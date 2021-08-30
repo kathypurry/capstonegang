@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { apiURL } from "./util/apiURL.js";
 const API = apiURL();
 
-function App() {
+const App = () => {
   const [days, setDays] = useState([]);
   useEffect(() => {
     axios
