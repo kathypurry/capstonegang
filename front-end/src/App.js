@@ -17,7 +17,7 @@ const App = () => {
   return (
     <div>
       <h1>Hello, gang</h1>
-      <h2>beep boop</h2>
+      <h2>beep boop beep</h2>
       <ul>
         {days.map((day) => (
           <li key={day.name}>{day.name}</li>
