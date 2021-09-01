@@ -166,6 +166,10 @@ const Name = styled.div`
         font-size: 0.8rem;
         text-decoration: none;
         color: var(--white);
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     padding: 0 1.5rem;
