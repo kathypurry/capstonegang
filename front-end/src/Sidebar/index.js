@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 
 // image files 
 import Logo from "../assets/Typing-Game-Logo.svg";
@@ -28,56 +28,68 @@ const Button = styled.button`
         background-color: var(--white);
         height: 2px;
         width: 1rem;
+        margin-left: 12px;
         position: absolute;
+        transition: all 0.3s ease;
     }
 
     &::before {
-        top: 1rem;
+        top: 1.5;
+        transform: ${(props) => (props.clicked? "rotate(135deg)" : "rotate(0)")}
     }
 
     &::after {
-        top: 1.5rem;
+        top: 1.2;
+        transform: ${(props) => (props.clicked? "rotate(-135deg)" : "rotate(0)")}
     }
+`
+
+const SidebarContainer = styled.div`
+    background-color: var(--black);
+    width: 3.5rem;
+    height: 80vh;
 `
 
 const Sidebar = () => {
 
-useState
+const [click, setClick] = useState(false);
+const handleClick = () => setClick(!click);
 
 
     return (
         <div>
-            <Button>Click</Button>
-
-            <div>
+            <Button clicked={click} onClick={() => handleClick()}>Click</Button>
+            <SidebarContainer>
                 <div>
-                    <img src={Logo} alt="logo" />
+                    <div>
+                        <img src={Logo} alt="logo" />
+                    </div>
+                    <ul>
+                        <li>
+                            <img src={About} alt="about" />
+                            <span>About</span>
+                        </li>
+                        <li>
+                            <img src={Leaderboard} alt="leaderboard" />
+                            <span>LeaderBoard</span>
+                        </li>
+                    </ul>
+
+                <div>
+                    <img src={Profilepic} alt="profile-pic" />
                 </div>
-                <ul>
-                    <li>
-                        <img src={About} alt="about" />
-                        <span>About</span>
-                    </li>
-                    <li>
-                        <img src={Leaderboard} alt="leaderboard" />
-                        <span>LeaderBoard</span>
-                    </li>
-                </ul>
 
-            <div>
-                <img src={Profilepic} alt="profile-pic" />
-            </div>
+                <div>
+                    <h5>Sponge Bob</h5>
+                    <a href="/#">Profile</a>
+                </div>
 
-            <div>
-                <h5>Sponge Bob</h5>
-                <a href="/#">Profile</a>
-            </div>
+                <button>
 
-            <button>
+                </button>
 
-            </button>
-
-            </div>
+                </div>
+            </SidebarContainer>
         </div>
     )
 }
