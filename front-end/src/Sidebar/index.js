@@ -113,6 +113,7 @@ const Text = styled.span`
     margin-left: ${(props) => (props.clicked? "1.5rem" : "0")};
     margin-top: 5px;
     overflow: hidden;
+
     transition: all 0.3s ease;
 `
 
@@ -121,9 +122,15 @@ const Profile = styled.div`
     align-items: center;
     justify-content: center;
 
-    width: ${(props) => (props.clicked? "14rem" : "3rem")};
+    background-color: var(--black);
+    // border: 2px solid var(--neonyellow);
+
+    transition: all 0.3s;
+
+    // border: 2px solid var(--white);
     padding: 0.5rem 1rem;
-    border: 2px solid var(--white);
+    margin-left: ${(props) => (props.clicked? "9rem" : "0")};
+    width: ${(props) => (props.clicked? "14rem" : "3rem")};
     height: 3rem;
 
     img {
@@ -136,6 +143,32 @@ const Profile = styled.div`
             padding: 2px;
         }
     }
+`
+
+const Details = styled.div`
+    display: ${(props) => (props.clicked ? "flex" : "none")};
+    justify-content: space-between;
+    align-items: center;
+`
+
+const Name = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h5 {
+        display: inline-block;
+        color: var(--neonyellow);
+    }
+
+    a {
+        font-size: 0.8rem;
+        text-decoration: none;
+        color: var(--white);
+    }
+
+    padding: 0 1.5rem;
 `
 
 const Sidebar = () => {
@@ -168,16 +201,14 @@ const handleProfileClick = () => setProfileClick(!profileClick);
                     </Bar>
 
                 <Profile clicked={profileClick}>
-                    <img src={Profilepic} alt="profile-pic" />
-                    <div>
-                        <div>
+                    <img onClick={() => handleProfileClick()} src={Profilepic} alt="profile-pic" />
+                    <Details clicked={profileClick}>
+                        <Name>
                             <h5>Sponge Bob</h5>
                             <a href="/#">Profile</a>
-                        </div>
+                        </Name>
 
-                        <button>
-                        </button>
-                </div>
+                </Details>
                 </Profile>
             </SidebarContainer>
         </div>
