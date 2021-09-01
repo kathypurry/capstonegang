@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 
 // image files 
-import Logo from "../assets/Typing-Game-Logo.svg";
+import logo from "../assets/Typing-Game-Logo.svg";
 import About from "../assets/About-Logo.svg";
 import Leaderboard from "../assets/leaderboard-Logo-neon.svg";
 import Profilepic from "../assets/profile-placeholder.jpeg";
 import styled from "styled-components";
 
 const Button = styled.button`
+    display: flex;
+    justfify-content: center;
+    align-items: center;
+
     background-color: var(--black);
     border: none;
     width: 2.5rem;
@@ -16,10 +20,7 @@ const Button = styled.button`
     margin: 0.5rem 0 0 0.5rem;
     cursor: pointer;
 
-    display: flex;
-    justfify-content: center;
-    align-items: center;
-
+    
     position: relative;
 
     &::before, 
@@ -45,9 +46,45 @@ const Button = styled.button`
 `
 
 const SidebarContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+
     background-color: var(--black);
     width: 3.5rem;
     height: 80vh;
+    margin-top: 1rem;
+    border-radius: 0 30px 30px 0;
+    padding: 1rem 0;
+`
+
+const Logo = styled.div`
+    width: 2rem;
+
+    img {
+        width: 30px;
+        height: auto;
+    }
+`
+
+const Bar = styled.ul`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    
+    background-color: var(--black);
+    color: var(--neongreen);
+    list-style: none;
+
+    width: ${(props) => (props.clicked? "12rem" : "3.5rem")};
+    transition: all 0.5s ease;
 `
 
 const Sidebar = () => {
@@ -60,20 +97,21 @@ const handleClick = () => setClick(!click);
         <div>
             <Button clicked={click} onClick={() => handleClick()}>Click</Button>
             <SidebarContainer>
-                <div>
-                    <div>
-                        <img src={Logo} alt="logo" />
-                    </div>
-                    <ul>
-                        <li>
-                            <img src={About} alt="about" />
-                            <span>About</span>
-                        </li>
+                    <Logo>
+                        <img src={logo} alt="logo" />
+                    </Logo>
+
+                    <Bar clicked={click}>
                         <li>
                             <img src={Leaderboard} alt="leaderboard" />
                             <span>LeaderBoard</span>
                         </li>
-                    </ul>
+
+                        <li>
+                            <img src={About} alt="about" />
+                            <span>About</span>
+                        </li>
+                    </Bar>
 
                 <div>
                     <img src={Profilepic} alt="profile-pic" />
@@ -88,7 +126,7 @@ const handleClick = () => setClick(!click);
 
                 </button>
 
-                </div>
+                
             </SidebarContainer>
         </div>
     )
