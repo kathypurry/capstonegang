@@ -99,6 +99,7 @@ const Item = styled.li`
 
     &:hover {
         border-right: 4px solid var(--neonyellow);
+
     }
 
     img {
@@ -107,10 +108,43 @@ const Item = styled.li`
     }
 `
 
+const Text = styled.span`
+    width: ${(props) => (props.clicked? "100%" : "0")};
+    margin-left: ${(props) => (props.clicked? "1.5rem" : "0")};
+    margin-top: 5px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+`
+
+const Profile = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: ${(props) => (props.clicked? "14rem" : "3rem")};
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--white);
+    height: 3rem;
+
+    img {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+
+        &:hover {
+            border: 2px solid var(--neonyellow);
+            padding: 2px;
+        }
+    }
+`
+
 const Sidebar = () => {
 
 const [click, setClick] = useState(false);
 const handleClick = () => setClick(!click);
+
+const [profileClick, setProfileClick] = useState(false);
+const handleProfileClick = () => setProfileClick(!profileClick);
 
 
     return (
@@ -124,29 +158,27 @@ const handleClick = () => setClick(!click);
                     <Bar clicked={click}>
                         <Item>
                             <img src={Leaderboard} alt="leaderboard" />
-                            <span>LeaderBoard</span>
+                            <Text clicked={click}>LeaderBoard</Text>
                         </Item>
 
                         <Item>
                             <img src={About} alt="about" />
-                            <span>About</span>
+                            <Text clicked={click}>About</Text>
                         </Item>
                     </Bar>
 
-                <div>
+                <Profile clicked={profileClick}>
                     <img src={Profilepic} alt="profile-pic" />
+                    <div>
+                        <div>
+                            <h5>Sponge Bob</h5>
+                            <a href="/#">Profile</a>
+                        </div>
+
+                        <button>
+                        </button>
                 </div>
-
-                <div>
-                    <h5>Sponge Bob</h5>
-                    <a href="/#">Profile</a>
-                </div>
-
-                <button>
-
-                </button>
-
-                
+                </Profile>
             </SidebarContainer>
         </div>
     )
