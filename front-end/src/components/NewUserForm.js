@@ -4,6 +4,7 @@ import { CountryDropdown, RegionDropdown, CountryRegionData } from 'react-countr
 
 
 const NewUserForm = () => {
+
     return (
         <div className="NewUserForm">
             <h1 id="formHeader">Create an account</h1>
@@ -27,10 +28,10 @@ const NewUserForm = () => {
                 <div> By clicking Create Account, I agree that:
                     <ul>
                         <li>I have read and accepted the <Link>Terms of Use</Link>.</li>
-                        <li>The Capstone Gane may keep me informed with personalised emails about game updates and reminders.</li>
+                        <li>The Capstone Gang may keep me informed with personalised emails about game updates and reminders.</li>
                     </ul>
                 </div>
-                
+
                 <button type="submit" id="createAccount-Submit">Create Account</button>
             </form>
         </div>
