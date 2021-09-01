@@ -84,7 +84,27 @@ const Bar = styled.ul`
     list-style: none;
 
     width: ${(props) => (props.clicked? "12rem" : "3.5rem")};
+    padding: 2rem 0;
     transition: all 0.5s ease;
+    border-radius: 0 30px 30px 0; 
+`
+
+const Item = styled.li`
+    display: flex;
+
+    width: 100%;
+    padding: 1rem 0;
+    padding-left: 1rem;
+    cursor: pointer;
+
+    &:hover {
+        border-right: 4px solid var(--neonyellow);
+    }
+
+    img {
+        width: 2rem;
+        height: auto;
+    }
 `
 
 const Sidebar = () => {
@@ -102,15 +122,15 @@ const handleClick = () => setClick(!click);
                     </Logo>
 
                     <Bar clicked={click}>
-                        <li>
+                        <Item>
                             <img src={Leaderboard} alt="leaderboard" />
                             <span>LeaderBoard</span>
-                        </li>
+                        </Item>
 
-                        <li>
+                        <Item>
                             <img src={About} alt="about" />
                             <span>About</span>
-                        </li>
+                        </Item>
                     </Bar>
 
                 <div>
