@@ -32,7 +32,7 @@ const NewUserForm = () => {
                     </ul>
                 </div>
 
-                <button type="submit" id="createAccount-Submit">Create Account</button>
+                <input type="submit" value="Create Account" id="createAccount-Submit" />
             </form>
         </div>
     )
