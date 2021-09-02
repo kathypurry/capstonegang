@@ -4,8 +4,13 @@ import React, { useState } from 'react';
 import logo from "../assets/Typing-Game-Logo.svg";
 import About from "../assets/About-Logo.svg";
 import Leaderboard from "../assets/leaderboard-Logo-neon.svg";
+import login from "../assets/enter.svg";
 import Profilepic from "../assets/profile-placeholder.jpeg";
 import styled from "styled-components";
+
+const Container = styled.div`
+    position: fixed;
+`
 
 const Button = styled.button`
     display: flex;
@@ -99,6 +104,9 @@ const Item = styled.li`
 
     &:hover {
         border-right: 4px solid var(--neonyellow);
+        filter: invert(0%) sepia(93%) saturate(0%) hue-rotate(256deg) brightness(97%) contrast(101%)
+
+
 
     }
 
@@ -123,12 +131,11 @@ const Profile = styled.div`
     justify-content: center;
 
     background-color: var(--black);
-    // border: 2px solid var(--neonyellow);
 
     transition: all 0.3s;
 
-    // border: 2px solid var(--white);
     padding: 0.5rem 1rem;
+    border-radius: 0 30px 30px 0;
     margin-left: ${(props) => (props.clicked? "9rem" : "0")};
     width: ${(props) => (props.clicked? "14rem" : "3rem")};
     height: 3rem;
@@ -137,6 +144,7 @@ const Profile = styled.div`
         width: 2.5rem;
         height: 2.5rem;
         border-radius: 50%;
+        cursor: pointer;
 
         &:hover {
             border: 2px solid var(--neonyellow);
@@ -175,6 +183,24 @@ const Name = styled.div`
     padding: 0 1.5rem;
 `
 
+const Login = styled.button`
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+
+    img {
+        width: 100%;
+        height: auto;
+        filter: invert(98%) sepia(100%) saturate(0%) hue-rotate(232deg) brightness(104%) contrast(101%);
+        transition: all 0.3s ease;
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+`
+
 const Sidebar = () => {
 
 const [click, setClick] = useState(false);
@@ -185,7 +211,7 @@ const handleProfileClick = () => setProfileClick(!profileClick);
 
 
     return (
-        <div>
+        <Container>
             <Button clicked={click} onClick={() => handleClick()}>Click</Button>
             <SidebarContainer>
                     <Logo>
@@ -212,10 +238,14 @@ const handleProfileClick = () => setProfileClick(!profileClick);
                             <a href="/#">Profile</a>
                         </Name>
 
+                        <Login>
+                            <img src={login} alt="login" />
+                        </Login>
+
                 </Details>
                 </Profile>
             </SidebarContainer>
-        </div>
+        </Container>
     )
 }
 
