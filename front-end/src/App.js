@@ -31,6 +31,7 @@ const App = () => {
           </Switch>
         </BrowserRouter>
       </Pages>
+
     </div>
   )
 }
