@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 // image files 
 import logo from '../assets/Typing-Game-Logo.svg';
@@ -231,12 +231,12 @@ const handleProfileClick = () => setProfileClick(!profileClick);
 
                     <Bar clicked={click}>
                         <Item 
-                            onClick={() => handleClick()} exact activeClassName="selected" to="/leaderboard">
+                            onClick={() => setClick(false)} activeClassName="active" to="/leaderboard">
                             <img src={Leaderboard} alt="leaderboard" />
                             <Text clicked={click}>LeaderBoard</Text>
                         </Item>
 
-                        <Item onClick={() => handleClick()} exact activeClassName="selected" to="/about">
+                        <Item onClick={() => setClick(false)} activeClassName="active" to="/about">
                             <img src={About} alt="about" />
                             <Text clicked={click}>About</Text>
                         </Item>
