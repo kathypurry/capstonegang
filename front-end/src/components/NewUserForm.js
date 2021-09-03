@@ -63,7 +63,7 @@ const NewUserForm = () => {
                     className="NewUserForm-Input"
                     id="country"
                     value={input.country}/>
-
+{/* Terms of use still has to be written out */}
                 <div id='NewUserForm-agreement'> By clicking Create Account, I agree that:
                     <ul>
                         <li>I have read and accepted the <Link>Terms of Use</Link>.</li>
@@ -77,4 +77,4 @@ const NewUserForm = () => {
     )
 };
 
-export default NewUserForm
+export default NewUserForm;
