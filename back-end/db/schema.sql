@@ -1,6 +1,39 @@
-DROP TABLE IF EXISTS test;
+-- DROP TABLE IF EXISTS typing_game;
 
-CREATE TABLE test (
+-- CREATE TABLE typing_game (
+--     id SERIAL PRIMARY KEY, 
+    
+   
+-- );
+
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE users (
     id SERIAL PRIMARY KEY, 
-    name TEXT
+    username TEXT
+    email TEXT
+    password TEXT
 );
+
+DROP TABLE IF EXISTS code_snippets ;
+
+CREATE TABLE code_snippets (
+    id SERIAL PRIMARY KEY, 
+    difficulty NUMBER
+    snippet TEXT
+ 
+);
+
+DROP TABLE IF EXISTS game_stats;
+
+CREATE TABLE game_stats (
+    id SERIAL PRIMARY KEY, 
+    percentage NUMBER
+    wpm NUMBER
+    correct NUMBER
+    incorrect NUMBER
+    missed NUMBER
+   
+);
+
+
