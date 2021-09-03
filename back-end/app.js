@@ -3,7 +3,7 @@ const cors = require("cors");
 const express = require("express");
 
 const codeSnippetController = require("./controllers/codeSnippetController");
-const usersController = require("./controllers/usersController");
+//const usersController = require("./controllers/usersController");
 
 // CONFIGURATION
 const app = express();
@@ -17,14 +17,14 @@ app.get("/", (req, res) => {
   res.send("Codesnip and Userinfo API");
 });
 
-app.use("/users", usersController);
+//app.use("/users", usersController);
 
 app.get("*", (req, res) => {
   res.status(404).send("404: Page not found");
 });
 
 
-app.use("/users", codeSnippetController);
+app.use("/code", codeSnippetController);
 
 app.get("*", (req, res) => {
   res.status(404).send("404: Page not found");
