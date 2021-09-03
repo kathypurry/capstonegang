@@ -4,7 +4,7 @@ import Timer from "../components/Timer.js"
 const Home = () => {
     return (
         <div>
-            <Timer/>
+            <Timer />
             <h2>Home</h2>
         </div>
     )
