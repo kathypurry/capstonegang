@@ -26,8 +26,8 @@ const App = () => {
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} /> 
-            <Route path="/leaderboard" component={Leaderboard} />
+            <Route exact path="/about" component={About} /> 
+            <Route exact path="/leaderboard" component={Leaderboard} />
           </Switch>
         </BrowserRouter>
       </Pages>
