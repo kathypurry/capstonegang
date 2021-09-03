@@ -1,5 +1,7 @@
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import styled from "styled-components";
+import { Switch, Route } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+
+import styled from 'styled-components';
 import Sidebar from './Sidebar';
 import Home from './Pages/Home';
 import About from './Pages/About';
@@ -23,11 +25,14 @@ const App = () => {
     <div className='App'>
       <Sidebar />
       <Pages>
-          <Switch>
+        <AnimatePresence exitBeforeEnter>
+        <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} /> 
             <Route path="/leaderboard" component={Leaderboard} />
           </Switch>
+        </AnimatePresence>
+         
       </Pages>
 
     </div>
