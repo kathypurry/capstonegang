@@ -16,7 +16,7 @@ DROP TABLE IF EXISTS code_snippets ;
 
 CREATE TABLE code_snippets (
     id SERIAL PRIMARY KEY, 
-    difficulty NUMBER
+    difficulty NUMERIC,
     snippet TEXT
  
 );

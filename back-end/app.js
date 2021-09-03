@@ -12,6 +12,7 @@ const app = express();
 app.use(cors());
 app.use(express.json()); // Parse incoming JSON
 
+app.use("/code", codeSnippetController);
 // ROUTES
 app.get("/", (req, res) => {
   res.send("Codesnip and Userinfo API");
@@ -23,8 +24,6 @@ app.get("*", (req, res) => {
   res.status(404).send("404: Page not found");
 });
 
-
-app.use("/code", codeSnippetController);
 
 app.get("*", (req, res) => {
   res.status(404).send("404: Page not found");
