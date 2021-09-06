@@ -6,6 +6,8 @@ import MotionF from './MotionF';
 
 // images
 import TypingImage from './TypingImage';
+import NextIcon from '../assets/next-icon.svg';
+import LowerIcon from '../assets/lower-icon.svg';
 
 
 const Container = styled.div`
@@ -82,6 +84,17 @@ const Paragraph = styled.p`
     color: var(--white);
     opacity: 0.5;
 `
+const Next = styled.div`
+    position: absolute;
+    left: 108vw;
+    margin-top: -16em;
+`
+
+const Lower = styled.div`
+    position: absolute;
+    margin-left: 10em;
+    top: 52em;
+`
 
 const Green = styled.div`
 
@@ -92,10 +105,10 @@ const Green = styled.div`
    margin-right: -600px;
 
    h4 {
-    color: var(--grey);
-    font-size: 30px;
+        color: var(--grey);
+        font-size: 30px;
 
-    padding-top: 20px;
+        padding-top: 20px;
    }
 `
 
@@ -139,6 +152,7 @@ const AboutComponent = () => {
                                 Lets Type
                             </Button>
                         </Left>
+
                         <Right>
                             <Parallax speed={-10}>
                                 <TypingImage />
@@ -146,8 +160,16 @@ const AboutComponent = () => {
                         </Right>
                     </RelaxContainer>
 
+                    <Next>
+                        <img src={NextIcon} alt="NextIcon" />
+                    </Next>
+
+                    <Lower>
+                        <img src={LowerIcon} alt="LowerIcon" />
+                    </Lower>
+
                     <Green>
-                        <h4>Scroll Left To Meet The Team</h4>
+                        <h4>Scroll Left To Meet The Team and Down For More</h4>
                     </Green>
                </Content>
            </Section>
