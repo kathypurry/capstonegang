@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import Timer from "../components/Timer.js";
+import React, { useState } from 'react'
+// import StatGraph from '../components/StatGraph'
+import Timer from '../components/Timer'
 
-const Home = () => {
+const TestPage = () => {
     const [time, setTime] = useState(0);
     const timer = (number_ofSeconds) => {
         let tMinus = number_ofSeconds
@@ -14,16 +15,17 @@ const Home = () => {
                 tMinus >= 0
                     ? tMinus
                     : 0
-            )  
-        };
-        return setInterval(countdown, 1000);
+            )   
+        }
+        return setInterval(countdown, 1000)
     };
+
     return (
         <div>
-            <h2>Home</h2>
-            <Timer timer={timer} time={time} />
+            <Timer timer={timer} time={time}/>
+            {/* <StatGraph/> */}
         </div>
     )
 };
 
-export default Home;
+export default TestPage;
