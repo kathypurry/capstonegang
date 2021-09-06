@@ -230,8 +230,7 @@ const handleProfileClick = () => setProfileClick(!profileClick);
                     </Logo>
 
                     <Bar clicked={click}>
-                        <Item 
-                            onClick={() => setClick(false)} activeClassName="active" to="/leaderboard">
+                        <Item onClick={() => setClick(false)} activeClassName="active" to="/leaderboard">
                             <img src={Leaderboard} alt="leaderboard" />
                             <Text clicked={click}>LeaderBoard</Text>
                         </Item>
