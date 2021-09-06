@@ -6,8 +6,11 @@
   --neonyellow:#BAFF29;
   --background: rgb(49, 49, 49);
   --foam: #DDFBD2;
-
 }
+
+/* html {
+  overflow: hidden;
+} */
 
 *, *::before, *::after {
   margin: 0;
@@ -19,3 +22,5 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   background-color: var(--background);
 }
+
+
