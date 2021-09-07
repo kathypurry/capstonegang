@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import styled from 'styled-components';
 import Parallax from 'react-rellax'
-import MotionF from './MotionF';
+import MotionF from '../Components/MotionF';
 
 // images
 import TypingImage from '../Components/TypingImage';
