@@ -1,11 +1,16 @@
 :root {
+
+  /* website theme */
   --white: #fff;
   --grey:#6f7579;
   --black:#09090C;
   --neongreen:#80FF00;
   --neonyellow:#BAFF29;
-  --background: rgb(49, 49, 49);
   --foam: #DDFBD2;
+  --background: rgb(49, 49, 49);
+
+  /* Timer countdown indication colors */
+  --red: #FF0000;
 }
 
 /* html {
@@ -23,4 +28,19 @@ body {
   background-color: var(--background);
 }
 
+.p-icon {
+  margin: 14px 5px 10px 10;
+  width: 50px;
+}
+
+.timer-style {
+  background-color: transparent;
+  border: none;
+
+  right: 1.3vw;
+}
+
+.timer-style:hover {
+ color: var(--neongreen);
+}
 

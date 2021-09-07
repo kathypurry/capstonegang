@@ -5,7 +5,7 @@ import Parallax from 'react-rellax'
 import MotionF from './MotionF';
 
 // images
-import TypingImage from './TypingImage';
+import TypingImage from '../components/TypingImage';
 import NextIcon from '../assets/next-icon.svg';
 import LowerIcon from '../assets/lower-icon.svg';
 
@@ -84,16 +84,17 @@ const Paragraph = styled.p`
     color: var(--white);
     opacity: 0.5;
 `
+
 const Next = styled.div`
     position: absolute;
-    left: 108vw;
+    left: 109.5vw;
     margin-top: -16em;
 `
 
 const Lower = styled.div`
     position: absolute;
     margin-left: 10em;
-    top: 52em;
+    top: 47.5em;
 `
 
 const Green = styled.div`
@@ -103,13 +104,6 @@ const Green = styled.div`
    min-height: 100vh;
    margin-left: -600px;
    margin-right: -600px;
-
-   h4 {
-        color: var(--grey);
-        font-size: 30px;
-
-        padding-top: 20px;
-   }
 `
 
 const AboutUs = styled.div`
@@ -161,7 +155,7 @@ const AboutComponent = () => {
                     </RelaxContainer>
 
                     <Next>
-                        <img src={NextIcon} alt="NextIcon" />
+                        <a href=""><img src={NextIcon} alt="NextIcon" /></a>
                     </Next>
 
                     <Lower>
@@ -169,7 +163,7 @@ const AboutComponent = () => {
                     </Lower>
 
                     <Green>
-                        <h4>Scroll Left To Meet The Team and Down For More</h4>
+                        
                     </Green>
                </Content>
            </Section>
