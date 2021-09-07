@@ -19,6 +19,9 @@ INSERT INTO code_snippets (
 (1, '`Tommy is ${age} years old.` const currency = "$"'),
 (1, 'console.log(`Billy is ${6+8} years old.`) epic = true'),
 (1, 'const multiply = (a,b) => a * b;'),
+(1, 'console.log(`this is ${string} interpolation`)'),
+(1, 'Math.random(Math.floor(randomNum)))'),
+(1, 'let arr = []'),
 (2, 'const checkWeight = weight => {
     \nconsole.log(`Baggage weight: ${weight} kilograms.`)};
 '),
