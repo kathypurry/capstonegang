@@ -22,6 +22,16 @@ INSERT INTO code_snippets (
 (1, 'console.log(`this is ${string} interpolation`)'),
 (1, 'Math.random(Math.floor(randomNum)))'),
 (1, 'let arr = []'),
+(1, 'let obj = []'),
+(1, 'let stringArray = ["a","b","c","d","e","f","g"]'),
+(1, 'let numArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]'),
+(1, 'let randomNum = Math.random() * 11'),
+(1, 'let perfection = Me && You'),
+(1, 'let perfectStranger = Me || You'),
+(1, 'console.log(stringArray.length)'),
+(1, 'console.log(numArray.length'),
+(1, 'newStringArray = stringArray.push("h")'),
+(1, 'newNumArray = numArray.push("11")'),
 (2, 'const checkWeight = weight => {
     \nconsole.log(`Baggage weight: ${weight} kilograms.`)};
 '),
