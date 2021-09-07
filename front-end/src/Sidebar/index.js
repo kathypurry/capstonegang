@@ -226,7 +226,7 @@ const handleProfileClick = () => setProfileClick(!profileClick);
             <Button clicked={click} onClick={() => handleClick()}>Click</Button>
             <SidebarContainer>
                     <Logo>
-                        <img src={logo} alt="logo" />
+                        <a href="/"><img src={logo} alt="logo" /></a>
                     </Logo>
 
                     <Bar clicked={click}>
