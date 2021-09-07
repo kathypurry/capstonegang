@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useEffect,useState } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 import {
     LineChart,
     Line,
@@ -6,10 +8,28 @@ import {
     XAxis,
     YAxis
 } from 'recharts';
+import { apiURL } from '../util/apiURL';
+
+const API = apiURL
 
 
 const StatGraph = () => {
+    //axios get for all user stats in back end by their id
+    // const { id } = useParams();
+    // const [stats, setStats] = useState()
+    // useEffect(() => {
+    //     // get user data from back end by id
+    //     // convert to array of objects 
+    //     // ^ will depend on the shape of the data we get from firebase so we can pass data into the graph
 
+    //     axios
+    //         .get(`${API}/users/id`)
+    //         .then(response => setStats(response.data.payload))
+    //         .catch((e)=>console.error(e))
+    //     }, [id])
+       
+    
+    //Test data    
     const data = [
         {
           name: 'Page A',
@@ -53,7 +73,9 @@ const StatGraph = () => {
           pv: 4300,
           amt: 2100,
         },
-      ];
+      ]
+
+    // const data = stats
     
     return (
         <div>
