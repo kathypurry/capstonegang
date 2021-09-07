@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
+import { NavLink, Link } from 'react-router-dom';
 
 // image files 
-import logo from "../assets/Typing-Game-Logo.svg";
-import About from "../assets/About-Logo.svg";
-import Leaderboard from "../assets/leaderboard-Logo-neon.svg";
-import login from "../assets/enter.svg";
-import Profilepic from "../assets/profile-placeholder.jpeg";
-import styled from "styled-components";
+import logo from '../assets/Typing-Game-Logo.svg';
+import About from '../assets/About-Logo.svg';
+import Leaderboard from '../assets/leaderboard-Logo-neon.svg';
+import login from '../assets/enter.svg';
+import Profilepic from '../assets/profile-placeholder.jpeg';
+import styled from 'styled-components';
 
 const Container = styled.div`
     position: fixed;
+
+    .active {
+        border-right: 4px solid var(--neonyellow);
+    }
 `
 
 const Button = styled.button`
@@ -94,20 +99,22 @@ const Bar = styled.ul`
     border-radius: 0 30px 30px 0; 
 `
 
-const Item = styled.li`
+const Item = styled(NavLink)`
     display: flex;
 
     width: 100%;
     padding: 1rem 0;
     padding-left: 1rem;
+    text-decoration: none;
     cursor: pointer;
 
     &:hover {
         border-right: 4px solid var(--neonyellow);
-        filter: invert(0%) sepia(93%) saturate(0%) hue-rotate(256deg) brightness(97%) contrast(101%)
+        filter: invert(0%) sepia(93%) saturate(0%) hue-rotate(256deg) brightness(97%) contrast(101%);
+    }
 
-
-
+    &:visited {
+        color: var(--foam);
     }
 
     img {
@@ -123,6 +130,10 @@ const Text = styled.span`
     overflow: hidden;
 
     transition: all 0.3s ease;
+
+    &:hover {
+        color: var(--white);
+    }
 `
 
 const Profile = styled.div`
@@ -215,16 +226,16 @@ const handleProfileClick = () => setProfileClick(!profileClick);
             <Button clicked={click} onClick={() => handleClick()}>Click</Button>
             <SidebarContainer>
                     <Logo>
-                        <img src={logo} alt="logo" />
+                        <a href="/"><img src={logo} alt="logo" /></a>
                     </Logo>
 
                     <Bar clicked={click}>
-                        <Item>
+                        <Item onClick={() => setClick(false)} activeClassName="active" to="/leaderboard">
                             <img src={Leaderboard} alt="leaderboard" />
                             <Text clicked={click}>LeaderBoard</Text>
                         </Item>
 
-                        <Item>
+                        <Item onClick={() => setClick(false)} activeClassName="active" to="/about">
                             <img src={About} alt="about" />
                             <Text clicked={click}>About</Text>
                         </Item>

@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import Timer from "../components/Timer.js";
+=======
+import React from 'react';
+import Timer from '../Components/Timer';
+>>>>>>> c94a0863b104b535a3543a773046d9c8aa1a64d1
 
 const Home = () => {
     const [time, setTime] = useState(0);
@@ -20,6 +25,7 @@ const Home = () => {
     };
     return (
         <div>
+            <Timer />
             <h2>Home</h2>
             <Timer timer={timer} time={time} />
         </div>
