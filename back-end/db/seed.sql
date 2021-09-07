@@ -21,6 +21,7 @@ INSERT INTO code_snippets (
 (1, 'const multiply = (a,b) => a * b;'),
 (1, 'console.log(`this is ${string} interpolation`)'),
 (1, 'Math.random(Math.floor(randomNum)))'),
+(1, 'let arr = []'),
 (2, 'const checkWeight = weight => {
     \nconsole.log(`Baggage weight: ${weight} kilograms.`)};
 '),
