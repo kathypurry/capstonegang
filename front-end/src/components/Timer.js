@@ -15,14 +15,23 @@ const TimeContainer = styled.div`
 
 const Timer = () => {
     const [time, setTime] = useState(30);
-  
+    
     useEffect(() => {
       if (time > 0) {
         setTimeout(() => setTime(time - 1), 1000);
       } else {
         setTime(time);
       }
-    });
+    },[time]);
+  
+    const reset = () => {
+      //reset the clock no matter where it is, but does not start the clock
+      
+    }
+  
+  const start = () => {
+    //commence countdown, does not reset the clock
+  }
   
     return (
       <Time>
