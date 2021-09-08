@@ -11,7 +11,7 @@ export default function Snippets() {
     axios.get(`${API}/code`).then((res) => {
       setSnippet(res.data);
     });
-  }, []);
+  });
 
   return (
 

@@ -8,7 +8,7 @@ import About from "./Pages/About";
 import Leaderboard from "./Pages/Leaderboard";
 import Snippets from "./Components/Snippets";
 
-import testPage from "./Pages/testPage";
+import TestPage from "./Pages/TestPage";
 
 const Pages = styled.div`
   width: 100vw;
@@ -33,7 +33,7 @@ const App = () => {
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />
             <Route path="/leaderboard" component={Leaderboard} />
-            <Route path="/test" component={testPage} />
+            <Route path="/test" component={TestPage} />
             <Route path="/code" component={Snippets} />
           </Switch>
         </AnimatePresence>

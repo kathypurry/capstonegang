@@ -1,16 +1,17 @@
-import React, { useEffect,useState } from 'react';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import React from 'react';
 import {
-    LineChart,
-    Line,
-    CartesianGrid,
-    XAxis,
-    YAxis
+  LineChart,
+  Line,
+  CartesianGrid,
+  XAxis,
+  YAxis
 } from 'recharts';
-import { apiURL } from '../util/apiURL';
+// import React, { useEffect, useState } from 'react';
+// import { useParams } from 'react-router-dom';
+// import axios from 'axios';
+// import { apiURL } from '../util/apiURL';
 
-const API = apiURL
+// const API = apiURL
 
 
 const StatGraph = () => {
