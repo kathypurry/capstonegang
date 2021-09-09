@@ -141,7 +141,7 @@ const AboutComponent = () => {
                             <Parallax speed={2}>
                                 <Paragraph>As well as be able to identify bugs in a faster manner. </Paragraph>
                             </Parallax>
-                                
+   
                             <Button variant="contained" color="primary" style={{marginTop: "20px", backgroundColor: "var(--foam)", color: "#5FA8D3"}}>
                                 Lets Type
                             </Button>
