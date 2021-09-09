@@ -20,7 +20,7 @@ const Home = () => {
     // };
     return (
         <div>
-            <Timer />
+            {/* <Timer /> */}
             <h2>Home</h2>
             {/* <Timer timer={timer} time={time} /> */}
         </div>
