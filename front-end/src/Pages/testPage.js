@@ -18,17 +18,17 @@ const TestPage = () => {
     //         )   
     //     }
     //     return setInterval(countdown, 1000)
-    const timer = (number_ofSeconds) => {
-        for (let i = number_ofSeconds; i > 0; i--) {
-            setTimeout(() => {            
-                setTime(i)
-            }, 1000)
-        }        
-    }    
+    // const timer = (number_ofSeconds) => {
+    //     for (let i = number_ofSeconds; i > 0; i--) {
+    //         setTimeout(() => {
+    //             setTime(i)
+    //         }, 1000)
+    //     }
+    // };
     return (
         <div>
             <StatGraph/>
-            <Timer timer={timer} time={time}/>
+            <Timer expiryTimestamp={30}/>
         </div>
     )
 };
