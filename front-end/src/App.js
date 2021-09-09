@@ -6,7 +6,7 @@ import Sidebar from "./Sidebar";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Leaderboard from "./Pages/Leaderboard";
-import Snippets from "./Components/Snippets";
+import SnippetsPage from "./Pages/SnippetsPage";
 
 import TestPage from "./Pages/TestPage";
 
@@ -34,7 +34,7 @@ const App = () => {
             <Route path="/about" component={About} />
             <Route path="/leaderboard" component={Leaderboard} />
             <Route path="/test" component={TestPage} />
-            <Route path="/code" component={Snippets} />
+            <Route path="/code" component={SnippetsPage} />
           </Switch>
         </AnimatePresence>
       </Pages>
