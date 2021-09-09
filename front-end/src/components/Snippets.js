@@ -6,25 +6,25 @@ import DisplaySnippets from "./DisplaySnippets";
 export default function Snippets() {
   const API = apiURL();
 
-  const [snippet, setSnippet] = useState([]);
+  //const [snippet, setSnippet] = useState([]);
   const [difficulty, setDifficulty] = useState([])
   const [currentLevel, setCurrentLevel] = useState([]);
 
   useEffect(() => {
     axios.get(`${API}/code`)
       .then((res) => {
-      setSnippet(res.data);
+      const filtered = filterSnippets(res.data) 
+      setCurrentLevel(filterSnippets(res.data));
+      console.log(res.data)
     });
-  }, []);
+  }, [difficulty]);
 
   const handleDifficultyChange = (e) => {
     setDifficulty({ [e.target.id]: Number(e.target.value) });
-    setCurrentLevel({ currentLevel: filterDifficulty() });
-    console.log(currentLevel)
   };
 
-  const filterDifficulty = () => {
-    return snippet.filter(snip => snip.difficulty === difficulty)
+  const filterSnippets = (data) => {
+    return data.filter((snippet) => (Number(snippet.difficulty)) === difficulty)
   }
 
   return (
@@ -38,8 +38,8 @@ export default function Snippets() {
         <option value='3'>3</option>
       </select>
 
-      <h4>{}</h4>
-      {snippet.map((snip) => snip.snippet)}
+      <h4>{currentLevel}</h4>
+      {/* {snippet.map((snip) => snip.snippet)} */}
     </div>
   );
 }
