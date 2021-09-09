@@ -14,8 +14,12 @@
     "react-rellax": "^1.0.3",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
+<<<<<<< HEAD
     "react-tiger-transition": "^4.1.2",
     "react-transition-group": "^4.4.2",
+=======
+    "react-timer-hook": "^3.0.4",
+>>>>>>> fbaf6598e220bab09ca0c0d89933f494b06b3fb6
     "styled-components": "^5.3.1",
     "web-vitals": "^1.1.2"
   },
