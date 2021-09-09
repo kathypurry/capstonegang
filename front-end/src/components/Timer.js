@@ -13,7 +13,7 @@ const TimeContainer = styled.div`
     font-size: 30px;
 `
 
-const Timer = ({expiryTimestamp }) => {
+const Timer = ({ expiryTimestamp }) => {
   
   
   const start_try1 = () => {
@@ -51,8 +51,8 @@ const Timer = ({expiryTimestamp }) => {
     seconds,
     resume,
     pause,
-    restart,
-  } = useTimer({ expiryTimestamp, });
+    restart
+  } = useTimer({ expiryTimestamp });
   
   return (
     <Time>
