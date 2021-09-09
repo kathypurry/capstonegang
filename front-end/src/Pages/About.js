@@ -106,13 +106,13 @@ const Green = styled.div`
    margin-right: -600px;
 `
 
-const AboutUs = styled.div`
-    color: var(--foam);
-`
+// const AboutUs = styled.div`
+//     color: var(--foam);
+// `
 
-const Details = styled.div`
+// const Details = styled.div`
 
-`
+// `
 
 const AboutComponent = () => {
     return ( 
@@ -155,7 +155,7 @@ const AboutComponent = () => {
                     </RelaxContainer>
 
                     <Next>
-                        <a href=""><img src={NextIcon} alt="NextIcon" /></a>
+                        <img src={NextIcon} alt="NextIcon" />
                     </Next>
 
                     <Lower>
