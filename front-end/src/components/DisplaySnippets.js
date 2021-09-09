@@ -3,7 +3,7 @@ import React from 'react'
 function DisplaySnippets({snippet}) {
     return (
         <div>
-            <h3>{snippet}</h3>
+            <h3>{snippet.snippet}</h3>
         </div>
     );
 };
