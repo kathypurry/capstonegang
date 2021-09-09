@@ -2,9 +2,7 @@ import { useState, useEffect } from "react";
 import { apiURL } from "../util/apiURL";
 import axios from "axios";
 
-
 import DisplaySnippets from "./DisplaySnippets";
-
 
 export default function Snippets() {
   const API = apiURL();
@@ -15,38 +13,40 @@ export default function Snippets() {
 
   useEffect(() => {
     axios.get(`${API}/code`)
-      .then((res) => {
-      setSnippet(res.data);
-    });
-  });
-
+      .then(
+        (res) => setSnippet(res.data),
+        (error) => console.log('get', error)
+      )
+      .catch((c) => console.warn('catch', c));
+  }, []);
 
   const handleDifficultyChange = (e) => {
-    setDifficulty({ [e.target.id]: Number(e.target.value) });
-    setCurrentLevel({ currentLevel: filterDifficulty() });
+    setDifficulty({ [e.target.id]: e.target.value });
+    const filteredSnippet = snippet.filter((snip) => snip.difficulty === difficulty.difficulty)
+    setCurrentLevel([ filteredSnippet ])
     console.log(currentLevel)
   };
-
-  const filterDifficulty = () => {
-    return snippet.filter(snip => snip.difficulty === difficulty)
-  }
-
+  
   return (
     <div>
       <h1>Snippets</h1>
 
       <label htmlFor='difficulty'>Pick your difficulty</label>
-      <select id='difficulty' onClick={handleDifficultyChange}>
-        <option value='1'>1</option>
+      <select id='difficulty' onChange={handleDifficultyChange}>
+        <option value='1' defaultChecked>1</option>
         <option value='2'>2</option>
         <option value='3'>3</option>
       </select>
 
-
-
-      <h4>{}</h4>
-      {snippet.map((snip) => snip.snippet)}
-
+      <ul>
+      {/* {currentLevel.map(snip => {
+        return (
+          <li key={snip.id}>
+            <DisplaySnippets snippet={snip}/>
+          </li>
+        )
+      })} */}
+      </ul>
     </div>
   );
-}
+};
