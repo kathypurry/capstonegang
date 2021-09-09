@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import { apiURL } from "../util/apiURL";
 import axios from "axios";
+
+
 import DisplaySnippets from "./DisplaySnippets";
+
 
 export default function Snippets() {
   const API = apiURL();
@@ -17,7 +20,8 @@ export default function Snippets() {
       setCurrentLevel(filterSnippets(res.data));
       console.log(res.data)
     });
-  }, [difficulty]);
+  });
+
 
   const handleDifficultyChange = (e) => {
     setDifficulty({ [e.target.id]: Number(e.target.value) });
@@ -38,8 +42,11 @@ export default function Snippets() {
         <option value='3'>3</option>
       </select>
 
-      <h4>{currentLevel}</h4>
-      {/* {snippet.map((snip) => snip.snippet)} */}
+
+
+      <h4>{}</h4>
+      {snippet.map((snip) => snip.snippet)}
+
     </div>
   );
 }
