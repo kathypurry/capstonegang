@@ -15,7 +15,7 @@ export default function Snippets() {
       .then((res) => {
       setSnippet(res.data);
     });
-  }, []);
+  });
 
   const handleDifficultyChange = (e) => {
     setDifficulty({ [e.target.id]: Number(e.target.value) });
