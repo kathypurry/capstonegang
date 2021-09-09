@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import { useTimer } from 'react-timer-hook';
 import styled from 'styled-components';
 
@@ -16,7 +16,7 @@ const TimeContainer = styled.div`
 const Timer = ({ expiryTimestamp }) => {
   
   
-  const start_try1 = () => {
+  // const start_try1 = () => {
     // useEffect(() => {
   //   if (time > 0) {
   //     setTimeout(() => setTime(time - 1), 1000);
@@ -45,7 +45,7 @@ const Timer = ({ expiryTimestamp }) => {
     //   else {setTime(time)}
     //   // time > 0 ? setTimeout(() => setTime(time - 1), 1000) : setTime(time);
     // }
-  }
+  // }
   
   const {
     seconds,

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { apiURL } from "../util/apiURL";
 import axios from "axios";
 
-import DisplaySnippets from "./DisplaySnippets";
+// import DisplaySnippets from "./DisplaySnippets";
 
 export default function Snippets() {
   const API = apiURL();
