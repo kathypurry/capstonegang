@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/joinpursuit/pern-final-project#readme",
   "dependencies": {
+    "react-timer-hook": "^3.0.4",
     "recharts": "^2.1.2",
     "three": "^0.132.2"
   }

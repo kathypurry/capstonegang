@@ -106,13 +106,13 @@ const Green = styled.div`
    margin-right: -600px;
 `
 
-const AboutUs = styled.div`
-    color: var(--foam);
-`
+// const AboutUs = styled.div`
+//     color: var(--foam);
+// `
 
-const Details = styled.div`
+// const Details = styled.div`
 
-`
+// `
 
 const AboutComponent = () => {
     return ( 
@@ -141,7 +141,7 @@ const AboutComponent = () => {
                             <Parallax speed={2}>
                                 <Paragraph>As well as be able to identify bugs in a faster manner. </Paragraph>
                             </Parallax>
-                                
+   
                             <Button variant="contained" color="primary" style={{marginTop: "20px", backgroundColor: "var(--foam)", color: "#5FA8D3"}}>
                                 Lets Type
                             </Button>
@@ -155,7 +155,7 @@ const AboutComponent = () => {
                     </RelaxContainer>
 
                     <Next>
-                        <a href=""><img src={NextIcon} alt="NextIcon" /></a>
+                        <img src={NextIcon} alt="NextIcon" />
                     </Next>
 
                     <Lower>

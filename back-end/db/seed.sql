@@ -79,10 +79,8 @@ INSERT INTO code_snippets (
     \nconst newObj = { 1: "spotted doggo", 2: "puppers", 3: "is-this-a-dog-?"}
     \nnumArr.reduce((a, b) => a + b)
 '),
-(3, 'li.innerHTML = `${newArr[0].dieImg} = ${newArr[0].dieSum}`
-    \nchangeUpThisNumToAString(origNum, origStr)
-    \ncheckCondition ? ifTrueDoThis : elseDoThis
-'),
+(3, 'li.innerHTML = `${newArr[0].dieImg} = ${newArr[0].dieSum}`'||E'\n'||'changeUpThisNumToAString(origNum, origStr)'||E'\n'||'checkCondition ? ifTrueDoThis : elseDoThis'
+),
 (3, 'const rubiksCubeFacts = {
     \npossiblePermutations: "43,252,003,274,489,856,000",
     \ninvented: "1974"}

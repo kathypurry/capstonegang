@@ -17,8 +17,8 @@ const Timer = ({expiryTimestamp }) => {
     seconds,
     resume,
     pause,
-    restart,
-  } = useTimer({ expiryTimestamp, });
+    restart
+  } = useTimer({ expiryTimestamp });
   
   return (
     <Time>

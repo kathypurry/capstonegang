@@ -1,45 +1,74 @@
 import { useState, useEffect } from "react";
 import { apiURL } from "../util/apiURL";
 import axios from "axios";
+
+import styled from 'styled-components';
+
 import DisplaySnippets from "./DisplaySnippets";
+
+const LabelHousing = styled.div`
+  margin-left: 15vw;
+  margin-bottom: 5vh;
+`
+
+const SnippetContainer = styled.div`
+  display: flex;
+
+  margin-left: 15vw;
+  z-index: -1;
+`
+
+const PopulateSnippets = styled.ul`
+  list-style: none;
+`
 
 export default function Snippets() {
   const API = apiURL();
 
   const [snippet, setSnippet] = useState([]);
-  const [difficulty, setDifficulty] = useState([])
-  const [currentLevel, setCurrentLevel] = useState([]);
+  const [difficulty, setDifficulty] = useState([]);
 
   useEffect(() => {
     axios.get(`${API}/code`)
-      .then((res) => {
-      setSnippet(res.data);
-    });
-  });
-
+      .then(
+        (res) => setSnippet(res.data),
+        (error) => console.log('get', error)
+      )
+      .catch((c) => console.warn('catch', c));
+  }, []);
+ 
   const handleDifficultyChange = (e) => {
-    setDifficulty({ [e.target.id]: Number(e.target.value) });
-    setCurrentLevel({ currentLevel: filterDifficulty() });
-    console.log(currentLevel)
+    setDifficulty(e.target.value);
   };
 
-  const filterDifficulty = () => {
-    return snippet.filter(snip => snip.difficulty === difficulty)
-  }
+  const filteredSnippet = snippet.filter(snip => snip.difficulty === difficulty)
 
   return (
     <div>
-      <h1>Snippets</h1>
-
+      <LabelHousing>
       <label htmlFor='difficulty'>Pick your difficulty</label>
-      <select id='difficulty' onClick={handleDifficultyChange}>
-        <option value='1'>1</option>
-        <option value='2'>2</option>
-        <option value='3'>3</option>
-      </select>
-
-      <h4>{}</h4>
-      {snippet.map((snip) => snip.snippet)}
+          <select 
+            id='difficulty' 
+            onChange={handleDifficultyChange} 
+            value={difficulty}
+          >
+            <option>-Choose difficulty-</option>
+            <option value='1' defaultChecked>1</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+          </select>
+        </LabelHousing>
+        <SnippetContainer>
+        <PopulateSnippets>
+          {filteredSnippet.map(snip => {
+            return (
+              <li key={snip.id}>
+                <DisplaySnippets snippet={snip}/>
+              </li>
+            )
+          })}
+        </PopulateSnippets>
+      </SnippetContainer>
     </div>
   );
-}
+};
