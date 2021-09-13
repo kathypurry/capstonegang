@@ -12,7 +12,7 @@ const {
 
 //INDEX
 codeSnippet.get("/", async (req,res) => {
-    const allCodeSnippets = await allCodeSnippets();
+    const allCodeSnippets = await getAllCodeSnippets();
     res.json(allCodeSnippets);
 });
 
