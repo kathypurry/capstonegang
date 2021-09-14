@@ -8,7 +8,7 @@ import About from "./Pages/About";
 import Leaderboard from "./Pages/Leaderboard";
 import SnippetsPage from "./Pages/SnippetsPage";
 
-import TestPage from "./Pages/TestPage";
+import TestPage from "./Pages/testPage";
 
 const Pages = styled.div`
   width: 100vw;

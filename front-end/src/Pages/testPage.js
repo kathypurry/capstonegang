@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import StatGraph from '../Components/StatGraph'
 import Timer from '../Components/Timer'
 
