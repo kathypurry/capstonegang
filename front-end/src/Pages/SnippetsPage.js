@@ -1,4 +1,4 @@
-import Snippets from '../Components/Snippets';
+import Snippets from '../components/Snippets';
 
 function SnippetsPage() {
     return (
