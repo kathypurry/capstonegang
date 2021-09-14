@@ -97,8 +97,8 @@ INSERT INTO code_snippets (
     \n
     \n
 '),
-(3, 'const productData = [
-    \n{id: 1, name: Baseball Glove, price: 19.99},
+(3, E'const productData = [
+    \n{id: 1, name: Baseball Glove, price: 19.99}
     \n{id:2, name: Vintage VCR, 21.34}]
 ');
 
