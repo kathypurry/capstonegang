@@ -6,11 +6,8 @@ const Home = () => {
     return (
         <div>
             <h2>Home</h2>
- 
-
             <Snippets />
             {/* <Timer timer={timer} time={time} /> */}
-
         </div>
     )
 };
