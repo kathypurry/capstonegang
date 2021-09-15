@@ -22,7 +22,7 @@ const PopulateSnippets = styled.ul`
   list-style: none;
 `
 
-const Snippets = (count = 20) => {
+const Snippets = () => {
   const API = apiURL();
 
   const [snippet, setSnippet] = useState([]);
