@@ -1,5 +1,5 @@
 import React from 'react';
-import MotionF from '../components/MotionF';
+import MotionF from '../Components/MotionF';
 
 
 const LeaderboardComponent = () => {

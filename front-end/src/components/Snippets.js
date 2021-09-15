@@ -31,7 +31,10 @@ export default function Snippets() {
   useEffect(() => {
     axios.get(`${API}/code`)
       .then(
-        (res) => setSnippet(res.data),
+        (res) => {
+          console.log(res.data)
+          setSnippet(res.data)
+        },
         (error) => console.log('get', error)
       )
       .catch((c) => console.warn('catch', c));
@@ -41,7 +44,7 @@ export default function Snippets() {
     setDifficulty(e.target.value);
   };
 
-  const filteredSnippet = snippet.filter(snip => snip.difficulty === difficulty)
+  const filteredSnippet = snippet.filter(snip => snip.difficulty === difficulty);
 
   return (
     <div>
