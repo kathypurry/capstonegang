@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { firebase } from '../Services/firebase';
 
 // image files 
 import logo from '../assets/Typing-Game-Logo.svg';
@@ -220,6 +221,9 @@ const handleClick = () => setClick(!click);
 const [profileClick, setProfileClick] = useState(false);
 const handleProfileClick = () => setProfileClick(!profileClick);
 
+const LogOut = () => {
+    firebase.auth().signOut();
+}
 
     return (
         <Container>
@@ -249,7 +253,7 @@ const handleProfileClick = () => setProfileClick(!profileClick);
                             <a href="/#">Profile</a>
                         </Name>
 
-                        <Login>
+                        <Login onClick={LogOut}>
                             <img src={login} alt="login" />
                         </Login>
 
