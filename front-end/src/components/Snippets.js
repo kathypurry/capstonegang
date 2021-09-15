@@ -22,7 +22,7 @@ const PopulateSnippets = styled.ul`
   list-style: none;
 `
 
-export default function Snippets() {
+const Snippets = () => {
   const API = apiURL();
 
   const [snippet, setSnippet] = useState([]);
@@ -75,3 +75,5 @@ export default function Snippets() {
     </div>
   );
 };
+
+export default Snippets;
