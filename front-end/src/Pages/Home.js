@@ -1,6 +1,6 @@
 import React from 'react';
-import Timer from '../Components/Timer';
-import Snippets from '../Components/Snippets';
+import Timer from '../components/Timer';
+import Snippets from '../components/Snippets';
 
 const Home = () => {
     return (
