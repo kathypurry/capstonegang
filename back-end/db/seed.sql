@@ -89,17 +89,13 @@ INSERT INTO code_snippets (
     \nthis._name = newName }
     \nelse {console.log("ERROR")}
 '),
-(3, 'const dogFactory = (name, age, breed) => {}
+(3, E'const dogFactory = (name, age, breed) => {}
     \ne.preventDefault() if (!firstName || !lastName)
     \n`Price: ${price.toFixed(2)}`
 '),
-(3, 'const itemsAdded = cart.map(item => return item.name)
-    \n
-    \n
-'),
-(3, E'const productData = [
-    \n{id: 1, name: Baseball Glove, price: 19.99}
-    \n{id:2, name: Vintage VCR, 21.34}]
+(3, 'const productData = [
+    \{id: 1, name: Baseball Glove, price: 19.99}
+    \{id:2, name: Vintage VCR, 21.34}]
 ');
 
 -- INSERT INTO game_stats (
