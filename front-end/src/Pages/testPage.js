@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import StatGraph from '../components/StatGraph'
-import Timer from '../components/Timer'
+import StatGraph from '../Components/StatGraph'
+import Timer from '../Components/Timer'
 
 const TestPage = () => {
     const [time, setTime] = useState(0);
