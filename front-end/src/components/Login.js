@@ -2,10 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { firebase } from '../Services/firebase';
 import styled from 'styled-components';
 
+const TitleLine = styled.h1`
+    margin-bottom: 40px;
+    color: var(--neongreen);
+`
+
 const LoginContainer = styled.div`
     text-align: center;
     
-   margin: 30vh;
+    margin: 40vh;
 `
 
 const InstructHeader = styled.h2`
@@ -49,6 +54,7 @@ const Login = () => {
 
     return (
         <LoginContainer>
+            <TitleLine>Tech Type</TitleLine>
             <InstructHeader>Sign In</InstructHeader>
             <LoginButton onClick={SignInWithFirebase}>
                 <span> Login In with Google </span>
