@@ -5,7 +5,6 @@ function DisplaySnippets({snippet}) {
     
     return (
         <div>
-            
             <br/>
             <br/>
             <br/>
