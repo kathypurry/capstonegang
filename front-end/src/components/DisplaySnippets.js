@@ -1,7 +1,7 @@
 import React from 'react'
 
 function DisplaySnippets({snippet}) {
-    console.log(snippet.snippet)
+    
     return (
         <div>
             <br/>

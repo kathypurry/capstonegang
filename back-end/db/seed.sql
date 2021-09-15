@@ -33,69 +33,70 @@ INSERT INTO code_snippets (
 (1, 'newStringArray = stringArray.push("h")'),
 (1, 'newNumArray = numArray.push("11")'),
 (2, 'const checkWeight = weight => {
-    \nconsole.log(`Baggage weight: ${weight} kilograms.`)};
+    console.log(`Baggage weight: ${weight} kilograms.`)};
 '),
 (2, 'true || false; day === "Monday" ? price -= 1.5 : price += 1.5;
-    \n () => return [...cards, cards]
+    () => return [...cards, cards]
 '),
 (2, 'toLowerCase() console.log(`My name is ${myName}. I am ${myAge} years old
-    \nin human years which is ${myAgeInDogYears} years old in dog years.`)
+    in human years which is ${myAgeInDogYears} years old in dog years.`)
 '),
 (2, '//Is this a comment? littleDucklings.push(newDuck).filter((duck) => duck.length > 5)
-    \nif(typeof dog === "string") {verifyDog(dog)}
+    if(typeof dog === "string") {verifyDog(dog)}
 '),
 (2, 'if (isLoggedIn === true) {
-    \n const statusMessage = "User is logged in."}    
+    const statusMessage = "User is logged in."}    
 '),
 (2, 'const handleTextChange = (e) => {
-    \n setProduct({ ...product, [e.target.id]: e.target.value });
-    \n};   
+    setProduct({ ...product, [e.target.id]: e.target.value })}; 
 '),
 (2, 'const myArray = [100, 200, 300];
-    \nconst ingredients = ["eggs", "flour", "chocolate"];
+    const ingredients = ["eggs", "flour", "chocolate"];
 '),
 (2, 'for (let i = items.length; i >= 0; i -= 1){
-    \nconsole.log(`${i}. ${items[i]}`)}
+    console.log(`${i}. ${items[i]}`)}
 '),
 (2, 'const randomWord = dictionary[Math.floor(Math.random() * dictionary.length)]
-    \nstats.word = randomWord.split(" ").join(",")
+    stats.word = randomWord.split(" ").join(",")
 '),
 (2, 'const readline = require("readline-sync") startGame()
-    \nconst restart = readline.keyInYNStrict(`Would you like to play again?`)
+    const restart = readline.keyInYNStrict(`Would you like to play again?`)
 '),
 (3, 'for (let i = 0; i < word.length; i += 1) {
-    \nif (word[i] != userWord[i]) {
-    \nreturn false }}
+    if (word[i] != userWord[i]) {
+    return false }}
 '),
 (3, 'if (stats.word.includes(letter)) {
-    \nreplaceLetter(letter)
-    \ngetValidLetterGuess()}
+    replaceLetter(letter)
+    getValidLetterGuess()}
 '),
 (3, 'if (guessIsValid(input) && !stats.usedLetters.includes(input) && typeof input === "string")
-    \nlet firstNum = result.subString(0, result.indexOf(operators.includes(result)))
-    \nconst operators = ["+", "-", "/", "*"]
+    let firstNum = result.subString(0, result.indexOf(operators.includes(result)))
+    const operators = ["+", "-", "/", "*"]
 '),
 (3, '"Does anyone " + "actually like " + "Cypress??"
-    \nconst newObj = { 1: "spotted doggo", 2: "puppers", 3: "is-this-a-dog-?"}
-    \nnumArr.reduce((a, b) => a + b)
+    const newObj = { 1: "spotted doggo", 2: "puppers", 3: "is-this-a-dog-?"}
+    numArr.reduce((a, b) => a + b)
 '),
-(3, 'li.innerHTML = `${newArr[0].dieImg} = ${newArr[0].dieSum}`'||E'\n'||'changeUpThisNumToAString(origNum, origStr)'||E'\n'||'checkCondition ? ifTrueDoThis : elseDoThis'
+(3, 'li.innerHTML = `${newArr[0].dieImg} = ${newArr[0].dieSum}`
+    changeUpThisNumToAString(origNum, origStr)
+    checkCondition ? ifTrueDoThis : elseDoThis'
 ),
 (3, 'const rubiksCubeFacts = {
-    \npossiblePermutations: "43,252,003,274,489,856,000",
-    \ninvented: "1974"}
+    possiblePermutations: "43,252,003,274,489,856,000",
+    invented: "1974"}
 '),
 (3, 'if (typeof newName === "string" && newName.length > 0) {
-    \nthis._name = newName }
-    \nelse {console.log("ERROR")}
+    this._name = newName }
+    else {console.log("ERROR")}
 '),
-(3, E'const dogFactory = (name, age, breed) => {}
-    \ne.preventDefault() if (!firstName || !lastName)
-    \n`Price: ${price.toFixed(2)}`
+(3, 'const dogFactory = (name, age, breed) => {}
+    e.preventDefault() if (!firstName || !lastName)
+    `Price: ${price.toFixed(2)}`
 '),
 (3, 'const productData = [
-    \{id: 1, name: Baseball Glove, price: 19.99}
-    \{id:2, name: Vintage VCR, 21.34}]
+    {id: 1, name: Baseball Glove, price: 19.99}
+    {id:2, name: Vintage VCR, 21.34}]
 ');
 
 -- INSERT INTO game_stats (
