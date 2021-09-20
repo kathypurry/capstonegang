@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import StatGraph from '../Components/StatGraph'
-import Timer from '../Components/Timer'
+import StatGraph from '../components/StatGraph'
+import Timer from '../components/Timer'
 
 const TestPage = () => {
     
@@ -8,8 +8,7 @@ const TestPage = () => {
         <div>
             <StatGraph/>
             <Timer expiryTimestamp={30} />
-            <Snippets/>
-            <PlayerInput />
+            
         </div>
     )
 };

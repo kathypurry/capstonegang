@@ -63,13 +63,8 @@ const Snippets = () => {
         </LabelHousing>
         <SnippetContainer>
         <PopulateSnippets>
-          {filteredSnippet.map(snip => {
-            return (
-              <li key={snip.id}>
-                <DisplaySnippets snippet={snip}/>
-              </li>
-            )
-          })}
+          {/* {filteredSnippet.map(snip => {return (<li key={snip.id}><DisplaySnippets snippet={snip}/></li>)})} */}
+          <DisplaySnippets snippet={ filteredSnippet } />
         </PopulateSnippets>
       </SnippetContainer>
     </div>
