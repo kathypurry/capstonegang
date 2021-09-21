@@ -9,9 +9,9 @@ const getAllCodeSnippets = async () => {
     }
 };
 
-const getCodeSnippet = async (id) => {
+const getCodeSnippet = async (difficulty) => {
     try {
-        const oneCode = await db.one('SELECT * FROM code_snippets WHERE id=$1', id);
+        const oneCode = await db.any('SELECT * FROM code_snippets WHERE difficulty=$1', difficulty);
         return oneCode;
     } catch (e) {
         return e;
