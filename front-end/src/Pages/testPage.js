@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import StatGraph from '../components/StatGraph'
 import Timer from '../components/Timer'
-import MainMenu from '../components/MainMenu';
 
 const TestPage = () => {
     
