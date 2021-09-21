@@ -1,9 +1,5 @@
-import React from 'react'
-import TextInput from './TextInput';
-
-
 function DisplaySnippets({snippet}) {
-    
+
     return (
         <div>
             <br/>

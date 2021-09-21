@@ -10,7 +10,6 @@ import About from "./Pages/About";
 import Leaderboard from "./Pages/Leaderboard";
 import SnippetsPage from "./Pages/SnippetsPage";
 import LoginPage from "./Pages/LoginPage";
-import TextInput from './Components/TextInput';
 import TestPage from "./Pages/testPage";
 
 const Pages = styled.div`
@@ -49,7 +48,6 @@ const App = () => {
             <Route path="/test" component={TestPage} />
             <Route path="/code" component={SnippetsPage} />
           </Switch>
-            <TextInput />
         </AnimatePresence>
       </Pages>
     </div>

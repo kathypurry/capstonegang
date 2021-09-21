@@ -1,13 +1,9 @@
 import useKeyboard from "../hooks/useKeyboard";
 
 function TextInput() {
-    const currentState = useKeyboard()
+    const keyInputHook = useKeyboard()
 
-    return (
-        <div>
-            {currentState}
-        </div>
-    )
-}
+    return keyInputHook;
+};
 
-export default TextInput
+export default TextInput;
