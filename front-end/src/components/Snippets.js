@@ -31,7 +31,10 @@ const Snippets = () => {
   useEffect(() => {
     axios.get(`${API}/code`)
       .then(
-        (res) => setSnippet(res.data),
+        (res) => {
+          console.log(res.data)
+          setSnippet(res.data)
+        },
         (error) => console.log('get', error)
       )
       .catch((c) => console.warn('catch', c));
@@ -41,7 +44,7 @@ const Snippets = () => {
     setDifficulty(e.target.value);
   };
 
-  const filteredSnippet = snippet.filter(snip => snip.difficulty === difficulty)
+  const filteredSnippet = snippet.filter(snip => snip.difficulty === difficulty);
 
   return (
     <div>
@@ -58,16 +61,14 @@ const Snippets = () => {
             <option value='3'>3</option>
           </select>
         </LabelHousing>
-        <SnippetContainer>
+      <SnippetContainer>
+        <div>
         <PopulateSnippets>
-          {filteredSnippet.map(snip => {
-            return (
-              <li key={snip.id}>
-                <DisplaySnippets snippet={snip}/>
-              </li>
-            )
-          })}
+          {/* {filteredSnippet.map(snip => {return (<li key={snip.id}><DisplaySnippets snippet={snip}/></li>)})} */}
+          <DisplaySnippets snippet={ filteredSnippet } />
         </PopulateSnippets>
+        </div>
+        
       </SnippetContainer>
     </div>
   );
