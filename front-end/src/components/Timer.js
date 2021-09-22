@@ -1,4 +1,3 @@
-// import { useState, useEffect } from 'react';
 import { useTimer } from 'react-timer-hook';
 import styled from 'styled-components';
 
@@ -16,40 +15,7 @@ const TimerBtn = styled.button`
   
 `
 
-const Timer = ({ expiryTimestamp }) => {
-  
-  
-  // const start_try1 = () => {
-    // useEffect(() => {
-  //   if (time > 0) {
-  //     setTimeout(() => setTime(time - 1), 1000);
-  //   } else {
-  //     setTime(time);
-  //   }
-  // });
-  
-    // const reset = () => {
-    //   //reset the clock no matter where it is, but does not start the clock
-    //   setTime(30) 
-    // }
-
-    // const start = (e) => {
-    //   //commence countdown, does not reset the clock
-    //   e.preventDefault()
-    //   if (time === 30) {
-    //     const start = setInterval(() => setTime(time - 1), 1000)
-    //     if (time === 0) {
-    //       clearInterval(start)
-    //     }
-    //   }
-    //   // else if (time === 0) {
-    //   //   clearInterval(start)        
-    //   // }
-    //   else {setTime(time)}
-    //   // time > 0 ? setTimeout(() => setTime(time - 1), 1000) : setTime(time);
-    // }
-  // }
-  
+const Timer = ({expiryTimestamp }) => {
   const {
     seconds,
     resume,
@@ -63,14 +29,19 @@ const Timer = ({ expiryTimestamp }) => {
         <div>
           {seconds}
           {seconds < 30
-            ? <div onClick={() => {
+            ? <div className="timer-button" onClick={() => {
                 const timer = new Date()
                 timer.setSeconds(timer.getSeconds() + 30)
               restart(timer)
               pause()
             }}
+<<<<<<< HEAD
               ><button>Reset</button></div>
             : <div onClick={resume}> <button>G O!</button> </div> 
+=======
+              >Reset</div>
+            : <div className="timer-button" onClick={resume}> G O </div> 
+>>>>>>> 855b87c95ac957a3acb7c93b1f7af55319934a42
           }
         </div>  
       </TimeContainer>

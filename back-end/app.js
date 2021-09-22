@@ -14,6 +14,7 @@ app.use(express.json()); // Parse incoming JSON
 
 app.use("/code", codeSnippetController);
 // ROUTES
+
 app.get("/", (req, res) => {
   res.send("Codesnip and Userinfo API");
 });
