@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 import BlinkingCursor from "./BlinkingCursor";
 import useKeyboard from "../hooks/useKeyboard";
-import { KeyframeTrack } from "three";
+// import { KeyframeTrack } from "three";
 
 const SnippetContainer = styled.div`
   display: flex;
