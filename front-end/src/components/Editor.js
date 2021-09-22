@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 import SelectDifficulty from "./SelectDifficulty";
 import useKeyboard from "../hooks/useKeyboard";
-import { KeyframeTrack } from "three";
+// import { KeyframeTrack } from "three";
 
 const SnippetContainer = styled.div`
   display: flex;
