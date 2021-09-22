@@ -35,13 +35,8 @@ const Timer = ({expiryTimestamp }) => {
               restart(timer)
               pause()
             }}
-<<<<<<< HEAD
-              ><button>Reset</button></div>
-            : <div onClick={resume}> <button>G O!</button> </div> 
-=======
               >Reset</div>
             : <div className="timer-button" onClick={resume}> G O </div> 
->>>>>>> 855b87c95ac957a3acb7c93b1f7af55319934a42
           }
         </div>  
       </TimeContainer>
