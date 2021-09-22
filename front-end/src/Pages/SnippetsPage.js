@@ -1,12 +1,11 @@
-import React from 'react';
 // import Snippets from '../components/Snippets';
 
-const Game_PracticeMode = () => {
+function SnippetsPage() {
     return (
         <div>
             {/* <Snippets /> */}
         </div>
-    )
+    );
 };
 
-export default Game_PracticeMode;
+export default SnippetsPage;
