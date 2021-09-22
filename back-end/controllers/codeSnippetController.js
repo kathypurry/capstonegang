@@ -10,6 +10,7 @@ const {
 } = require("../queries/codeSnippet.js");
 
 //INDEX
+
 codeSnippet.get("/", async (req,res) => {
     const allCodeSnippets = await getAllCodeSnippets();
     res.json(allCodeSnippets);
