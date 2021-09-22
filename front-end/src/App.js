@@ -8,9 +8,8 @@ import Sidebar from "./Sidebar";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Leaderboard from "./Pages/Leaderboard";
-import SnippetsPage from "./Pages/SnippetsPage";
+import GamePage from './Pages/GamePage';
 import LoginPage from "./Pages/LoginPage";
-
 import TestPage from "./Pages/testPage";
 
 const Pages = styled.div`
@@ -43,11 +42,10 @@ const App = () => {
       <Pages>
         <AnimatePresence exitBeforeEnter>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={GamePage} />
             <Route path="/about" component={About} />
             <Route path="/leaderboard" component={Leaderboard} />
             <Route path="/test" component={TestPage} />
-            <Route path="/code" component={SnippetsPage} />
           </Switch>
         </AnimatePresence>
       </Pages>
