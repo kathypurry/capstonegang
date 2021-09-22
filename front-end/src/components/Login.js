@@ -55,7 +55,6 @@ const Login = () => {
     return (
         <LoginContainer>
             <TitleLine>Tech Type</TitleLine>
-            <InstructHeader>Sign In</InstructHeader>
             <LoginButton onClick={SignInWithFirebase}>
                 <span> Login In with Google </span>
             </LoginButton>

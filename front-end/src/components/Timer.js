@@ -12,6 +12,9 @@ const Time = styled.div`
 const TimeContainer = styled.div`
     font-size: 30px;
 `
+const TimerBtn = styled.button`
+  
+`
 
 const Timer = ({ expiryTimestamp }) => {
   
@@ -66,8 +69,8 @@ const Timer = ({ expiryTimestamp }) => {
               restart(timer)
               pause()
             }}
-              >Reset</div>
-            : <div onClick={resume}> G O </div> 
+              ><button>Reset</button></div>
+            : <div onClick={resume}> <button>G O!</button> </div> 
           }
         </div>  
       </TimeContainer>
