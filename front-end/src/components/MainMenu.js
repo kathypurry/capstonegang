@@ -10,8 +10,9 @@ const MainMenu = () => {
         border: 0.5vh solid;
         border-radius: 25px;
         border-color: neongreen;
-        colour: neongreen;
+        font-size: 50px;
     `
+    
     
 
     return (
@@ -20,7 +21,12 @@ const MainMenu = () => {
                 <Button>
                     <li>
                         {/* //make a path for Story mode setup */}
-                        <Link to="" style={{textDecoration: "none"}}>
+                        <Link
+                            to=""
+                            style={{
+                                textDecoration: "none",
+                                color: "#39FF14"
+                            }}>
                             Story
                         </Link>
                     </li>
@@ -29,7 +35,12 @@ const MainMenu = () => {
                 <Button>
                     <li>
                         {/* //path for Practice mode without story visuals */}
-                        <Link to="" style={{textDecoration: "none"}}>
+                        <Link
+                            to=""
+                            style={{
+                                textDecoration: "none",
+                                color: "#39FF14"
+                            }}>
                             Practice
                         </Link>
                     </li>
@@ -38,7 +49,12 @@ const MainMenu = () => {
                 <Button>
                     <li>
                         {/* //path to page of user career stats */}
-                        <Link to="" style={{textDecoration: "none"}}>
+                        <Link
+                            to=""
+                            style={{
+                                color: "#39FF14",
+                                textDecoration: "none",
+                            }}>
                             Career
                         </Link>
                     </li>
@@ -48,7 +64,12 @@ const MainMenu = () => {
                     <li>
                         {/* //path to new user form page
                         //should also be conditionally rendered so that if the user is logged in "Log Out" appears || "Log In" if they are not */}
-                        <Link to="" style={{textDecoration: "none"}}>
+                        <Link
+                            to=""
+                            style={{
+                                textDecoration: "none",
+                                color: "#39FF14"
+                            }}>
                             Login/Logout
                         </Link>
                     </li>
