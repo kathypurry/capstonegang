@@ -39,7 +39,7 @@ function DisplaySnippets({snippet}) {
             <br/>
             <br />
             
-            <h3 style={{ whiteSpace: 'pre-wrap' }}>{allSnippets}</h3>
+            <h3 style={{ whiteSpace: 'pre-wrap' }}>{workingSnippet}</h3>
 
             <textarea
                 style={{ background: 'none', borderColor: 'red', width: '45rem', height: '6rem'}}

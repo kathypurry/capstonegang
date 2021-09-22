@@ -2,8 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-
-
 const MainMenu = () => {
     const Button = styled.li`
         list-style-type: none;
@@ -12,17 +10,15 @@ const MainMenu = () => {
         border-color: neongreen;
         font-size: 50px;
     `
-    
-    
 
     return (
         <nav>
             <ul>
                 <Button>
                     <li>
-                        {/* //make a path for Story mode setup */}
+                        
                         <Link
-                            to=""
+                            to="/story"
                             style={{
                                 textDecoration: "none",
                                 color: "#39FF14"
@@ -34,9 +30,9 @@ const MainMenu = () => {
                 <br />
                 <Button>
                     <li>
-                        {/* //path for Practice mode without story visuals */}
+                        
                         <Link
-                            to=""
+                            to="/practice"
                             style={{
                                 textDecoration: "none",
                                 color: "#39FF14"
@@ -48,9 +44,9 @@ const MainMenu = () => {
                 <br />
                 <Button>
                     <li>
-                        {/* //path to page of user career stats */}
+                        
                         <Link
-                            to=""
+                            to="/user/career"
                             style={{
                                 color: "#39FF14",
                                 textDecoration: "none",
@@ -62,10 +58,9 @@ const MainMenu = () => {
                 <br />
                 <Button>
                     <li>
-                        {/* //path to new user form page
-                        //should also be conditionally rendered so that if the user is logged in "Log Out" appears || "Log In" if they are not */}
+                        {/*should also be conditionally rendered so that if the user is logged in "Log Out" appears || "Log In" if they are not */}
                         <Link
-                            to=""
+                            to="/login"
                             style={{
                                 textDecoration: "none",
                                 color: "#39FF14"
