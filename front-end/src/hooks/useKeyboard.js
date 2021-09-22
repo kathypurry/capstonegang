@@ -10,6 +10,10 @@ function useKeyboard() {
             if (e.key.length === 1) {
                 setInput(input => input + e.key)
             };
+            // if (e.keyCode === 8) {
+
+            //     setInput()
+            // }
         };
 
         window.addEventListener('keydown', handleKeyPress);
