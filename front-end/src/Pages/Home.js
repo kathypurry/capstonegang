@@ -1,6 +1,6 @@
 import React from 'react';
 import Timer from '../components/Timer';
-import Snippets from '../components/Snippets';
+import Editor from '../components/Editor';
 import styled from 'styled-components';
 
 
@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <div>
             <Timer />
-            <Snippets />
+            <Editor />
         </div>
     )
 };
