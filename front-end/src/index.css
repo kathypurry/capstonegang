@@ -44,3 +44,7 @@ body {
  color: var(--neongreen);
 }
 
+.btn-custom {
+  color: var(--neongreen)
+}
+
