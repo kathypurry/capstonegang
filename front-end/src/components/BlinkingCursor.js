@@ -1,30 +1,23 @@
 import { useState, useEffect, useRef } from 'react';
-import styled from 'styled-components';
-
-const CursorMovement = styled.div`
-    position: relative;
-
-`
 
 function BlinkingCursor({ currentSnippet }) {
+    //https://medium.com/@bharatgupta_2334/how-to-create-blinking-cursor-effect-using-javascript-fad099e8bcb9
+    let cursor = true;
     let speed = 350;
     
     setInterval(() => {
-        let cursor = true;
         if(cursor) {
-            document.getElementsByClassName('cursor').style.opacity = 0;
+            document.getElementsByClassName('cursor')[0].style.opacity = 0;
             cursor = false;
         } else {
-            document.getElementsByClassName('cursor').style.opacity = 1;
+            document.getElementsByClassName('cursor')[0].style.opacity = 1;
             cursor = true;
         }
-    }, speed) 
+    }, speed);
 
     return (
         <div>
-            <CursorMovement>
             <h2 className='cursor' style={{color: 'white'}}>|</h2>
-            </CursorMovement>
         </div>
     );
 };
