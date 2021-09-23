@@ -28,16 +28,16 @@
 
 
 const workerString = 'hello world!'
-const workerInput = 'hello world!'
+const workerInput = 'hello wOrld!'
 
 const strDiffer = (workingString, workingInput) => {
-    const Split = workingString.split(' ')    
-    const Input = workingInput.split(' ')
-    console.log(Split, Input)
+    const Split = workingString.split(' ');
+    const Input = workingInput.split(' ');
+    console.log(Split, Input);
     return Split.join(' ') === Input.join(' ')
-            ? true
-            : false
-}
+        ? true
+        : false
+};
 
 //after each input render we can check if the two arrays match
 

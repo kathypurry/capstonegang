@@ -45,13 +45,13 @@ const App = () => {
       <Pages>
         <AnimatePresence exitBeforeEnter>
           <Switch>
-            <Route exact path="/" component={GamePage} />
+            <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />
             <Route path="/leaderboard" component={Leaderboard} />
-            <Route path="/story" component={Game_StoryMode} />
+              <Route path="/story" component={Game_StoryMode} />
+              <Route path="/game" component={GamePage} />
             <Route path="/practice" component={Game_PracticeMode} />
-            <Route path="/user/career" component={Leaderboard} />
-            <Route path="/user/career" component={User_StatPage} />
+            <Route path="/career" component={User_StatPage} />
             <Route path="/login" component={LoginPage} />
             <Route path="/test" component={TestPage} />
           </Switch>

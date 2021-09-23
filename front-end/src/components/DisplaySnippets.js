@@ -27,15 +27,18 @@ function DisplaySnippets({snippet}) {
     };
 
     const isCorrect = (input) => {
+        let truth = [];
         for (
             let i = 0, len = input.length;
             i < len;
             i++) {
             input[i] === superString[i]
-                ? <Correct>{input}</Correct>
-                : <Incorrect>{input}</Incorrect>
+                ? truth = [...true]
+                : truth = [...false]
         }
+        return truth;
     }
+    console.log()
 
     return (
         <div>
