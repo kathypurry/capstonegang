@@ -12,6 +12,8 @@ import GamePage from './Pages/GamePage';
 import LoginPage from "./Pages/LoginPage";
 import TestPage from "./Pages/testPage";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const Pages = styled.div`
   width: 100vw;
   height: 100vh;
@@ -19,10 +21,19 @@ const Pages = styled.div`
   justify-content: center;
   align-items: center;
   color: var(--neongreen);
+  background-color: var(--background);
+  font-family: 'Josefin Sans', sans-serif;
 
   h2 {
     font-size: calc(2rem + 2vw);
   }
+
+  .btn-custom {
+    border-color: var(--neongreen);
+    color: var(--neongreen);
+    width: 130px;
+  }
+  
 `
 
 const App = () => {
