@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { apiURL } from "../util/apiURL";
 import axios from "axios";
 
 import styled from 'styled-components';
 
-import SelectDifficulty from "./SelectDifficulty";
+import BlinkingCursor from "./BlinkingCursor";
 import useKeyboard from "../hooks/useKeyboard";
-
+// import { KeyframeTrack } from "three";
 
 const SnippetContainer = styled.div`
   display: flex;
@@ -18,14 +18,18 @@ const SnippetContainer = styled.div`
 const Editor = ({currentSnippet}) => {
   const keyInput = useKeyboard();
   const [ completedSnippet, setCompletedSnippet ] = useState({});
+  const snippetLength = currentSnippet.snippet?.length;
 
-  
-  
+  // completedSnippet once user has finished typing the snippet
+  // set a start and a end point
+  // setCompletedSnippet maybe set it to check with a boolean
+
   return (
     <div>
         <SnippetContainer>
-        <span id='cursor'>|</span>
-        <h3 style={{whiteSpace: 'pre-wrap'}}>{currentSnippet?.snippet}</h3> 
+          <p style={{whiteSpace: 'pre-wrap'}} >{keyInput}</p>
+          <BlinkingCursor currentSnippet={currentSnippet} />
+          <h2 style={{whiteSpace: 'pre-wrap'}} >{currentSnippet?.snippet}</h2> 
         </SnippetContainer>
     </div>
   );
