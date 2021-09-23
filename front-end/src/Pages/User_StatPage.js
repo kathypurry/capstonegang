@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 const StatContainer = styled.div`
     display: flex;
+    flex-direction: column;
 
 `
 const MainStats = styled.li`
@@ -30,15 +31,18 @@ const User_StatPage = () => {
         
     return (
         <div>
-            <div>Fastest WPM</div>
-            <div>Average mistakes per minute</div>
-            <div>Hours played</div>
-            <div>Hightest Score</div>
-            <div>Rank</div>
-            <div>Keyboard type</div>
+            <StatContainer>
+                <div>Fastest WPM</div>
+                <div>Average mistakes per minute</div>
+                <div>Hours played</div>
+                <div>Hightest Score</div>
+                <div>Rank</div>
+                <div>Keyboard type</div>
+            </StatContainer>
             
+
         </div>
     )
-}
+};
 
-export default User_StatPage
+export default User_StatPage;

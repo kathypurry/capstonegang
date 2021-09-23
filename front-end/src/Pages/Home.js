@@ -12,8 +12,8 @@ const Home = () => {
             <MainMenu/>
             {/* <Timer />
             <Snippets /> */}
-            <Timer />
-            <Editor />
+            {/* <Timer /> */}
+            {/* <Editor /> */}
         </div>
     )
 };
