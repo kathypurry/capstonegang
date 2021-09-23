@@ -46,7 +46,7 @@ const MainMenu = () => {
                     <li>
                         
                         <Link
-                            to="/user/career"
+                            to="/career"
                             style={{
                                 color: "#39FF14",
                                 textDecoration: "none",
