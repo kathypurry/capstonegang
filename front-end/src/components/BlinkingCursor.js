@@ -1,21 +1,30 @@
-function BlinkingCursor({ currentSnippet }) {
-        let cursor = true;
-        let speed = 350;
-        setInterval(() => {
-          if(cursor) {
-            document.getElementById('cursor').style.opacity = 0;
-            cursor = false;
-          } else {
-            document.getElementById('cursor').style.opacity = 1;
-            cursor = true;
-          }
-        }, speed)
+import { useState, useEffect, useRef } from 'react';
+import styled from 'styled-components';
 
-        
+const CursorMovement = styled.div`
+    position: relative;
+
+`
+
+function BlinkingCursor({ currentSnippet }) {
+    let speed = 350;
+    
+    setInterval(() => {
+        let cursor = true;
+        if(cursor) {
+            document.getElementsByClassName('cursor').style.opacity = 0;
+            cursor = false;
+        } else {
+            document.getElementsByClassName('cursor').style.opacity = 1;
+            cursor = true;
+        }
+    }, speed) 
 
     return (
         <div>
-            <span id='cursor'>|</span>
+            <CursorMovement>
+            <h2 className='cursor' style={{color: 'white'}}>|</h2>
+            </CursorMovement>
         </div>
     );
 };
