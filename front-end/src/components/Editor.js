@@ -21,6 +21,10 @@ const Editor = ({currentSnippet}) => {
   const snippetLength = currentSnippet.snippet?.length;
   console.log(snippetLength)
 
+  // completedSnippet once user has finished typing the snippet
+  // set a start and a end point
+  // setCompletedSnippet maybe set it to check with a boolean
+
   return (
     <div>
         <SnippetContainer>
