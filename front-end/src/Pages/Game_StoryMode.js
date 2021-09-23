@@ -6,6 +6,6 @@ const Game_StoryMode = () => {
             {/* Story mode components go here */}
         </div>
     )
-}
+};
 
-export default Game_StoryMode
+export default Game_StoryMode;

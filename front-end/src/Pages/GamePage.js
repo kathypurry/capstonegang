@@ -11,7 +11,8 @@ function GamePage() {
     const [ currentSnippet, setCurrentSnippet ] = useState({});
 
     useEffect(() => {
-        axios.get(`${API}/code/${difficulty}`)
+        axios
+          .get(`${API}/code/${difficulty}`)
           .then(
             (res) => {
               setAllSnippets(res.data)
