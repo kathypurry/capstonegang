@@ -27,10 +27,10 @@ const Editor = ({currentSnippet}) => {
   return (
     <div>
         <SnippetContainer>
-          <p style={{whiteSpace: 'pre-wrap'}} >{keyInput}</p>
-          <BlinkingCursor currentSnippet={currentSnippet} />
+          {/* <BlinkingCursor currentSnippet={currentSnippet} /> */}
           <h2 style={{whiteSpace: 'pre-wrap'}} >{currentSnippet?.snippet}</h2> 
         </SnippetContainer>
+          <input type='text' style={{whiteSpace: 'pre-wrap'}} value={keyInput}></input>
     </div>
   );
 };
