@@ -1,5 +1,3 @@
-import { useState, useEffect, useRef } from 'react';
-
 function BlinkingCursor({ currentSnippet }) {
     //https://medium.com/@bharatgupta_2334/how-to-create-blinking-cursor-effect-using-javascript-fad099e8bcb9
     let cursor = true;
