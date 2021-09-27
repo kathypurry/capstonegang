@@ -18,7 +18,6 @@ CREATE TABLE code_snippets (
     id SERIAL PRIMARY KEY, 
     difficulty NUMERIC,
     snippet TEXT
- 
 );
 
 -- DROP TABLE IF EXISTS game_stats;

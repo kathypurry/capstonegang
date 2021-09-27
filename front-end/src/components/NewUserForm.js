@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CountryDropdown } from 'react-country-region-selector';
-
 
 const NewUserForm = () => {
     const [input, setInput] = useState({
@@ -10,8 +9,8 @@ const NewUserForm = () => {
         password: '',
         date: '',
         country: '',
+    });
 
-    })
     const handleChange_input = (e) => {
         setInput({...input, [e.target.id]:[e.target.value]});
     };
@@ -19,7 +18,7 @@ const NewUserForm = () => {
     const handleSumbit = (e) => {
         e.preventDefault();
         //updateUsers(user)
-    }
+    };
 
     return (
         <div className="NewUserForm">
