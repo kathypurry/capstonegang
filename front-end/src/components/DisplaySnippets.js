@@ -14,7 +14,7 @@ function DisplaySnippets({snippet}) {
     `
 
     const allSnippets = snippet.map((oneSnippet) => oneSnippet.snippet);
-    const superString = allSnippets.join('').split('');
+    const superString = allSnippets.join('').split(' ');
     
     useEffect(() => {
         console.log(superString, 'superString here!')
@@ -26,7 +26,7 @@ function DisplaySnippets({snippet}) {
         setInput(e.target.value)
     };
 
-    const isCorrect = (input) => {
+    const isCorrect = (e,input) => {
         let truth = [];
         for (
             let i = 0, len = input.length;
@@ -36,7 +36,7 @@ function DisplaySnippets({snippet}) {
                 ? truth = [...true]
                 : truth = [...false]
         }
-        return truth;
+        return truth
     }
     console.log()
 
@@ -56,6 +56,7 @@ function DisplaySnippets({snippet}) {
                 cols="30"
                 rows="10"
                 onChange={handle_userInput, isCorrect} />
+            <div style={{borderColor: 'red', }}>{ input }</div>
         </div>
     );
 };
