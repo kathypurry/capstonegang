@@ -13,7 +13,19 @@ const SnippetContainer = styled.div`
 
   margin-left: 15vw;
   z-index: -1;
+
 `
+
+const InputContainer = styled.div`
+  display: flex;
+
+  margin-left: 30vw;
+  z-index: -1;
+`;
+
+const TextInput = styled.input`
+  
+`;
 
 const Editor = ({currentSnippet}) => {
   const keyInput = useKeyboard();
@@ -30,8 +42,10 @@ const Editor = ({currentSnippet}) => {
           {/* <BlinkingCursor currentSnippet={currentSnippet} /> */}
           <h2 style={{whiteSpace: 'pre-wrap'}} >{currentSnippet?.snippet}</h2> 
         </SnippetContainer>
-        {/* <DisplaySnippets snippet={currentSnippet}/> */}
-          <input type='text' style={{whiteSpace: 'pre-wrap'}} value={keyInput}></input>
+
+        <InputContainer>
+          <TextInput type='text' style={{whiteSpace: 'pre-wrap'}} value={keyInput} size="100"></TextInput>
+        </InputContainer>
     </div>
   );
 };
