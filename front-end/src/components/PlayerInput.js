@@ -36,6 +36,7 @@ const PlayerInput = ({ snippet }) => {
   
     //checks whether the word is correct while the user is typing
     useEffect(() => {
+        console.log(snippet)
         let hasError = false;
         for (let i = 0; i < typingInput.length; i++) {
             let char = typingInput[i];

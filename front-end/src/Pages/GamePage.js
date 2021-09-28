@@ -38,7 +38,7 @@ function GamePage() {
                 currentSnippet={currentSnippet}
                   
             /> */}
-            <PlayerInput snippet={() => currentSnippet.snippet}/>
+            <PlayerInput snippet={() => [...currentSnippet.snippet]}/>
         </div>
     );
 };
