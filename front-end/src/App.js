@@ -61,7 +61,7 @@ const App = () => {
             <Route path="/leaderboard" component={Leaderboard} />
               <Route path="/story" component={Game_StoryMode} />
               <Route path="/game" component={GamePage} />
-            <Route path="/practice" component={Game_PracticeMode} />
+            <Route path="/practice" component={GamePage} />
             <Route path="/career" component={User_StatPage} />
             <Route path="/login" component={LoginPage} />
             <Route path="/test" component={TestPage} />
