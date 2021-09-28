@@ -17,10 +17,11 @@ function GamePage() {
           .then(
             (res) => {
               setAllSnippets(res.data)
-              setCurrentSnippet(res.data)
+              setCurrentSnippet(res.data[0])
             },
             (error) => console.log('get', error)
           )
+          .then(res=>console.log(res))
             .catch((c) => console.warn('catch', c));
         console.log(currentSnippet, 'test curSnippet');
         // console.log(allSnippets, 'test allSnippets');
@@ -40,7 +41,8 @@ function GamePage() {
                 currentSnippet={currentSnippet}
                   
             /> */}
-            <PlayerInput snippet={currentSnippet.snippet}/>
+            {/* <PlayerInput snippet={currentSnippet}/> */}
+            <PlayerInput snippet={'gingerbutt'}/>
             {/* <PlayerInput snippet={currentSnippet.snippet}/> */}
             
         </div>
