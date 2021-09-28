@@ -1,5 +1,6 @@
 import Editor from '../components/Editor';
 import SelectDifficulty from '../components/SelectDifficulty';
+import PlayerInput from '../components/PlayerInput';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { apiURL } from '../util/apiURL';
@@ -33,10 +34,11 @@ function GamePage() {
                 handleDifficultyChange={handleDifficultyChange} 
                 difficulty={difficulty} 
             />
-            <Editor 
+            {/* <Editor 
                 currentSnippet={currentSnippet}
                   
-            />
+            /> */}
+            <PlayerInput snippet={() => currentSnippet.snippet}/>
         </div>
     );
 };
