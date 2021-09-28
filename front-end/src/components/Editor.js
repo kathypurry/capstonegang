@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { apiURL } from "../util/apiURL";
 import axios from "axios";
 
@@ -19,7 +19,6 @@ const Editor = ({currentSnippet}) => {
   const keyInput = useKeyboard();
   const [ completedSnippet, setCompletedSnippet ] = useState({});
   const snippetLength = currentSnippet.snippet?.length;
-  console.log(snippetLength)
 
   // completedSnippet once user has finished typing the snippet
   // set a start and a end point
@@ -28,10 +27,10 @@ const Editor = ({currentSnippet}) => {
   return (
     <div>
         <SnippetContainer>
-          <p style={{whiteSpace: 'pre-wrap'}}>{keyInput}</p>
           {/* <BlinkingCursor currentSnippet={currentSnippet} /> */}
-          <h3 style={{whiteSpace: 'pre-wrap'}}>{currentSnippet?.snippet}</h3> 
+          <h2 style={{whiteSpace: 'pre-wrap'}} >{currentSnippet?.snippet}</h2> 
         </SnippetContainer>
+          <input type='text' style={{whiteSpace: 'pre-wrap'}} value={keyInput}></input>
     </div>
   );
 };

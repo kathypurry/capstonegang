@@ -20,25 +20,17 @@ const Timer = ({ expiryTimestamp }) => {
       <TimeContainer>
         <div>
           {seconds}
-          {seconds < 30 ? (
-            <div
-              className="timer-button"
-              onClick={() => {
-                const timer = new Date();
-                timer.setSeconds(timer.getSeconds() + 30);
-                restart(timer);
-                pause();
-              }}
-            >
-              <button>Reset</button>
-            </div>
-          ) : (
-            <div onClick={resume}>
-              {" "}
-              <button>G O!</button>{" "}
-            </div>
-          )}
-        </div>
+          {seconds < 30
+            ? <div className="timer-button" onClick={() => {
+                const timer = new Date()
+                timer.setSeconds(timer.getSeconds() + 30)
+              restart(timer)
+              pause()
+            }}
+              ><button>Reset</button></div>
+            : <div onClick={resume}> <button>G O!</button> </div> 
+          }
+        </div>  
       </TimeContainer>
     </Time>
   );
