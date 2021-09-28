@@ -12,7 +12,7 @@ function DisplaySnippets({snippet}) {
     const Incorrect = styled.div`
         color: (--crimson)
     `
-
+    console.log(snippet)
     const allSnippets = snippet.map((oneSnippet) => oneSnippet.snippet);
     const superString = allSnippets.join('').split('');
     
