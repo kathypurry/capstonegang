@@ -14,24 +14,31 @@ function DisplaySnippets({snippet}) {
     `
     console.log(snippet)
     const allSnippets = snippet.map((oneSnippet) => oneSnippet.snippet);
-    const superString = allSnippets.join('').split('');
+    const superString = allSnippets.join('').split(' ');
     
     useEffect(() => {
         console.log(superString, 'superString here!')
         setWorkingSnippet(superString)
-        for (
-            let i = 0, len = input.length;
-            i < len;
-            i++) {
-            input[i] === superString[i]
-                ? <Correct>{input}</Correct>
-                : <Incorrect>{input}</Incorrect>
-        }
+        
     });
 
     const handle_userInput = (e) => {
         setInput(e.target.value)
     };
+
+    const isCorrect = (e,input) => {
+        let truth = [];
+        for (
+            let i = 0, len = input.length;
+            i < len;
+            i++) {
+            input[i] === superString[i]
+                ? truth = [...true]
+                : truth = [...false]
+        }
+        return truth
+    }
+    console.log()
 
     return (
         <div>
@@ -39,7 +46,8 @@ function DisplaySnippets({snippet}) {
             <br/>
             <br />
             
-            <h3 style={{ whiteSpace: 'pre-wrap' }}>{allSnippets}</h3>
+            <h3 style={{ whiteSpace: 'pre-wrap' }}>{workingSnippet}</h3>
+
 
             <textarea
                 style={{ background: 'none', borderColor: 'red', width: '45rem', height: '6rem'}}
@@ -47,7 +55,8 @@ function DisplaySnippets({snippet}) {
                 id=""
                 cols="30"
                 rows="10"
-                onChange={handle_userInput} />
+                onChange={handle_userInput, isCorrect} />
+            <div style={{borderColor: 'red', }}>{ input }</div>
         </div>
     );
 };

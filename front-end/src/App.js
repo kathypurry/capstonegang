@@ -11,6 +11,9 @@ import Leaderboard from "./Pages/Leaderboard";
 import GamePage from './Pages/GamePage';
 import LoginPage from "./Pages/LoginPage";
 import TestPage from "./Pages/testPage";
+import Game_StoryMode from './Pages/Game_StoryMode';
+import Game_PracticeMode from './Pages/Game_PracticeMode';
+import User_StatPage from './Pages/User_StatPage';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -53,9 +56,14 @@ const App = () => {
       <Pages>
         <AnimatePresence exitBeforeEnter>
           <Switch>
-            <Route exact path="/" component={GamePage} />
+            <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />
             <Route path="/leaderboard" component={Leaderboard} />
+              <Route path="/story" component={Game_StoryMode} />
+              <Route path="/game" component={GamePage} />
+            <Route path="/practice" component={Game_PracticeMode} />
+            <Route path="/career" component={User_StatPage} />
+            <Route path="/login" component={LoginPage} />
             <Route path="/test" component={TestPage} />
           </Switch>
         </AnimatePresence>

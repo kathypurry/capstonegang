@@ -28,21 +28,21 @@
 
 
 const workerString = 'hello world!'
-const workerInput = 'hello world!'
+// const workerInput = 'hello wOrld!'
 
-const strDiffer = (workingString, workingInput) => {
-    const Split = workingString.split(' ')    
-    const Input = workingInput.split(' ')
-    console.log(Split, Input)
-    return Split.join(' ') === Input.join(' ')
-            ? true
-            : false
-}
+// const strDiffer = (workingString, workingInput) => {
+//     const Split = workingString.split(' ');
+//     const Input = workingInput.split(' ');
+//     console.log(Split, Input);
+//     return Split.join(' ') === Input.join(' ')
+//         ? true
+//         : false
+// };
 
-//after each input render we can check if the two arrays match
+// //after each input render we can check if the two arrays match
 
 
-console.log(strDiffer(workerString, workerInput));
+// console.log(strDiffer(workerString, workerInput));
 
 
 
