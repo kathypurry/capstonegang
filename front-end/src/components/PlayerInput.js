@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 import React, { useState, useRef, useEffect } from 'react';
 import useTypingGame from 'react-typing-game-hook';
 
@@ -29,7 +21,7 @@ const PlayerInput = ({ snippet }) => {
         },
         actions: { insertTyping, resetTyping }
     } = useTypingGame(snippet, {
-        //skip current word when spacebar is triggered
+        //skip current word when spacebar is triggered 
         //false -> move to next letter instead
         skipCurrentWordOnSpace: true
     });
@@ -122,7 +114,6 @@ const PlayerInput = ({ snippet }) => {
                 }}
             >
                 <div>
-                    //snippet is not defined
                     {snippet.split("").map((letter, index) => {
                         let shouldHightlight =
                             index >= currWordPos[0] && index <= currWordPos[1];
