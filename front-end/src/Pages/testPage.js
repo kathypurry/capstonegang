@@ -9,7 +9,9 @@ const TestPage = () => {
         <div>
             {/* <StatGraph/>
             <Timer expiryTimestamp={30} /> */}
-            <MainMenu />
+
+            {/* <MainMenu/> */}
+
         </div>
     )
 };

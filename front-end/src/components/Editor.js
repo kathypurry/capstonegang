@@ -4,9 +4,9 @@ import axios from "axios";
 
 import styled from 'styled-components';
 
-import BlinkingCursor from "./BlinkingCursor";
+// import BlinkingCursor from "./BlinkingCursor";
 import useKeyboard from "../hooks/useKeyboard";
-import { KeyframeTrack } from "three";
+// import { KeyframeTrack } from "three";
 
 const SnippetContainer = styled.div`
   display: flex;
@@ -29,7 +29,7 @@ const Editor = ({currentSnippet}) => {
     <div>
         <SnippetContainer>
           <p style={{whiteSpace: 'pre-wrap'}}>{keyInput}</p>
-          <BlinkingCursor currentSnippet={currentSnippet} />
+          {/* <BlinkingCursor currentSnippet={currentSnippet} /> */}
           <h3 style={{whiteSpace: 'pre-wrap'}}>{currentSnippet?.snippet}</h3> 
         </SnippetContainer>
     </div>

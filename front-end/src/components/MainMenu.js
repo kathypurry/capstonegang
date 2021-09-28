@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 
-
 const MainMenu = () => {
     const Button = styled.li`
         list-style-type: none;
