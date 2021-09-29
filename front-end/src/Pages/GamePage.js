@@ -19,7 +19,10 @@ function GamePage() {
             },
             (error) => console.log('get', error)
           )
-          .catch((c) => console.warn('catch', c));
+          .then(res=>console.log(res))
+            .catch((c) => console.warn('catch', c));
+        console.log(currentSnippet, 'test curSnippet');
+        // console.log(allSnippets, 'test allSnippets');
       }, [difficulty]);
 
     const handleDifficultyChange = (e) => {
@@ -35,7 +38,11 @@ function GamePage() {
             <Editor 
                 currentSnippet={currentSnippet}
                   
-            />
+            /> */}
+            {/* <PlayerInput snippet={currentSnippet}/> */}
+            <PlayerInput snippet={'gingerbutt'}/>
+            {/* <PlayerInput snippet={currentSnippet.snippet}/> */}
+            
         </div>
     );
 };
