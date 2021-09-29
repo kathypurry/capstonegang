@@ -16,8 +16,7 @@ function GamePage() {
           .get(`${API}/code/${difficulty}`)
           .then(
             (res) => {
-                  setAllSnippets(res.data)
-                  //conditional that looks for a null or undefined in difficulty
+              setAllSnippets(res.data)
               setCurrentSnippet(res.data[0])
             },
             (error) => console.log('get', error)
@@ -32,10 +31,6 @@ function GamePage() {
         setDifficulty(e.target.value); 
     };
 
-    const difficulty_isNull = () => {
-        //
-    }
-
     return (
         <div>
             {difficulty === ''
@@ -43,17 +38,10 @@ function GamePage() {
                 : <PlayerInput snippet={currentSnippet.snippet}/> 
             }
             
-            {/* <Editor currentSnippet={currentSnippet}
-            
-            /> */}
             <SelectDifficulty 
                 handleDifficultyChange={handleDifficultyChange} 
                 difficulty={difficulty} 
             />
-            {/* <PlayerInput snippet={currentSnippet}/> */}
-            
-            {/* <PlayerInput snippet={currentSnippet.snippet}/> */}
-            
         </div>
     );
 };
