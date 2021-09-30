@@ -18,7 +18,7 @@ import User_StatPage from './Pages/User_StatPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Pages = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
