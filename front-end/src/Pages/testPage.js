@@ -1,17 +1,15 @@
-import React, { useState } from 'react'
-import StatGraph from '../Components/StatGraph'
-import Timer from '../Components/Timer'
-import MainMenu from '../Components/MainMenu';
-import PlayerInput from '../Components/PlayerInput';
+import React from 'react'
+// import StatGraph from '../components/StatGraph'
+// import Timer from '../components/Timer'
+import MainMenu from '../components/MainMenu';
+// import PlayerInput from '../components/PlayerInput';
 const TestPage = () => {
     
     return (
         <div>
             {/* <StatGraph/>
             <Timer expiryTimestamp={30} /> */}
-
             <MainMenu />
-
         </div>
     )
 };

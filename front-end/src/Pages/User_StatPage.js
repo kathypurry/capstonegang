@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+// import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { apiURL } from '../util/apiURL';
 import styled from 'styled-components';
@@ -6,16 +7,9 @@ import styled from 'styled-components';
 const StatContainer = styled.div`
     display: flex;
     flex-direction: column;
-
 `
-const MainStats = styled.li`
-    color: neongreen;
-
-`
-
-
 const User_StatPage = () => {
-    const [userStats, setUserStats] = useState({})
+    // const [userStats, setUserStats] = useState({})
     const API = apiURL()
     useEffect(() => {
         axios
@@ -23,7 +17,8 @@ const User_StatPage = () => {
             .get(`${API}`)
             .then(
                 (res) => {
-                    setUserStats(res.data)
+                    // setUserStats(res.data)
+                    console.log('useEffect ran')
                 },
                 (error) => console.log('get', error)
             )

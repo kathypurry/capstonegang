@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { firebase } from '../Services/firebase';
 import styled from 'styled-components';
 
@@ -13,11 +13,11 @@ const LoginContainer = styled.div`
     margin: 40vh;
 `
 
-const InstructHeader = styled.h2`
-    margin-bottom: 10px;
+// const InstructHeader = styled.h2`
+//     margin-bottom: 10px;
 
-    color: var(--white);
-`
+//     color: var(--white);
+// `
 
 const LoginButton = styled.button`
     border: none;

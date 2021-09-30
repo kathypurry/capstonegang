@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Menu_StoryMode = () => {
+const MenuStoryMode = () => {
     return (
         <div>
             {/* Starts a whole new game and overwrites previous playthrough data */}
@@ -13,4 +13,4 @@ const Menu_StoryMode = () => {
     )
 }
 
-export default Menu_StoryMode
+export default MenuStoryMode;
