@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import Login from '../components/Login';
 import { firebase } from '../Services/firebase';
+
 
 // image files 
 import logo from '../assets/Typing-Game-Logo.svg';
 import About from '../assets/About-Logo.svg';
 import Leaderboard from '../assets/leaderboard-Logo-neon.svg';
-import login from '../assets/enter.svg';
+// import login from '../assets/enter.svg';
+import logout from '../assets/logout.svg';
 import Profilepic from '../assets/profile-placeholder.jpeg';
 import styled from 'styled-components';
 
@@ -195,7 +198,7 @@ const Name = styled.div`
     padding: 0 1.5rem;
 `
 
-const Login = styled.button`
+const Logout = styled.button`
     border: none;
     width: 2rem;
     height: 2rem;
@@ -204,9 +207,6 @@ const Login = styled.button`
     img {
         width: 100%;
         height: auto;
-        filter: invert(98%) sepia(100%) saturate(0%) hue-rotate(232deg) brightness(104%) contrast(101%);
-        transition: all 0.3s ease;
-
         &:hover {
             opacity: 0.5;
         }
@@ -215,15 +215,15 @@ const Login = styled.button`
 
 const Sidebar = () => {
 
-const [click, setClick] = useState(false);
-const handleClick = () => setClick(!click);
+    const [click, setClick] = useState(false);
+    const handleClick = () => setClick(!click);
 
-const [profileClick, setProfileClick] = useState(false);
-const handleProfileClick = () => setProfileClick(!profileClick);
+    const [profileClick, setProfileClick] = useState(false);
+    const handleProfileClick = () => setProfileClick(!profileClick);
 
-const LogOut = () => {
-    firebase.auth().signOut();
-}
+    const LogOut = () => {
+        firebase.auth().signOut();
+    }
 
     return (
         <Container>
@@ -249,13 +249,13 @@ const LogOut = () => {
                     <img onClick={() => handleProfileClick()} src={Profilepic} alt="profile-pic" />
                     <Details clicked={profileClick}>
                         <Name>
-                            <h5>Sponge Bob</h5>
+                            <h5 className="profileName">Sponge Bob</h5>
                             <a href="/#">Profile</a>
                         </Name>
 
-                        <Login onClick={LogOut}>
-                            <img src={login} alt="login" />
-                        </Login>
+                        <Logout onClick={LogOut}>
+                            <img src={logout} alt="logout" />
+                        </Logout>
 
                 </Details>
                 </Profile>

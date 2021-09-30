@@ -1,6 +1,5 @@
 import React from 'react';
-import GamePage from './GamePage'
-
+import GamePage from './GamePage';
 
 const Game_PracticeMode = () => {
     return (
