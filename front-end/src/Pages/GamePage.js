@@ -1,6 +1,6 @@
-import Editor from '../Components/Editor';
-import SelectDifficulty from '../Components/SelectDifficulty';
-import PlayerInput from '../Components/PlayerInput';
+// import Editor from '../components/Editor';
+import SelectDifficulty from '../components/SelectDifficulty';
+import PlayerInput from '../components/PlayerInput';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { apiURL } from '../util/apiURL';

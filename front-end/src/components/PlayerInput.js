@@ -2,9 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import useTypingGame from 'react-typing-game-hook';
 import styled from 'styled-components';
 
-const WideInput = styled.div`
-        width: 500px;
-    `
 
 const PlayerInput = ({ snippet }) => {
     //https://codesandbox.io/s/pensive-star-58xy6?file=/src/components/TypingInput.tsx
@@ -137,7 +134,7 @@ const PlayerInput = ({ snippet }) => {
                         );
                     })}
                 </div>
-                <WideInput>
+                
                 <div>
                     {/* {justTyped !== typingInput
                         ? <input
@@ -205,7 +202,7 @@ const PlayerInput = ({ snippet }) => {
                     } */}
                     
                         <input
-                            style={justTyped === correctChar ? { backgrounColor: 'black', color: '#39ff14' } : {backgroundColor: 'black', color: '#39ff14'}}
+                            style={justTyped === correctChar ? { backgrounColor: 'black', color: 'crimson' } : {backgroundColor: 'black', color: '#39ff14'}}
                             type="snippet"
                             ref={inputRef}
                             onKeyDown={(e) => {
@@ -236,7 +233,7 @@ const PlayerInput = ({ snippet }) => {
                             }
                         />
                 </div>
-                    </WideInput>
+                    
             </div>
             <div>
                 {phase === 2 && startTime && endTime
