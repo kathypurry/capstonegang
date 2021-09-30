@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import Login from '../components/Login';
+import Login from '../Components/Login';
 import { firebase } from '../Services/firebase';
 
 
