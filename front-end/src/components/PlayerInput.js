@@ -135,7 +135,7 @@ const PlayerInput = ({ snippet }) => {
                     })}
                 </div>
                 <div>
-                    {/* {!typingInput.length
+                    {/* {justTyped !== typingInput
                         ? <input
                         style={{ backgroundColor: "black", color: "neongreen" }}
                         type="snippet"
