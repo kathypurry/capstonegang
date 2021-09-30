@@ -1,10 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import useTypingGame from 'react-typing-game-hook';
+// import styled from 'styled-components';
+
 
 const PlayerInput = ({ snippet }) => {
     //https://codesandbox.io/s/pensive-star-58xy6?file=/src/components/TypingInput.tsx
     const [duration, setDuration] = useState(0);
     const [typingInput, setTypingInput] = useState("");
+    const [justTyped, setJustTyped] = useState("");
     const [typedWrong, setTypeWrong] = useState(false);
     const [currWordPos, setCurrWordPos] = useState([-1, -1]);
     const inputRef = useRef(null);
@@ -28,16 +31,14 @@ const PlayerInput = ({ snippet }) => {
   
     //checks whether the word is correct while the user is typing
     useEffect(() => {
-        // console.log(snippet)
-        // let hasError = false;
-        let prev = typeof true;
         for (let i = 0; i < typingInput.length; i++) {
             let char = typingInput[i];
             
             let correctChar = snippet[currWordPos[0] + i];
             //diff is bool
             let diff = char !== correctChar;
-            console.log(diff, 'diff')
+            setJustTyped(char)
+            
             console.log(correctChar, 'correctChar')
             console.log(typingInput, 'typingInput')
             console.log(char, 'justTyped')
@@ -46,11 +47,6 @@ const PlayerInput = ({ snippet }) => {
                 break;
             }
         }
-        // if (hasError !== prev) {
-        //     return !prev;
-        // } else {
-        //     return prev;
-        // }
     }, [typingInput, currWordPos, snippet]);
   
     //Set the start and end index of the next word
@@ -139,8 +135,72 @@ const PlayerInput = ({ snippet }) => {
                     })}
                 </div>
                 <div>
-                    
+                    {/* {!typingInput.length
+                        ? <input
+                        style={{ backgroundColor: "black", color: "neongreen" }}
+                        type="snippet"
+                        ref={inputRef}
+                        onKeyDown={(e) => {
+                            if (e.key === "Escape") {
+                                e.preventDefault();
+                                reset();
+                            } else if (e.key === "Enter" || e.key === " ") {
+                                e.preventDefault();
+                                submitWord();
+                            }
+                        }}
+                        onChange={(e) => {
+                            setTypingInput(e.target.value);
+                        }}
+                        value={typingInput}
+                        autoCorrect="off"
+                        autoCapitalize="off"
+                        spellCheck={false}
+                        // className={`focus:outline-none bg-black snippet-gray-400 border-b-2 p-1 w-full border-${!typingInput.length
+                        //         ? "gray"
+                        //         : typedWrong
+                        //             ? "red" : "green"
+                        //     }-500`}
+                        placeholder={
+                            phase !== 1
+                                ? "Type here... (Press enter or space to submit word)"
+                                : ""
+                        }
+                    />
+                        : <input
+                        style={{ backgroundColor: "black", color: "crimson" }}
+                        type="snippet"
+                        ref={inputRef}
+                        onKeyDown={(e) => {
+                            if (e.key === "Escape") {
+                                e.preventDefault();
+                                reset();
+                            } else if (e.key === "Enter" || e.key === " ") {
+                                e.preventDefault();
+                                submitWord();
+                            }
+                        }}
+                        onChange={(e) => {
+                            setTypingInput(e.target.value);
+                        }}
+                        value={typingInput}
+                        autoCorrect="off"
+                        autoCapitalize="off"
+                        spellCheck={false}
+                        // className={`focus:outline-none bg-black snippet-gray-400 border-b-2 p-1 w-full border-${!typingInput.length
+                        //         ? "gray"
+                        //         : typedWrong
+                        //             ? "red" : "green"
+                        //     }-500`}
+                        placeholder={
+                            phase !== 1
+                                ? "Type here... (Press enter or space to submit word)"
+                                : ""
+                        }
+                    />
+                    } */}
                     <input
+                        style={justTyped === correctChar ? { backgrounColor: 'black', color: '#39ff14' } : {backgroundColor: 'black', color: '#39ff14'}}
                         type="snippet"
                         ref={inputRef}
                         onKeyDown={(e) => {
@@ -180,7 +240,7 @@ const PlayerInput = ({ snippet }) => {
                     <span>Duration: {duration}s</span>
                     </>)
                 : null}
-                {/* <span className="mr-4"> Current Index: {currIndex}</span> */}
+                
                 <span className="mr-4"> Correct Characters: {correctChar}</span>
                 <span className="mr-4"> Error Characters: {errorChar}</span>
             </div>
