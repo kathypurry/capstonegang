@@ -1,7 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import useTypingGame from 'react-typing-game-hook';
-// import styled from 'styled-components';
+import styled from 'styled-components';
 
+const WideInput = styled.div`
+        width: 500px;
+    `
 
 const PlayerInput = ({ snippet }) => {
     //https://codesandbox.io/s/pensive-star-58xy6?file=/src/components/TypingInput.tsx
@@ -128,7 +131,7 @@ const PlayerInput = ({ snippet }) => {
                         //     styling = "snippet-gray-400";
                         // }
                         return (
-                            <span key={letter + index} className={`${styling}`}>
+                            <span key={letter + index}>
                                 {letter}
                             </span>
                         );
@@ -199,44 +202,48 @@ const PlayerInput = ({ snippet }) => {
                         }
                     />
                     } */}
-                    <input
-                        style={justTyped === correctChar ? { backgrounColor: 'black', color: '#39ff14' } : {backgroundColor: 'black', color: '#39ff14'}}
-                        type="snippet"
-                        ref={inputRef}
-                        onKeyDown={(e) => {
-                            if (e.key === "Escape") {
-                                e.preventDefault();
-                                reset();
-                            } else if (e.key === "Enter" || e.key === " ") {
-                                e.preventDefault();
-                                submitWord();
+                    <WideInput>
+                        <input
+                            style={justTyped === correctChar ? { backgrounColor: 'black', color: '#39ff14' } : {backgroundColor: 'black', color: '#39ff14'}}
+                            type="snippet"
+                            ref={inputRef}
+                            onKeyDown={(e) => {
+                                if (e.key === "Escape") {
+                                    e.preventDefault();
+                                    reset();
+                                } else if (e.key === "Enter" || e.key === " ") {
+                                    e.preventDefault();
+                                    submitWord();
+                                }
+                            }}
+                            onChange={(e) => {
+                                setTypingInput(e.target.value);
+                            }}
+                            value={typingInput}
+                            autoCorrect="off"
+                            autoCapitalize="off"
+                            spellCheck={false}
+                            // className={`focus:outline-none bg-black snippet-gray-400 border-b-2 p-1 w-full border-${!typingInput.length
+                            //         ? "gray"
+                            //         : typedWrong
+                            //             ? "red" : "green"
+                            //     }-500`}
+                            placeholder={
+                                phase !== 1
+                                    ? "Type here... (Press enter or space to submit word)"
+                                    : ""
                             }
-                        }}
-                        onChange={(e) => {
-                            setTypingInput(e.target.value);
-                        }}
-                        value={typingInput}
-                        autoCorrect="off"
-                        autoCapitalize="off"
-                        spellCheck={false}
-                        // className={`focus:outline-none bg-black snippet-gray-400 border-b-2 p-1 w-full border-${!typingInput.length
-                        //         ? "gray"
-                        //         : typedWrong
-                        //             ? "red" : "green"
-                        //     }-500`}
-                        placeholder={
-                            phase !== 1
-                                ? "Type here... (Press enter or space to submit word)"
-                                : ""
-                        }
-                    />
+                        />
+                    </WideInput>
                 </div>
             </div>
             <div>
                 {phase === 2 && startTime && endTime
                 ? (<>
-                    <span>WPM: {Math.round(((60 / duration) * correctChar) / 5)}</span>
-                    <span>Accuracy: {((correctChar / snippet.length) * 100).toFixed(2)}%</span>
+                        <span>WPM: {Math.round(((60 / duration) * correctChar) / 5)}</span>
+                        <br />
+                        <span>Accuracy: {((correctChar / snippet.length) * 100).toFixed(2)}%</span>
+                        <br />
                     <span>Duration: {duration}s</span>
                     </>)
                 : null}
