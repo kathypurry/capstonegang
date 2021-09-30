@@ -1,5 +1,6 @@
-import Editor from '../components/Editor';
-import SelectDifficulty from '../components/SelectDifficulty';
+import Editor from '../Components/Editor';
+import SelectDifficulty from '../Components/SelectDifficulty';
+import PlayerInput from '../Components/PlayerInput';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { apiURL } from '../util/apiURL';
@@ -11,7 +12,8 @@ function GamePage() {
     const [ currentSnippet, setCurrentSnippet ] = useState({});
 
     useEffect(() => {
-        axios.get(`${API}/code/${difficulty}`)
+        axios
+          .get(`${API}/code/${difficulty}`)
           .then(
             (res) => {
               setAllSnippets(res.data)
@@ -19,7 +21,10 @@ function GamePage() {
             },
             (error) => console.log('get', error)
           )
-          .catch((c) => console.warn('catch', c));
+          .then(res=>console.log(res))
+            .catch((c) => console.warn('catch', c));
+        console.log(currentSnippet, 'test curSnippet');
+        // console.log(allSnippets, 'test allSnippets');
       }, [difficulty]);
 
     const handleDifficultyChange = (e) => {
@@ -32,10 +37,14 @@ function GamePage() {
                 handleDifficultyChange={handleDifficultyChange} 
                 difficulty={difficulty} 
             />
-            <Editor 
+            {/* <Editor 
                 currentSnippet={currentSnippet}
                   
-            />
+            /> */}
+            {/* <PlayerInput snippet={currentSnippet}/> */}
+            <PlayerInput snippet={'gingerbutt'}/>
+            {/* <PlayerInput snippet={currentSnippet.snippet}/> */}
+            
         </div>
     );
 };

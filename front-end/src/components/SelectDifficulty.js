@@ -1,10 +1,33 @@
 import styled from "styled-components";
-import Button from "react-bootstrap/Button";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
+// import Button from "react-bootstrap/Button";
+// import ButtonGroup from "react-bootstrap/ButtonGroup";
 
 const LabelHousing = styled.div`
   margin-left: 15vw;
   margin-bottom: 5vh;
+`;
+
+const Button = styled.button`
+  background-color: var(--background);
+  border-color: var(--neongreen);
+  color: var(--neongreen);
+  width: 130px;
+  transition-duration: 0.4s;
+
+  &:hover {
+    background-color: var(--neongreen);
+    color: var(--background);
+  }
+
+  &:focus {
+    background-color: var(--neongreen);
+    color: var(--background);
+    cursor: not-allowed;
+  }
+`;
+
+const ButtonGroup = styled.div`
+  display: flex;
 `;
 
 function SelectDifficulty({ handleDifficultyChange, difficulty }) {
@@ -12,7 +35,7 @@ function SelectDifficulty({ handleDifficultyChange, difficulty }) {
     <div>
       <LabelHousing>
         <label htmlFor="difficulty">Pick your difficulty</label>
-        <br/>
+        <br />
         {/* <select 
             id='difficulty' 
             onChange={handleDifficultyChange} 
@@ -25,25 +48,13 @@ function SelectDifficulty({ handleDifficultyChange, difficulty }) {
           </select> */}
 
         <ButtonGroup aria-label="difficulty selector">
-          <Button
-            onClick={handleDifficultyChange}
-            value={1}
-            variant="custom"
-          >
+          <Button onClick={handleDifficultyChange} value={1} variant="custom">
             Easy
           </Button>
-          <Button
-            onClick={handleDifficultyChange}
-            value={2}
-            variant="custom"
-          >
+          <Button onClick={handleDifficultyChange} value={2} variant="custom">
             Medium
           </Button>
-          <Button
-            onClick={handleDifficultyChange}
-            value={3}
-            variant="custom"
-          >
+          <Button onClick={handleDifficultyChange} value={3} variant="custom">
             Hard
           </Button>
         </ButtonGroup>

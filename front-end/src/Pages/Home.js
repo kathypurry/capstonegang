@@ -1,14 +1,19 @@
 import React from 'react';
-import Timer from '../components/Timer';
-import Editor from '../components/Editor';
+import Timer from '../Components/Timer';
+// import Snippets from '../components/Snippets';
+import MainMenu from '../Components/MainMenu';
+import Editor from '../Components/Editor';
 import styled from 'styled-components';
 
 
 const Home = () => {
     return (
         <div>
-            <Timer />
-            <Editor />
+            <MainMenu/>
+            {/* <Timer />
+            <Snippets /> */}
+            {/* <Timer /> */}
+            {/* <Editor /> */}
         </div>
     )
 };
