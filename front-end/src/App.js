@@ -11,7 +11,7 @@ import Leaderboard from "./Pages/Leaderboard";
 import GamePage from './Pages/GamePage';
 import LoginPage from "./Pages/LoginPage";
 import TestPage from "./Pages/testPage";
-import Game_StoryMode from './Pages/Game_StoryMode';
+import Game_StoryMode from './Pages/GAME_STORY_MODE';
 // import Game_PracticeMode from './Pages/Game_PracticeMode';
 import User_StatPage from './Pages/User_StatPage';
 

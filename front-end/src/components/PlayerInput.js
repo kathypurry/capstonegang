@@ -28,16 +28,21 @@ const PlayerInput = ({ snippet }) => {
   
     //checks whether the word is correct while the user is typing
     useEffect(() => {
-        console.log(snippet)
-        let hasError = false;
+        // console.log(snippet)
+        // let hasError = false;
+        let prev = typeof true;
         for (let i = 0; i < typingInput.length; i++) {
             let char = typingInput[i];
+            
             let correctChar = snippet[currWordPos[0] + i];
+            //diff is bool
             let diff = char !== correctChar;
-            console.log(diff)
+            console.log(diff, 'diff')
+            console.log(correctChar, 'correctChar')
+            console.log(typingInput, 'typingInput')
+            console.log(char, 'justTyped')
             if (diff) {
-                hasError = true;
-                //break out of for loop 
+                //increment errorChar
                 break;
             }
         }
@@ -119,13 +124,13 @@ const PlayerInput = ({ snippet }) => {
                             index >= currWordPos[0] && index <= currWordPos[1];
                         let state = charsState[index];
                         let styling = "snippet-red-500";
-                        if (shouldHightlight) {
-                            styling = "snippet-black bg-yellow-600";
-                        } else if (state === 0) {
-                            styling = "snippet-gray-700";
-                        } else if (state === 1) {
-                            styling = "snippet-gray-400";
-                        }
+                        // if (shouldHightlight) {
+                        //     styling = "snippet-black bg-yellow-600";
+                        // } else if (state === 0) {
+                        //     styling = "snippet-gray-700";
+                        // } else if (state === 1) {
+                        //     styling = "snippet-gray-400";
+                        // }
                         return (
                             <span key={letter + index} className={`${styling}`}>
                                 {letter}
@@ -133,7 +138,8 @@ const PlayerInput = ({ snippet }) => {
                         );
                     })}
                 </div>
-                <div className="mb-2">
+                <div>
+                    
                     <input
                         type="snippet"
                         ref={inputRef}
@@ -153,11 +159,11 @@ const PlayerInput = ({ snippet }) => {
                         autoCorrect="off"
                         autoCapitalize="off"
                         spellCheck={false}
-                        className={`focus:outline-none bg-black snippet-gray-400 border-b-2 p-1 w-full border-${!typingInput.length
-                                ? "gray"
-                                : typedWrong
-                                    ? "red" : "green"
-                            }-500`}
+                        // className={`focus:outline-none bg-black snippet-gray-400 border-b-2 p-1 w-full border-${!typingInput.length
+                        //         ? "gray"
+                        //         : typedWrong
+                        //             ? "red" : "green"
+                        //     }-500`}
                         placeholder={
                             phase !== 1
                                 ? "Type here... (Press enter or space to submit word)"
@@ -166,22 +172,18 @@ const PlayerInput = ({ snippet }) => {
                     />
                 </div>
             </div>
-            <p className="snippet-sm">
-                {phase === 2 && startTime && endTime ? (
-                    <>
-                        <span className="snippet-green-500 mr-4">
-                            WPM: {Math.round(((60 / duration) * correctChar) / 5)}
-                        </span>
-                        <span className="snippet-blue-500 mr-4">
-                            Accuracy: {((correctChar / snippet.length) * 100).toFixed(2)}%
-                        </span>
-                        <span className="snippet-yellow-500 mr-4">Duration: {duration}s</span>
-                    </>
-                ) : null}
-                <span className="mr-4"> Current Index: {currIndex}</span>
+            <div>
+                {phase === 2 && startTime && endTime
+                ? (<>
+                    <span>WPM: {Math.round(((60 / duration) * correctChar) / 5)}</span>
+                    <span>Accuracy: {((correctChar / snippet.length) * 100).toFixed(2)}%</span>
+                    <span>Duration: {duration}s</span>
+                    </>)
+                : null}
+                {/* <span className="mr-4"> Current Index: {currIndex}</span> */}
                 <span className="mr-4"> Correct Characters: {correctChar}</span>
                 <span className="mr-4"> Error Characters: {errorChar}</span>
-            </p>
+            </div>
         </div>
     );
 };

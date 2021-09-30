@@ -23,7 +23,7 @@ function GamePage() {
           )
           .then(res=>console.log(res))
             .catch((c) => console.warn('catch', c));
-        console.log(currentSnippet, 'test curSnippet');
+      console.log(currentSnippet, 'test curSnippet');
         // console.log(allSnippets, 'test allSnippets');
       }, [difficulty]);
 
