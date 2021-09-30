@@ -137,6 +137,7 @@ const PlayerInput = ({ snippet }) => {
                     <input
                         type="snippet"
                         ref={inputRef}
+                        style={{whiteSpace: 'pre-wrap'}}
                         onKeyDown={(e) => {
                             if (e.key === "Escape") {
                                 e.preventDefault();

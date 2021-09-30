@@ -1,8 +1,17 @@
 import Editor from '../components/Editor';
 import SelectDifficulty from '../components/SelectDifficulty';
+import PlayerInput from '../components/PlayerInput';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { apiURL } from '../util/apiURL';
+import styled from 'styled-components';
+
+const InputContainer = styled.div`
+  display: flex;
+
+  margin-left: 30vw;
+  z-index: -1;
+`;
 
 function GamePage() {
     const API = apiURL();
@@ -14,8 +23,8 @@ function GamePage() {
         axios.get(`${API}/code/${difficulty}`)
           .then(
             (res) => {
-              setAllSnippets(res.data)
-              setCurrentSnippet(res.data[0])
+              
+              setCurrentSnippet(res.data[0].snippet)
             },
             (error) => console.log('get', error)
           )
@@ -38,11 +47,12 @@ function GamePage() {
             <Editor 
                 currentSnippet={currentSnippet}
                   
-            /> */}
+            /> 
             {/* <PlayerInput snippet={currentSnippet}/> */}
-            <PlayerInput snippet={'gingerbutt'}/>
+            <InputContainer>
+              <PlayerInput snippet={currentSnippet}/>
             {/* <PlayerInput snippet={currentSnippet.snippet}/> */}
-            
+            </InputContainer>
         </div>
     );
 };

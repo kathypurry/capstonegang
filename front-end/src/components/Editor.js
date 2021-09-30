@@ -43,9 +43,9 @@ const Editor = ({currentSnippet}) => {
           <h2 style={{whiteSpace: 'pre-wrap'}} >{currentSnippet?.snippet}</h2> 
         </SnippetContainer>
 
-        <InputContainer>
+        {/* <InputContainer>
           <TextInput type='text' style={{whiteSpace: 'pre-wrap'}} value={keyInput} size="100"></TextInput>
-        </InputContainer>
+        </InputContainer> */}
     </div>
   );
 };
