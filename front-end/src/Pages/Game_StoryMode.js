@@ -1,5 +1,5 @@
 import React from 'react'
-import Menu_StoryMode from '../components/Menu_StoryMode';
+import Menu_StoryMode from '../Components/Menu_StoryMode';
 
 const Game_StoryMode = () => {
     return (

@@ -2,10 +2,10 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import styled from 'styled-components';
 import Parallax from 'react-rellax'
-import MotionF from '../components/MotionF';
+import MotionF from '../Components/MotionF';
 
 // images
-import TypingImage from '../components/TypingImage';
+import TypingImage from '../Components/TypingImage';
 import NextIcon from '../assets/next-icon.svg';
 import LowerIcon from '../assets/lower-icon.svg';
 
@@ -13,17 +13,19 @@ import LowerIcon from '../assets/lower-icon.svg';
 const Container = styled.div`
     display: flex;
     position: relative;
+    background-color: var(--background);
 
     top: 0;
     left: 0;
     width: 100%; 
-    z-index: -1;
+    // z-index: -1;
 `
 
 const Section = styled.div`
     display: flex;
     justify-Content: center;
     align-items: center;
+    background-color: var(--background);
 
     min-width: 100%;
     height: auto;
@@ -71,8 +73,9 @@ const RelaxContainer = styled.div`
 `
 
 const Left = styled.div`
-    padding-top: 60vh;
+    padding-top: 50vh;
     width: 50%;
+    text-align: center;
 `
 
 const Right = styled.div`
@@ -122,23 +125,23 @@ const AboutComponent = () => {
                <Content>
                    <RelaxContainer>
                         <Left>
-                            <Parallax speed={10}>
+                            <Parallax speed={10} horizontal={true}>
                                 <h2>Typing Game</h2><br />
                             </Parallax>
 
-                            <Parallax speed={8}>
+                            <Parallax speed={8} horizontal={true}>
                                 <Paragraph>The Typing game is designed to get developers more familiar with hand placement</Paragraph>
                             </Parallax>
 
-                            <Parallax speed={6}>
+                            <Parallax speed={6} horizontal={true}>
                                 <Paragraph>While creating muscle memory that the average typist has not developed.</Paragraph>
                             </Parallax>
 
-                            <Parallax speed={4}>
+                            <Parallax speed={4} horizontal={true}>
                                 <Paragraph>We believe that with enough structured repetiiton that developers will create better code.</Paragraph>
                             </Parallax>
 
-                            <Parallax speed={2}>
+                            <Parallax speed={2} horizontal={true}>
                                 <Paragraph>As well as be able to identify bugs in a faster manner. </Paragraph>
                             </Parallax>
    
@@ -148,7 +151,7 @@ const AboutComponent = () => {
                         </Left>
 
                         <Right>
-                            <Parallax speed={-10}>
+                            <Parallax speed={-10} horizontal={true}>
                                 <TypingImage />
                             </Parallax>
                         </Right>
@@ -162,9 +165,9 @@ const AboutComponent = () => {
                         <img src={LowerIcon} alt="LowerIcon" />
                     </Lower>
 
-                    <Green>
+                    {/* <Green>
                         
-                    </Green>
+                    </Green> */}
                </Content>
            </Section>
 
