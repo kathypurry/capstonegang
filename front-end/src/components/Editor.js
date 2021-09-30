@@ -4,7 +4,8 @@ import { useState } from "react";
 // import axios from "axios";
 
 import styled from 'styled-components';
-import BlinkingCursor from "./BlinkingCursor";
+
+// import BlinkingCursor from "./BlinkingCursor";
 import useKeyboard from "../hooks/useKeyboard";
 // import { KeyframeTrack } from "three";
 

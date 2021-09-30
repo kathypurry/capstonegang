@@ -42,6 +42,7 @@ const LoginButton = styled.button`
 const Login = () => {
   
     const SignInWithFirebase = () => {
+        
         const googleProvider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(googleProvider)
         .then((re) => {

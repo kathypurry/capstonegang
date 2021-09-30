@@ -137,6 +137,7 @@ const PlayerInput = ({ snippet }) => {
                         );
                     })}
                 </div>
+                <WideInput>
                 <div>
                     {/* {justTyped !== typingInput
                         ? <input
@@ -202,7 +203,7 @@ const PlayerInput = ({ snippet }) => {
                         }
                     />
                     } */}
-                    <WideInput>
+                    
                         <input
                             style={justTyped === correctChar ? { backgrounColor: 'black', color: '#39ff14' } : {backgroundColor: 'black', color: '#39ff14'}}
                             type="snippet"
@@ -234,8 +235,8 @@ const PlayerInput = ({ snippet }) => {
                                     : ""
                             }
                         />
-                    </WideInput>
                 </div>
+                    </WideInput>
             </div>
             <div>
                 {phase === 2 && startTime && endTime
