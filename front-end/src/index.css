@@ -45,6 +45,14 @@ body {
 }
 
 .btn-custom {
-  color: var(--neongreen)
+  color: var(--neongreen);
 }
 
+.bg-black {
+  color: var(--white);
+  width: 40em;
+}
+
+.profileName {
+  font-size: 12px;
+}

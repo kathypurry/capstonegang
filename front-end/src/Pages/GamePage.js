@@ -42,7 +42,7 @@ function GamePage() {
                   
             /> */}
             {/* <PlayerInput snippet={currentSnippet}/> */}
-            <PlayerInput snippet={'gingerbutt'}/>
+            <PlayerInput snippet={'snippet'}/>
             {/* <PlayerInput snippet={currentSnippet.snippet}/> */}
             
         </div>
