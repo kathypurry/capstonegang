@@ -109,11 +109,7 @@ const PlayerInput = ({ snippet }) => {
   
     return (
         <div>
-            <div
-                onClick={() => {
-                    inputRef.current.focus();
-                }}
-            >
+            <div onClick={() => {inputRef.current.focus();}}>
                 <div>
                     {snippet.split("").map((letter, index) => {
                         let shouldHightlight =
@@ -131,23 +127,26 @@ const PlayerInput = ({ snippet }) => {
                             <span key={letter + index}>
                                 {letter}
                             </span>
-                        );
-                    })}
+                        )
+                    })
+                    }
                 </div>
                 
                 <div>
-                    {/* {justTyped !== typingInput
-                        ? <input
-                        style={{ backgroundColor: "black", color: "neongreen" }}
+                    <input
+                        style={justTyped === correctChar ? { backgrounColor: 'black', color: 'crimson' } : {backgroundColor: 'black', color: '#39ff14'}}
                         type="snippet"
                         ref={inputRef}
                         onKeyDown={(e) => {
                             if (e.key === "Escape") {
                                 e.preventDefault();
                                 reset();
-                            } else if (e.key === "Enter" || e.key === " ") {
+                            } else if (e.key === " ") {
                                 e.preventDefault();
                                 submitWord();
+                            } else if (e.key === "Enter") {
+                                e.preventDefault()
+                                submitWord()                                
                             }
                         }}
                         onChange={(e) => {
@@ -157,84 +156,15 @@ const PlayerInput = ({ snippet }) => {
                         autoCorrect="off"
                         autoCapitalize="off"
                         spellCheck={false}
-                        // className={`focus:outline-none bg-black snippet-gray-400 border-b-2 p-1 w-full border-${!typingInput.length
-                        //         ? "gray"
-                        //         : typedWrong
-                        //             ? "red" : "green"
-                        //     }-500`}
                         placeholder={
                             phase !== 1
                                 ? "Type here... (Press enter or space to submit word)"
                                 : ""
                         }
                     />
-                        : <input
-                        style={{ backgroundColor: "black", color: "crimson" }}
-                        type="snippet"
-                        ref={inputRef}
-                        onKeyDown={(e) => {
-                            if (e.key === "Escape") {
-                                e.preventDefault();
-                                reset();
-                            } else if (e.key === "Enter" || e.key === " ") {
-                                e.preventDefault();
-                                submitWord();
-                            }
-                        }}
-                        onChange={(e) => {
-                            setTypingInput(e.target.value);
-                        }}
-                        value={typingInput}
-                        autoCorrect="off"
-                        autoCapitalize="off"
-                        spellCheck={false}
-                        // className={`focus:outline-none bg-black snippet-gray-400 border-b-2 p-1 w-full border-${!typingInput.length
-                        //         ? "gray"
-                        //         : typedWrong
-                        //             ? "red" : "green"
-                        //     }-500`}
-                        placeholder={
-                            phase !== 1
-                                ? "Type here... (Press enter or space to submit word)"
-                                : ""
-                        }
-                    />
-                    } */}
-                    
-                        <input
-                            style={justTyped === correctChar ? { backgrounColor: 'black', color: 'crimson' } : {backgroundColor: 'black', color: '#39ff14'}}
-                            type="snippet"
-                            ref={inputRef}
-                            onKeyDown={(e) => {
-                                if (e.key === "Escape") {
-                                    e.preventDefault();
-                                    reset();
-                                } else if (e.key === "Enter" || e.key === " ") {
-                                    e.preventDefault();
-                                    submitWord();
-                                }
-                            }}
-                            onChange={(e) => {
-                                setTypingInput(e.target.value);
-                            }}
-                            value={typingInput}
-                            autoCorrect="off"
-                            autoCapitalize="off"
-                            spellCheck={false}
-                            // className={`focus:outline-none bg-black snippet-gray-400 border-b-2 p-1 w-full border-${!typingInput.length
-                            //         ? "gray"
-                            //         : typedWrong
-                            //             ? "red" : "green"
-                            //     }-500`}
-                            placeholder={
-                                phase !== 1
-                                    ? "Type here... (Press enter or space to submit word)"
-                                    : ""
-                            }
-                        />
                 </div>
-                    
             </div>
+
             <div>
                 {phase === 2 && startTime && endTime
                 ? (<>
