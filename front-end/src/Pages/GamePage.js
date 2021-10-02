@@ -7,7 +7,7 @@ import { apiURL } from '../util/apiURL';
 
 function GamePage() {
     const API = apiURL();
-    const [ allSnippets, setAllSnippets ] = useState([]);
+    // const [ allSnippets, setAllSnippets ] = useState([]);
     const [ difficulty, setDifficulty ] = useState('');
     const [ currentSnippet, setCurrentSnippet ] = useState({});
 
@@ -16,14 +16,14 @@ function GamePage() {
           .get(`${API}/code/${difficulty}`)
           .then(
             (res) => {
-              setAllSnippets(res.data)
+            //   setAllSnippets(res.data)
               setCurrentSnippet(res.data[0])
             },
             (error) => console.log('get', error)
           )
           .then(res=>console.log(res))
             .catch((c) => console.warn('catch', c));
-        console.log(currentSnippet, 'test curSnippet');
+      console.log(currentSnippet, 'test curSnippet');
         // console.log(allSnippets, 'test allSnippets');
       }, [difficulty]);
 
@@ -33,17 +33,15 @@ function GamePage() {
 
     return (
         <div>
+            {difficulty === ''
+                ? null
+                : <PlayerInput snippet={currentSnippet.snippet}/> 
+            }
+            
             <SelectDifficulty 
                 handleDifficultyChange={handleDifficultyChange} 
                 difficulty={difficulty} 
             />
-            {/* <Editor 
-                currentSnippet={currentSnippet}
-                  
-            /> */}
-            {/* <PlayerInput snippet={currentSnippet}/> */}
-            <PlayerInput snippet={'snippet'}/>
-            {/* <PlayerInput snippet={currentSnippet.snippet}/> */}
             
         </div>
     );

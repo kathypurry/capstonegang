@@ -1,10 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react';
 import useTypingGame from 'react-typing-game-hook';
+import styled from 'styled-components';
+
+const WideInput = styled.div`
+        width: 500px;
+    `
 
 const PlayerInput = ({ snippet }) => {
     //https://codesandbox.io/s/pensive-star-58xy6?file=/src/components/TypingInput.tsx
     const [duration, setDuration] = useState(0);
     const [typingInput, setTypingInput] = useState("");
+    const [justTyped, setJustTyped] = useState("");
     const [typedWrong, setTypeWrong] = useState(false);
     const [currWordPos, setCurrWordPos] = useState([-1, -1]);
     const inputRef = useRef(null);
@@ -28,24 +34,22 @@ const PlayerInput = ({ snippet }) => {
   
     //checks whether the word is correct while the user is typing
     useEffect(() => {
-        console.log(snippet)
-        let hasError = false;
         for (let i = 0; i < typingInput.length; i++) {
             let char = typingInput[i];
+            
             let correctChar = snippet[currWordPos[0] + i];
+            //diff is bool
             let diff = char !== correctChar;
-            console.log(diff)
+            setJustTyped(char)
+            
+            console.log(correctChar, 'correctChar')
+            console.log(typingInput, 'typingInput')
+            console.log(char, 'justTyped')
             if (diff) {
-                hasError = true;
-                //break out of for loop 
+                //increment errorChar
                 break;
             }
         }
-        // if (hasError !== prev) {
-        //     return !prev;
-        // } else {
-        //     return prev;
-        // }
     }, [typingInput, currWordPos, snippet]);
   
     //Set the start and end index of the next word
@@ -119,22 +123,25 @@ const PlayerInput = ({ snippet }) => {
                             index >= currWordPos[0] && index <= currWordPos[1];
                         let state = charsState[index];
                         let styling = "snippet-red-500";
-                        if (shouldHightlight) {
-                            styling = "snippet-black bg-yellow-600";
-                        } else if (state === 0) {
-                            styling = "snippet-gray-700";
-                        } else if (state === 1) {
-                            styling = "snippet-gray-400";
-                        }
+                        // if (shouldHightlight) {
+                        //     styling = "snippet-black bg-yellow-600";
+                        // } else if (state === 0) {
+                        //     styling = "snippet-gray-700";
+                        // } else if (state === 1) {
+                        //     styling = "snippet-gray-400";
+                        // }
                         return (
-                            <span key={letter + index} className={`${styling}`}>
+                            <span key={letter + index}>
                                 {letter}
                             </span>
                         );
                     })}
                 </div>
-                <div className="mb-2">
-                    <input
+                <WideInput>
+                <div>
+                    {/* {justTyped !== typingInput
+                        ? <input
+                        style={{ backgroundColor: "black", color: "neongreen" }}
                         type="snippet"
                         ref={inputRef}
                         onKeyDown={(e) => {
@@ -153,35 +160,98 @@ const PlayerInput = ({ snippet }) => {
                         autoCorrect="off"
                         autoCapitalize="off"
                         spellCheck={false}
-                        className={`focus:outline-none bg-black snippet-gray-400 border-b-2 p-1 w-full border-${!typingInput.length
-                                ? "gray"
-                                : typedWrong
-                                    ? "red" : "green"
-                            }-500`}
+                        // className={`focus:outline-none bg-black snippet-gray-400 border-b-2 p-1 w-full border-${!typingInput.length
+                        //         ? "gray"
+                        //         : typedWrong
+                        //             ? "red" : "green"
+                        //     }-500`}
                         placeholder={
                             phase !== 1
                                 ? "Type here... (Press enter or space to submit word)"
                                 : ""
                         }
                     />
+                        : <input
+                        style={{ backgroundColor: "black", color: "crimson" }}
+                        type="snippet"
+                        ref={inputRef}
+                        onKeyDown={(e) => {
+                            if (e.key === "Escape") {
+                                e.preventDefault();
+                                reset();
+                            } else if (e.key === "Enter" || e.key === " ") {
+                                e.preventDefault();
+                                submitWord();
+                            }
+                        }}
+                        onChange={(e) => {
+                            setTypingInput(e.target.value);
+                        }}
+                        value={typingInput}
+                        autoCorrect="off"
+                        autoCapitalize="off"
+                        spellCheck={false}
+                        // className={`focus:outline-none bg-black snippet-gray-400 border-b-2 p-1 w-full border-${!typingInput.length
+                        //         ? "gray"
+                        //         : typedWrong
+                        //             ? "red" : "green"
+                        //     }-500`}
+                        placeholder={
+                            phase !== 1
+                                ? "Type here... (Press enter or space to submit word)"
+                                : ""
+                        }
+                    />
+                    } */}
+                    
+                        <input
+                            style={justTyped === correctChar ? { backgrounColor: 'black', color: '#39ff14' } : {backgroundColor: 'black', color: '#39ff14'}}
+                            type="snippet"
+                            ref={inputRef}
+                            onKeyDown={(e) => {
+                                if (e.key === "Escape") {
+                                    e.preventDefault();
+                                    reset();
+                                } else if (e.key === "Enter" || e.key === " ") {
+                                    e.preventDefault();
+                                    submitWord();
+                                }
+                            }}
+                            onChange={(e) => {
+                                setTypingInput(e.target.value);
+                            }}
+                            value={typingInput}
+                            autoCorrect="off"
+                            autoCapitalize="off"
+                            spellCheck={false}
+                            // className={`focus:outline-none bg-black snippet-gray-400 border-b-2 p-1 w-full border-${!typingInput.length
+                            //         ? "gray"
+                            //         : typedWrong
+                            //             ? "red" : "green"
+                            //     }-500`}
+                            placeholder={
+                                phase !== 1
+                                    ? "Type here... (Press enter or space to submit word)"
+                                    : ""
+                            }
+                        />
                 </div>
+                    </WideInput>
             </div>
-            <p className="snippet-sm">
-                {phase === 2 && startTime && endTime ? (
-                    <>
-                        <span className="snippet-green-500 mr-4">
-                            WPM: {Math.round(((60 / duration) * correctChar) / 5)}
-                        </span>
-                        <span className="snippet-blue-500 mr-4">
-                            Accuracy: {((correctChar / snippet.length) * 100).toFixed(2)}%
-                        </span>
-                        <span className="snippet-yellow-500 mr-4">Duration: {duration}s</span>
-                    </>
-                ) : null}
-                <span className="mr-4"> Current Index: {currIndex}</span>
+            <div>
+                {phase === 2 && startTime && endTime
+                ? (<>
+                        <span>WPM: {Math.round(((60 / duration) * correctChar) / 5)}</span>
+                        <br />
+                        <span>Accuracy: {((correctChar / snippet.length) * 100).toFixed(2)}%</span>
+                        <br />
+                    <span>Duration: {duration}s</span>
+                    </>)
+                : null}
+                
                 <span className="mr-4"> Correct Characters: {correctChar}</span>
                 <span className="mr-4"> Error Characters: {errorChar}</span>
-            </p>
+            </div>
         </div>
     );
 };

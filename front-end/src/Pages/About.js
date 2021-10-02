@@ -15,7 +15,7 @@ const Container = styled.div`
     position: relative;
     background-color: var(--background);
 
-    top: 0;
+    top: 0;x
     left: 0;
     width: 100%; 
     // z-index: -1;
