@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import Login from '../components/Login';
+import AuthPage from '../Pages/AuthPage';
 import { firebase } from '../Services/firebase';
+import { getAuth } from "firebase/auth";
 
 
 // image files 
@@ -152,7 +153,7 @@ const Profile = styled.div`
     padding: 0.5rem 1rem;
     border-radius: 0 30px 30px 0;
     margin-left: ${(props) => (props.clicked? "9rem" : "0")};
-    width: ${(props) => (props.clicked? "14rem" : "3rem")};
+    width: ${(props) => (props.clicked? "16rem" : "3rem")};
     height: 3rem;
 
     img {
@@ -214,6 +215,14 @@ const Logout = styled.button`
 `
 
 const Sidebar = () => {
+    const [currentUser, setCurrentUser] = useState();
+    
+
+    useEffect(() => {
+        firebase.auth().onAuthStateChanged((user) => {
+            setCurrentUser(user)
+        })
+    }, []);
 
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
@@ -223,7 +232,8 @@ const Sidebar = () => {
 
     const LogOut = () => {
         firebase.auth().signOut();
-    }
+    };
+    
 
     return (
         <Container>
@@ -246,10 +256,11 @@ const Sidebar = () => {
                     </Bar>
 
                 <Profile clicked={profileClick}>
-                    <img onClick={() => handleProfileClick()} src={Profilepic} alt="profile-pic" />
+                    {currentUser && <> <img onClick={() => handleProfileClick()} src={currentUser.photoURL} alt="profile-pic" /></>}
                     <Details clicked={profileClick}>
                         <Name>
-                            <h5 className="profileName">Sponge Bob</h5>
+                            
+                            {currentUser && <> <h5 className="profileName">{currentUser.displayName}</h5></>}
                             <a href="/#">Profile</a>
                         </Name>
 
