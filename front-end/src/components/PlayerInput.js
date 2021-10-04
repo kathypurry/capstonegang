@@ -144,6 +144,7 @@ const PlayerInput = ({ snippet }) => {
                         style={{ backgroundColor: "black", color: "neongreen" }}
                         type="snippet"
                         ref={inputRef}
+                        style={{whiteSpace: 'pre-wrap'}}
                         onKeyDown={(e) => {
                             if (e.key === "Escape") {
                                 e.preventDefault();

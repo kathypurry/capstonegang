@@ -6,13 +6,6 @@ import {
   XAxis,
   YAxis
 } from 'recharts';
-// import React, { useEffect, useState } from 'react';
-// import { useParams } from 'react-router-dom';
-// import axios from 'axios';
-// import { apiURL } from '../util/apiURL';
-
-// const API = apiURL
-
 
 const StatGraph = () => {
     //axios get for all user stats in back end by their id

@@ -4,6 +4,14 @@ import PlayerInput from '../components/PlayerInput';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { apiURL } from '../util/apiURL';
+import styled from 'styled-components';
+
+const InputContainer = styled.div`
+  display: flex;
+
+  margin-left: 30vw;
+  z-index: -1;
+`;
 
 
 function GamePage() {
@@ -13,8 +21,7 @@ function GamePage() {
     const [ currentSnippet, setCurrentSnippet ] = useState({});
 
     useEffect(() => {
-        axios
-          .get(`${API}/code/${difficulty}`)
+        axios.get(`${API}/code/${difficulty}`)
           .then(
             (res) => {
             //   setAllSnippets(res.data)
