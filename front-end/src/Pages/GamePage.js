@@ -1,22 +1,12 @@
-import Editor from '../components/Editor';
 import SelectDifficulty from '../components/SelectDifficulty';
 import PlayerInput from '../components/PlayerInput';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { apiURL } from '../util/apiURL';
-import styled from 'styled-components';
-
-const InputContainer = styled.div`
-  display: flex;
-
-  margin-left: 30vw;
-  z-index: -1;
-`;
-
 
 function GamePage() {
     const API = apiURL();
-    // const [ allSnippets, setAllSnippets ] = useState([]);
+
     const [ difficulty, setDifficulty ] = useState('');
     const [ currentSnippet, setCurrentSnippet ] = useState({});
 
@@ -24,7 +14,6 @@ function GamePage() {
         axios.get(`${API}/code/${difficulty}`)
           .then(
             (res) => {
-            //   setAllSnippets(res.data)
               setCurrentSnippet(res.data[0])
             },
             (error) => console.log('get', error)
@@ -32,8 +21,7 @@ function GamePage() {
           .then(res=>console.log(res))
             .catch((c) => console.warn('catch', c));
       console.log(currentSnippet, 'test curSnippet');
-        // console.log(allSnippets, 'test allSnippets');
-      }, [difficulty]);
+    }, [difficulty]);
 
     const handleDifficultyChange = (e) => {
         setDifficulty(e.target.value); 
@@ -50,7 +38,6 @@ function GamePage() {
                 handleDifficultyChange={handleDifficultyChange} 
                 difficulty={difficulty} 
             />
-            
         </div>
     );
 };

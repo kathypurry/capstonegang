@@ -50,8 +50,8 @@ const AuthPage = () => {
         })
         .catch((err) => {
             console.log(err);
-        })
-    }
+        });
+    };
 
     return (
         <Section>
@@ -62,7 +62,7 @@ const AuthPage = () => {
                 </LoginButton>
             </LoginContainer>
         </Section>
-    )
-}
+    );
+};
 
 export default AuthPage;
