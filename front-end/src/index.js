@@ -15,8 +15,8 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById('root')
 );
-
-// console.log(db);
+ 
+// console.log(db);  
 
 // async function readAllUsers() {
 //   try {
