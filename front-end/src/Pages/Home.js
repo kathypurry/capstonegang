@@ -6,6 +6,7 @@ import Editor from '../components/Editor';
 import styled from 'styled-components';
 
 
+
 const Home = () => {
     return (
         <div>

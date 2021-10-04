@@ -30,7 +30,7 @@ const NewUserForm = () => {
                     type="email" name=""
                     id="email" className="NewUserForm-Input"
                     value={input.email}
-                    onChange={ handleChange_input }/>;
+                    onChange={handleChange_input}/>;
 
                 <label htmlFor="NewUserForm-userName">Choose a Username</label>
                 <input

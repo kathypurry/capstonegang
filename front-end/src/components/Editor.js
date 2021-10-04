@@ -1,10 +1,11 @@
-import { useState, useEffect, useRef } from "react";
-import { apiURL } from "../util/apiURL";
-import axios from "axios";
+import { useState } from "react";
+// import { useState, useEffect, useRef } from "react";
+// import { apiURL } from "../util/apiURL";
+// import axios from "axios";
 
 import styled from 'styled-components';
 
-import DisplaySnippets from "./DisplaySnippets";
+// import BlinkingCursor from "./BlinkingCursor";
 import useKeyboard from "../hooks/useKeyboard";
 // import { KeyframeTrack } from "three";
 
@@ -14,7 +15,7 @@ const SnippetContainer = styled.div`
   margin-left: 15vw;
   z-index: -1;
 
-`
+`;
 
 const InputContainer = styled.div`
   display: flex;
@@ -29,8 +30,8 @@ const TextInput = styled.input`
 
 const Editor = ({currentSnippet}) => {
   const keyInput = useKeyboard();
-  const [ completedSnippet, setCompletedSnippet ] = useState({});
-  const snippetLength = currentSnippet.snippet?.length;
+  // const [ completedSnippet, setCompletedSnippet ] = useState({});
+  // const snippetLength = currentSnippet.snippet?.length;
 
   // completedSnippet once user has finished typing the snippet
   // set a start and a end point

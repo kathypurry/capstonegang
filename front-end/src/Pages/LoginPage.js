@@ -1,11 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
-import Login from '../components/Login'
-import { firebase } from '../Services/firebase';
+import AuthPage from '../Pages/AuthPage'
+
+
 
 const LoginPage = () => {
     return (
-        <Login />
+        <AuthPage />
     )
 }
 

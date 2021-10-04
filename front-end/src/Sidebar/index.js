@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+// import AuthPage from '../Pages/AuthPage';
 import { firebase } from '../Services/firebase';
+// import { getAuth } from "firebase/auth";
+
 
 // image files 
 import logo from '../assets/Typing-Game-Logo.svg';
 import About from '../assets/About-Logo.svg';
 import Leaderboard from '../assets/leaderboard-Logo-neon.svg';
-import login from '../assets/enter.svg';
-import Profilepic from '../assets/profile-placeholder.jpeg';
+// import login from '../assets/enter.svg';
+import logout from '../assets/logout.svg';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -149,7 +152,7 @@ const Profile = styled.div`
     padding: 0.5rem 1rem;
     border-radius: 0 30px 30px 0;
     margin-left: ${(props) => (props.clicked? "9rem" : "0")};
-    width: ${(props) => (props.clicked? "14rem" : "3rem")};
+    width: ${(props) => (props.clicked? "16rem" : "3rem")};
     height: 3rem;
 
     img {
@@ -195,7 +198,7 @@ const Name = styled.div`
     padding: 0 1.5rem;
 `
 
-const Login = styled.button`
+const Logout = styled.button`
     border: none;
     width: 2rem;
     height: 2rem;
@@ -204,9 +207,6 @@ const Login = styled.button`
     img {
         width: 100%;
         height: auto;
-        filter: invert(98%) sepia(100%) saturate(0%) hue-rotate(232deg) brightness(104%) contrast(101%);
-        transition: all 0.3s ease;
-
         &:hover {
             opacity: 0.5;
         }
@@ -214,16 +214,25 @@ const Login = styled.button`
 `
 
 const Sidebar = () => {
+    const [currentUser, setCurrentUser] = useState();
+    
 
-const [click, setClick] = useState(false);
-const handleClick = () => setClick(!click);
+    useEffect(() => {
+        firebase.auth().onAuthStateChanged((user) => {
+            setCurrentUser(user)
+        })
+    }, []);
 
-const [profileClick, setProfileClick] = useState(false);
-const handleProfileClick = () => setProfileClick(!profileClick);
+    const [click, setClick] = useState(false);
+    const handleClick = () => setClick(!click);
 
-const LogOut = () => {
-    firebase.auth().signOut();
-}
+    const [profileClick, setProfileClick] = useState(false);
+    const handleProfileClick = () => setProfileClick(!profileClick);
+
+    const LogOut = () => {
+        firebase.auth().signOut();
+    };
+    
 
     return (
         <Container>
@@ -246,16 +255,17 @@ const LogOut = () => {
                     </Bar>
 
                 <Profile clicked={profileClick}>
-                    <img onClick={() => handleProfileClick()} src={Profilepic} alt="profile-pic" />
+                    {currentUser && <> <img onClick={() => handleProfileClick()} src={currentUser.photoURL} alt="profile-pic" /></>}
                     <Details clicked={profileClick}>
                         <Name>
-                            <h5>Sponge Bob</h5>
+                            
+                            {currentUser && <> <h5 className="profileName">{currentUser.displayName}</h5></>}
                             <a href="/#">Profile</a>
                         </Name>
 
-                        <Login onClick={LogOut}>
-                            <img src={login} alt="login" />
-                        </Login>
+                        <Logout onClick={LogOut}>
+                            <img src={logout} alt="logout" />
+                        </Logout>
 
                 </Details>
                 </Profile>
