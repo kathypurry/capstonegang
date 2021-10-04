@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { apiURL } from '../util/apiURL';
 
+
 function GamePage() {
     const API = apiURL();
     // const [ allSnippets, setAllSnippets ] = useState([]);
