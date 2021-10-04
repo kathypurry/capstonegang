@@ -1,7 +1,6 @@
 import React from 'react';
 import MotionF from '../components/MotionF';
 
-
 const LeaderboardComponent = () => {
     return (
         <div>
