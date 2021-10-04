@@ -1,6 +1,4 @@
 import React from 'react';
-import { useState, useEffect} from 'react';
-import Sidebar from '../Sidebar/index';
 import { firebase } from '../Services/firebase';
 import styled from 'styled-components';
 
