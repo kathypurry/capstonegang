@@ -12,7 +12,7 @@ function GamePage() {
   const [currentSnippet, setCurrentSnippet] = useState({});
 
   const dice = (nat, min) => {
-    return Math.floor(Math.random() * nat + min);
+    return Math.floor(Math.random() * nat +min);
   };
 
 
