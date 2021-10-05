@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Parallax from 'react-rellax'
 import MotionF from '../components/MotionF';
 
-// images
 import TypingImage from '../components/TypingImage';
 import NextIcon from '../assets/next-icon.svg';
 import LowerIcon from '../assets/lower-icon.svg';

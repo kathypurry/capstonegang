@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-// import AuthPage from '../Pages/AuthPage';
 import { firebase } from '../Services/firebase';
-// import { getAuth } from "firebase/auth";
-
-
-// image files 
+ 
 import logo from '../assets/Typing-Game-Logo.svg';
 import About from '../assets/About-Logo.svg';
 import Leaderboard from '../assets/leaderboard-Logo-neon.svg';
-// import login from '../assets/enter.svg';
 import logout from '../assets/logout.svg';
 import styled from 'styled-components';
 

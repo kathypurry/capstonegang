@@ -28,7 +28,7 @@ const ButtonGroup = styled.div`
   display: flex;
 `;
 
-function SelectDifficulty({ handleDifficultyChange, difficulty }) {
+function SelectDifficulty({ handleDifficultyChange }) {
   return (
     <div>
       <LabelHousing>
@@ -49,6 +49,6 @@ function SelectDifficulty({ handleDifficultyChange, difficulty }) {
       </LabelHousing>
     </div>
   );
-}
+};
 
 export default SelectDifficulty;
