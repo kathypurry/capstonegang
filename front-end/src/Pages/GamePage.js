@@ -20,8 +20,7 @@ function GamePage() {
           )
           .then(res=>console.log(res))
             .catch((c) => console.warn('catch', c));
-      console.log(currentSnippet, 'test curSnippet');
-    }, [difficulty]);
+    }, [difficulty, API]);
 
     const handleDifficultyChange = (e) => {
         setDifficulty(e.target.value); 

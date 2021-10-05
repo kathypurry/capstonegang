@@ -33,8 +33,6 @@ const User_StatPage = () => {
                 <div>Rank</div>
                 <div>Keyboard type</div>
             </StatContainer>
-            
-
         </div>
     );
 };
