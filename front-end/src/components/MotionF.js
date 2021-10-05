@@ -1,7 +1,4 @@
-// * Reusuable Motion Framer Functunality 
-
 import { motion } from 'framer-motion';
-
 
 const MotionF = (Component) => {
     return function HOC() {
@@ -12,9 +9,9 @@ const MotionF = (Component) => {
                 exit={{ y: -500, transition: { duration: 0.3, type: "spring", ease: "easeInOut" } }}>
                 <Component />
             </motion.div>
-        )
-    }
-}
+        );
+    };
+};
 
 export default MotionF;
 

@@ -3,7 +3,15 @@ import useTypingGame from 'react-typing-game-hook';
 import styled from 'styled-components';
 
 const WideInput = styled.div`
-        width: 500px;
+        // width: 500px;
+
+        input {
+            margin-top: 0.5em;
+            border: none;
+            width: 50vw;
+
+            color: white;
+        }
     `
 
 const PlayerInput = ({ snippet }) => {
@@ -11,13 +19,12 @@ const PlayerInput = ({ snippet }) => {
     const [duration, setDuration] = useState(0);
     const [typingInput, setTypingInput] = useState("");
     const [justTyped, setJustTyped] = useState("");
-    const [typedWrong, setTypeWrong] = useState(false);
+    const [ setTypeWrong] = useState(false);
     const [currWordPos, setCurrWordPos] = useState([-1, -1]);
     const inputRef = useRef(null);
   
     const {
         states: {
-            charsState,
             currIndex,
             phase,
             correctChar,
@@ -27,32 +34,22 @@ const PlayerInput = ({ snippet }) => {
         },
         actions: { insertTyping, resetTyping }
     } = useTypingGame(snippet, {
-        //skip current word when spacebar is triggered 
-        //false -> move to next letter instead
         skipCurrentWordOnSpace: true
     });
   
-    //checks whether the word is correct while the user is typing
     useEffect(() => {
         for (let i = 0; i < typingInput.length; i++) {
-            let char = typingInput[i];
-            
+            let char = typingInput[i];      
             let correctChar = snippet[currWordPos[0] + i];
-            //diff is bool
             let diff = char !== correctChar;
             setJustTyped(char)
             
-            console.log(correctChar, 'correctChar')
-            console.log(typingInput, 'typingInput')
-            console.log(char, 'justTyped')
             if (diff) {
-                //increment errorChar
                 break;
             }
         }
     }, [typingInput, currWordPos, snippet]);
   
-    //Set the start and end index of the next word
     useEffect(() => {
         let tempCurrIndex =
             snippet[currIndex] === " "
@@ -79,13 +76,11 @@ const PlayerInput = ({ snippet }) => {
         });
     }, [currIndex, snippet]);
   
-    //Reset
     const reset = () => {
         resetTyping();
         setTypingInput("");
     };
   
-    //Submit inputted word
     const submitWord = () => {
         for (let i = currWordPos[0]; i <= currWordPos[1]; i++) {
             let index = i - currIndex - 1;
@@ -97,10 +92,9 @@ const PlayerInput = ({ snippet }) => {
         }
         insertTyping(" ");
         setTypingInput("");
-        setTypeWrong(false);
+        // setTypeWrong(false);
     };
   
-    //set WPM
     useEffect(() => {
         if (phase === 2 && endTime && startTime) {
             setDuration(Math.floor((endTime - startTime) / 1000));
@@ -119,10 +113,10 @@ const PlayerInput = ({ snippet }) => {
             >
                 <div>
                     {snippet.split("").map((letter, index) => {
-                        let shouldHightlight =
-                            index >= currWordPos[0] && index <= currWordPos[1];
-                        let state = charsState[index];
-                        let styling = "snippet-red-500";
+                        // let shouldHightlight =
+                        //     index >= currWordPos[0] && index <= currWordPos[1];
+                        // let state = charsState[index];
+                        // let styling = "snippet-red-500";
                         // if (shouldHightlight) {
                         //     styling = "snippet-black bg-yellow-600";
                         // } else if (state === 0) {
@@ -144,6 +138,7 @@ const PlayerInput = ({ snippet }) => {
                         style={{ backgroundColor: "black", color: "neongreen" }}
                         type="snippet"
                         ref={inputRef}
+                        style={{whiteSpace: 'pre-wrap'}}
                         onKeyDown={(e) => {
                             if (e.key === "Escape") {
                                 e.preventDefault();
@@ -205,7 +200,7 @@ const PlayerInput = ({ snippet }) => {
                     } */}
                     
                         <input
-                            style={justTyped === correctChar ? { backgrounColor: 'black', color: '#39ff14' } : {backgroundColor: 'black', color: '#39ff14'}}
+                            style={justTyped === correctChar ? { backgrounColor: 'black', color: '#39ff14' } : {backgroundColor: 'black', color: 'var(--white)'}}
                             type="snippet"
                             ref={inputRef}
                             onKeyDown={(e) => {

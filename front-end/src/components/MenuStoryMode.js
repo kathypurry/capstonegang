@@ -1,5 +1,3 @@
-import React from 'react'
-
 const MenuStoryMode = () => {
     return (
         <div>
@@ -10,7 +8,7 @@ const MenuStoryMode = () => {
             {/* dark mode, language, difficulty, sound toggle,  */}
             <div>Settings</div>
         </div>
-    )
-}
+    );
+};
 
 export default MenuStoryMode;

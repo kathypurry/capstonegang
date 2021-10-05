@@ -1,6 +1,4 @@
-import React from 'react';
 import MotionF from '../components/MotionF';
-
 
 const LeaderboardComponent = () => {
     return (
@@ -10,6 +8,6 @@ const LeaderboardComponent = () => {
     );
 };
 
-const Leaderboard = MotionF(LeaderboardComponent)
+const Leaderboard = MotionF(LeaderboardComponent);
 
 export default Leaderboard;
