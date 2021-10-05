@@ -92,7 +92,7 @@ const PlayerInput = ({ snippet }) => {
         }
         insertTyping(" ");
         setTypingInput("");
-        setTypeWrong(false);
+        // setTypeWrong(false);
     };
   
     useEffect(() => {
