@@ -3,7 +3,15 @@ import useTypingGame from 'react-typing-game-hook';
 import styled from 'styled-components';
 
 const WideInput = styled.div`
-        width: 500px;
+        // width: 500px;
+
+        input {
+            margin-top: 0.5em;
+            border: none;
+            width: 50vw;
+
+            color: white;
+        }
     `
 
 const PlayerInput = ({ snippet }) => {
@@ -192,7 +200,7 @@ const PlayerInput = ({ snippet }) => {
                     } */}
                     
                         <input
-                            style={justTyped === correctChar ? { backgrounColor: 'black', color: '#39ff14' } : {backgroundColor: 'black', color: '#39ff14'}}
+                            style={justTyped === correctChar ? { backgrounColor: 'black', color: '#39ff14' } : {backgroundColor: 'black', color: 'var(--white)'}}
                             type="snippet"
                             ref={inputRef}
                             onKeyDown={(e) => {

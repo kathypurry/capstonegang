@@ -28,15 +28,17 @@ function GamePage() {
 
     return (
         <div>
-            {difficulty === ''
-                ? null
-                : <PlayerInput snippet={currentSnippet.snippet}/> 
-            }
-            
             <SelectDifficulty 
                 handleDifficultyChange={handleDifficultyChange} 
                 difficulty={difficulty} 
             />
+
+            
+            {difficulty === ''
+                ? null
+                : <PlayerInput snippet={currentSnippet.snippet}/> 
+            }
+
         </div>
     );
 };
