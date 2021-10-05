@@ -260,7 +260,7 @@ const Sidebar = () => {
                         <Name>
                             
                             {currentUser && <> <h5 className="profileName">{currentUser.displayName}</h5></>}
-                            <a href="/#">Profile</a>
+                            <a href="/profile">Profile</a>
                         </Name>
 
                         <Logout onClick={LogOut}>
