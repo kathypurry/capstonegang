@@ -1,4 +1,3 @@
-import Editor from '../components/Editor';
 import SelectDifficulty from '../components/SelectDifficulty';
 import PlayerInput from '../components/PlayerInput';
 import { useState, useEffect } from 'react';
