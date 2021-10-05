@@ -31,11 +31,12 @@ const ProfileContainer2 = styled.div`
 `;
 
 const MetaInfo = styled.div`
+    margin-top: 2em;
     color: var(--white);
 `;
 
 const UserStats = styled.div`
-
+    margin-top: 1em;
 `;
 
 const CurrentUserProfile = () => {
