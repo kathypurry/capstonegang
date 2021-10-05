@@ -41,7 +41,7 @@ const UserStats = styled.div`
 const CurrentUserProfile = () => {
   const user = useContext(UserContext);
   console.log(user)
-
+   
   return (
     <SectionContainer>
         <ProfileContainer1>
