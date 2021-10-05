@@ -1,4 +1,3 @@
-import React from 'react';
 import { firebase } from '../Services/firebase';
 import styled from 'styled-components';
 
@@ -50,8 +49,8 @@ const AuthPage = () => {
         })
         .catch((err) => {
             console.log(err);
-        })
-    }
+        });
+    };
 
     return (
         <Section>
@@ -62,7 +61,7 @@ const AuthPage = () => {
                 </LoginButton>
             </LoginContainer>
         </Section>
-    )
-}
+    );
+};
 
 export default AuthPage;

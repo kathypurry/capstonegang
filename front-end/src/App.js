@@ -14,7 +14,6 @@ import GamePage from "./Pages/GamePage";
 import LoginPage from "./Pages/LoginPage";
 import TestPage from "./Pages/testPage";
 import Game_StoryMode from "./Pages/GAME_STORY_MODE";
-// import Game_PracticeMode from './Pages/Game_PracticeMode';
 import User_StatPage from "./Pages/User_StatPage";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -63,7 +62,6 @@ const App = () => {
                 <Route path="/about" component={About} />
                 <Route path="/leaderboard" component={Leaderboard} />
                 <Route path="/story" component={Game_StoryMode} />
-                <Route path="/game" component={GamePage} />
                 <Route path="/practice" component={GamePage} />
                 <Route path="/career" component={User_StatPage} />
                 <Route path="/login" component={LoginPage} />
