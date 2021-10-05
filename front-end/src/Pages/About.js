@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Parallax from 'react-rellax'
 import MotionF from '../components/MotionF';
 
-// images
 import TypingImage from '../components/TypingImage';
 import NextIcon from '../assets/next-icon.svg';
 import LowerIcon from '../assets/lower-icon.svg';
@@ -108,15 +107,6 @@ const Green = styled.div`
    margin-left: -600px;
    margin-right: -600px;
 `
-
-// const AboutUs = styled.div`
-//     color: var(--foam);
-// `
-
-// const Details = styled.div`
-
-// `
-
 const AboutComponent = () => {
     return ( 
         <Container>

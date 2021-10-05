@@ -1,6 +1,11 @@
-import React from 'react';
 import { firebase } from '../Services/firebase';
 import styled from 'styled-components';
+
+const Section = styled.div`
+    background: var(--black);
+
+    height: 60vh;
+`
 
 const TitleLine = styled.h1`
     margin-bottom: 40px;
@@ -12,12 +17,6 @@ const LoginContainer = styled.div`
     
     margin: 40vh;
 `
-
-// const InstructHeader = styled.h2`
-//     margin-bottom: 10px;
-
-//     color: var(--white);
-// `
 
 const LoginButton = styled.button`
     border: none;
@@ -39,8 +38,8 @@ const LoginButton = styled.button`
     }
 `
 
-const Login = () => {
-  
+const AuthPage = () => {
+
     const SignInWithFirebase = () => {
         
         const googleProvider = new firebase.auth.GoogleAuthProvider();
@@ -50,17 +49,19 @@ const Login = () => {
         })
         .catch((err) => {
             console.log(err);
-        })
-    }
+        });
+    };
 
     return (
-        <LoginContainer>
-            <TitleLine>Tech Type</TitleLine>
-            <LoginButton onClick={SignInWithFirebase}>
-                <span> Login In with Google </span>
-            </LoginButton>
-        </LoginContainer>
-    )
+        <Section>
+            <LoginContainer>
+                <TitleLine>Tech Type</TitleLine>
+                <LoginButton onClick={SignInWithFirebase}>
+                    <span> Login with Google </span>
+                </LoginButton>
+            </LoginContainer>
+        </Section>
+    );
 };
 
-export default Login;
+export default AuthPage;

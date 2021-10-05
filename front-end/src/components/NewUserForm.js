@@ -17,7 +17,6 @@ const NewUserForm = () => {
 
     const handleSumbit = (e) => {
         e.preventDefault();
-        //updateUsers(user)
     };
 
     return (
@@ -73,7 +72,7 @@ const NewUserForm = () => {
                 <input type="submit" value="Create Account" id="createAccount-Submit" />
             </form>
         </div>
-    )
+    );
 };
 
 export default NewUserForm;
