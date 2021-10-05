@@ -1,6 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
 import useTypingGame from 'react-typing-game-hook';
 import styled from 'styled-components';
+import {doc, setDoc} from 'firebase/firestore';
+import { useContext } from "react";
+import { UserContext } from "../Services/UserProvider";
+import {db} from 'firebase/firestore'
+
+await setDoc(doc(db, "users", "uid"), {
+    WPM: 23,
+    Accuracy: 90,
+  });
 
 const WideInput = styled.div`
         // width: 500px;
