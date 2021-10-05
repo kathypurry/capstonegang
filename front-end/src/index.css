@@ -56,3 +56,7 @@ body {
 .profileName {
   font-size: 12px;
 }
+
+div {
+  overflow-y: hidden;
+}
