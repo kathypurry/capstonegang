@@ -4,12 +4,26 @@ import styled from 'styled-components';
 import {doc, setDoc} from 'firebase/firestore';
 import { useContext } from "react";
 import { UserContext } from "../Services/UserProvider";
-import {db} from 'firebase/firestore'
+import {db} from '../Services/firebase'
 
-await setDoc(doc(db, "users", "uid"), {
-    WPM: 23,
-    Accuracy: 90,
-  });
+async function foo () {
+    //  
+    try {
+        const whatever = await setDoc(doc(db, "users", "uid"), {
+        // await setDoc(doc(db, "users", "uid"), {
+            uid: null,
+            WPM: 23,
+            Accuracy: 90,
+          });    
+          console.log(whatever, 'whatever here')
+    } catch (error) {
+        console.warn(error)
+    }
+}
+
+foo()
+
+
 
 const WideInput = styled.div`
         // width: 500px;
