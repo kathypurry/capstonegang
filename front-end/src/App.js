@@ -27,6 +27,12 @@ const Pages = styled.div`
   color: var(--neongreen);
   background-color: var(--background);
   font-family: "Josefin Sans", sans-serif;
+  overflow-y: hidden;
+
+  .body::-webkit-scrollbar {
+    display: none;
+  }
+
 
   h2 {
     font-size: calc(2rem + 2vw);

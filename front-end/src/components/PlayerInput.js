@@ -6,24 +6,22 @@ import { useContext } from "react";
 import { UserContext } from "../Services/UserProvider";
 import {db} from '../Services/firebase'
 
-async function foo () {
-    //  
+
+const uploadSession = async (duration, WPM, accuracy) => {
+
     try {
-        const whatever = await setDoc(doc(db, "users", "uid"), {
-        // await setDoc(doc(db, "users", "uid"), {
-            uid: null,
-            WPM: 23,
-            Accuracy: 90,
+        const {currentUser} = db
+        const postBody = await setDoc(doc(db, "users", "uid"), {
+            CurrentUser: currentUser.uid,
+            Duration: duration,                        
+            WPM: WPM,
+            Accuracy: accuracy,
+            DateStamp: Date.now()
           });    
-          console.log(whatever, 'whatever here')
     } catch (error) {
-        console.warn(error)
+        
     }
 }
-
-foo()
-
-
 
 const WideInput = styled.div`
         // width: 500px;
@@ -123,7 +121,11 @@ const PlayerInput = ({ snippet }) => {
             setDuration(0);
         }
     }, [phase, startTime, endTime]);
-  
+
+    uploadSession(
+        duration,
+        Math.round(((60 / duration) * correctChar) / 5),
+        ((correctChar / snippet.length) * 100).toFixed(2))
     return (
         <div>
             <div onClick={() => {inputRef.current.focus();}}>
@@ -179,8 +181,8 @@ const PlayerInput = ({ snippet }) => {
                     </>)
                 : null}
                 
-                <span className="mr-4"> Correct Characters: {correctChar}</span>
-                <span className="mr-4"> Error Characters: {errorChar}</span>
+                <span className="mr-4"> Correct Characters: {correctChar} </span>
+                <span className="mr-4"> Error Characters: {errorChar} </span>
             </div>
         </div>
     );
