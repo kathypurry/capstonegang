@@ -24,7 +24,6 @@ function GamePage() {
           (error) => console.log('get', error))
         .then(res=>console.log(res))
         .catch((c) => console.warn('catch', c));
-      console.log(currentSnippet, 'test curSnippet');
   }, [difficulty]);
 
   const handleDifficultyChange = (e) => {
