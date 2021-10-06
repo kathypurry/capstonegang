@@ -13,9 +13,9 @@
   --red: #FF0000;
 }
 
-/* html {
+html {
   overflow: hidden;
-} */
+}
 
 *, *::before, *::after {
   margin: 0;
