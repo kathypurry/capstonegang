@@ -164,7 +164,7 @@ const AboutComponent = () => {
 
             <Right>
               <Parallax speed={-10} horizontal={true}>
-                <TypingImage />
+                <TypingImage/>
               </Parallax>
             </Right>
           </RelaxContainer>

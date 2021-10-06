@@ -4,7 +4,7 @@ import DeskType from "../assets/Desk-Type.svg";
 const TypingImage = () => {
     return (
         <div>
-            <img src={DeskType} alt={TypingImage} />
+            <img src={DeskType} alt={TypingImage} style={{width: '350px'}}/>
         </div>
             
     );
