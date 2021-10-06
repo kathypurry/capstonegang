@@ -45,6 +45,9 @@ function SelectDifficulty({ handleDifficultyChange }) {
           <Button onClick={handleDifficultyChange} value={3} variant="custom">
             Hard
           </Button>
+          <Button onClick={() => { window.location.reload(true)}} variant="custom">
+            Reset
+          </Button>
         </ButtonGroup>
       </LabelHousing>
     </div>

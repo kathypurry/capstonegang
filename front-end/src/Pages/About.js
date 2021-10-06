@@ -1,8 +1,8 @@
-import React from "react";
-import Button from "@material-ui/core/Button";
-import styled from "styled-components";
-import Parallax from "react-rellax";
-import MotionF from "../components/MotionF";
+import React from 'react';
+import Button from '@material-ui/core/Button';
+import styled from 'styled-components';
+import Parallax from 'react-rellax'
+import MotionF from '../components/MotionF';
 
 import TypingImage from "../components/TypingImage";
 import NextIcon from "../assets/next-icon.svg";
