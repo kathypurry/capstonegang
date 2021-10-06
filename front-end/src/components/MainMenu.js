@@ -55,20 +55,6 @@ const MainMenu = () => {
                         </Link>
                     </li>
                 </Button>
-                <br />
-                <Button>
-                    <li>
-                        {/*should also be conditionally rendered so that if the user is logged in "Log Out" appears || "Log In" if they are not */}
-                        <Link
-                            to="/login"
-                            style={{
-                                textDecoration: "none",
-                                color: "#39FF14"
-                            }}>
-                            Login/Logout
-                        </Link>
-                    </li>
-                </Button>
             </ul>
         </nav>
     )

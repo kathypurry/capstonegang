@@ -10,6 +10,6 @@ const LeaderboardComponent = () => {
     );
 };
 
-const Leaderboard = MotionF(LeaderboardComponent)
+const Leaderboard = MotionF(LeaderboardComponent);
 
 export default Leaderboard;

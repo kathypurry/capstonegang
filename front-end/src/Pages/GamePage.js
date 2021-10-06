@@ -1,4 +1,3 @@
-// import Editor from '../components/Editor';
 import SelectDifficulty from '../components/SelectDifficulty';
 import PlayerInput from '../components/PlayerInput';
 import { useState, useEffect } from 'react';
@@ -7,7 +6,6 @@ import { apiURL } from '../util/apiURL';
 
 function GamePage() {
    const API = apiURL();
-   // const [ allSnippets, setAllSnippets ] = useState([]);
    const [ difficulty, setDifficulty ] = useState('');
   const [currentSnippet, setCurrentSnippet] = useState({});
 
@@ -47,6 +45,7 @@ function GamePage() {
           
       </div>
   );
+
 };
 
 export default GamePage;
