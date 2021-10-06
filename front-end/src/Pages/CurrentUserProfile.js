@@ -13,10 +13,21 @@ const ProfileContainer1 = styled.div`
     border-radius: 10px;
     width: 40vw;
     height: 60vh;
+
+    img {
+        float: left;
+        margin-top: 2em;
+        margin-left: 5em;
+        border: 1px solid var(--neonyellow);
+        border-radius: 50px;
+    }
 `;
 
 const CurrentUserName = styled.h3`
-    margin-top: 2em;
+    float: right;
+    margin-top: 2.5em;
+    margin-right: 4em;
+
 `;
 
 
@@ -47,7 +58,8 @@ const CurrentUserProfile = () => {
     <SectionContainer>
         <ProfileContainer1>
         <CurrentUserName>{user?.displayName}</CurrentUserName>
-        <p>{user?.uid}</p>
+        <img src={user?.photoURL} />
+        {/* <p>{user?.uid}</p> */}
         </ProfileContainer1>
 
         <ProfileContainer2>
