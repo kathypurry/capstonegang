@@ -4,12 +4,24 @@ import styled from 'styled-components';
 import {doc, setDoc} from 'firebase/firestore';
 import { useContext } from "react";
 import { UserContext } from "../Services/UserProvider";
-import {db} from 'firebase/firestore'
+import {db} from '../Services/firebase'
 
-await setDoc(doc(db, "users", "uid"), {
-    WPM: 23,
-    Accuracy: 90,
-  });
+
+const uploadSession = async (duration, WPM, accuracy) => {
+
+    try {
+        const {currentUser} = db
+        const postBody = await setDoc(doc(db, "users", "uid"), {
+            CurrentUser: currentUser.uid,
+            Duration: duration,                        
+            WPM: WPM,
+            Accuracy: accuracy,
+            DateStamp: Date.now()
+          });    
+    } catch (error) {
+        
+    }
+}
 
 const WideInput = styled.div`
         // width: 500px;
@@ -18,7 +30,6 @@ const WideInput = styled.div`
             margin-top: 0.5em;
             border: none;
             width: 50vw;
-
             color: white;
         }
     `
@@ -28,7 +39,6 @@ const PlayerInput = ({ snippet }) => {
     const [duration, setDuration] = useState(0);
     const [typingInput, setTypingInput] = useState("");
     const [justTyped, setJustTyped] = useState("");
-    const [ setTypeWrong] = useState(false);
     const [currWordPos, setCurrWordPos] = useState([-1, -1]);
     const inputRef = useRef(null);
   
@@ -101,7 +111,6 @@ const PlayerInput = ({ snippet }) => {
         }
         insertTyping(" ");
         setTypingInput("");
-        // setTypeWrong(false);
     };
   
     useEffect(() => {
@@ -112,102 +121,26 @@ const PlayerInput = ({ snippet }) => {
             setDuration(0);
         }
     }, [phase, startTime, endTime]);
-  
+
+    uploadSession(
+        duration,
+        Math.round(((60 / duration) * correctChar) / 5),
+        ((correctChar / snippet.length) * 100).toFixed(2))
     return (
         <div>
-            <div
-                onClick={() => {
-                    inputRef.current.focus();
-                }}
-            >
+            <div onClick={() => {inputRef.current.focus();}}>
                 <div>
                     {snippet.split("").map((letter, index) => {
-                        // let shouldHightlight =
-                        //     index >= currWordPos[0] && index <= currWordPos[1];
-                        // let state = charsState[index];
-                        // let styling = "snippet-red-500";
-                        // if (shouldHightlight) {
-                        //     styling = "snippet-black bg-yellow-600";
-                        // } else if (state === 0) {
-                        //     styling = "snippet-gray-700";
-                        // } else if (state === 1) {
-                        //     styling = "snippet-gray-400";
-                        // }
                         return (
                             <span key={letter + index}>
                                 {letter}
                             </span>
-                        );
-                    })}
+                        )
+                    })
+                    }
                 </div>
-                <WideInput>
+                
                 <div>
-                    {/* {justTyped !== typingInput
-                        ? <input
-                        style={{ backgroundColor: "black", color: "neongreen" }}
-                        type="snippet"
-                        ref={inputRef}
-                        style={{whiteSpace: 'pre-wrap'}}
-                        onKeyDown={(e) => {
-                            if (e.key === "Escape") {
-                                e.preventDefault();
-                                reset();
-                            } else if (e.key === "Enter" || e.key === " ") {
-                                e.preventDefault();
-                                submitWord();
-                            }
-                        }}
-                        onChange={(e) => {
-                            setTypingInput(e.target.value);
-                        }}
-                        value={typingInput}
-                        autoCorrect="off"
-                        autoCapitalize="off"
-                        spellCheck={false}
-                        // className={`focus:outline-none bg-black snippet-gray-400 border-b-2 p-1 w-full border-${!typingInput.length
-                        //         ? "gray"
-                        //         : typedWrong
-                        //             ? "red" : "green"
-                        //     }-500`}
-                        placeholder={
-                            phase !== 1
-                                ? "Type here... (Press enter or space to submit word)"
-                                : ""
-                        }
-                    />
-                        : <input
-                        style={{ backgroundColor: "black", color: "crimson" }}
-                        type="snippet"
-                        ref={inputRef}
-                        onKeyDown={(e) => {
-                            if (e.key === "Escape") {
-                                e.preventDefault();
-                                reset();
-                            } else if (e.key === "Enter" || e.key === " ") {
-                                e.preventDefault();
-                                submitWord();
-                            }
-                        }}
-                        onChange={(e) => {
-                            setTypingInput(e.target.value);
-                        }}
-                        value={typingInput}
-                        autoCorrect="off"
-                        autoCapitalize="off"
-                        spellCheck={false}
-                        // className={`focus:outline-none bg-black snippet-gray-400 border-b-2 p-1 w-full border-${!typingInput.length
-                        //         ? "gray"
-                        //         : typedWrong
-                        //             ? "red" : "green"
-                        //     }-500`}
-                        placeholder={
-                            phase !== 1
-                                ? "Type here... (Press enter or space to submit word)"
-                                : ""
-                        }
-                    />
-                    } */}
-                    
                         <input
                             style={justTyped === correctChar ? { backgrounColor: 'black', color: '#39ff14' } : {backgroundColor: 'black', color: 'var(--white)'}}
                             type="snippet"
@@ -228,11 +161,6 @@ const PlayerInput = ({ snippet }) => {
                             autoCorrect="off"
                             autoCapitalize="off"
                             spellCheck={false}
-                            // className={`focus:outline-none bg-black snippet-gray-400 border-b-2 p-1 w-full border-${!typingInput.length
-                            //         ? "gray"
-                            //         : typedWrong
-                            //             ? "red" : "green"
-                            //     }-500`}
                             placeholder={
                                 phase !== 1
                                     ? "Type here... (Press enter or space to submit word)"
@@ -240,8 +168,8 @@ const PlayerInput = ({ snippet }) => {
                             }
                         />
                 </div>
-                    </WideInput>
             </div>
+
             <div>
                 {phase === 2 && startTime && endTime
                 ? (<>
@@ -253,8 +181,8 @@ const PlayerInput = ({ snippet }) => {
                     </>)
                 : null}
                 
-                <span className="mr-4"> Correct Characters: {correctChar}</span>
-                <span className="mr-4"> Error Characters: {errorChar}</span>
+                <span className="mr-4"> Correct Characters: {correctChar} </span>
+                <span className="mr-4"> Error Characters: {errorChar} </span>
             </div>
         </div>
     );

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const LabelHousing = styled.div`
-  margin-left: 15vw;
+  margin-left: auto;
   margin-bottom: 5vh;
 `;
 
@@ -44,6 +44,9 @@ function SelectDifficulty({ handleDifficultyChange }) {
           </Button>
           <Button onClick={handleDifficultyChange} value={3} variant="custom">
             Hard
+          </Button>
+          <Button onClick={() => { window.location.reload(true)}} variant="custom">
+            Reset
           </Button>
         </ButtonGroup>
       </LabelHousing>

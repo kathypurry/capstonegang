@@ -13,9 +13,9 @@
   --red: #FF0000;
 }
 
-/* html {
+html {
   overflow: hidden;
-} */
+}
 
 *, *::before, *::after {
   margin: 0;
@@ -55,4 +55,8 @@ body {
 
 .profileName {
   font-size: 12px;
+}
+
+div {
+  overflow-y: hidden;
 }
