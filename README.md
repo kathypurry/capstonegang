@@ -1,26 +1,78 @@
-# PERN Final Project Template
+<div id="top"></div>
 
-- select `use this template`
-- clone this repo
+
+<br />
+<div align="center">
+  <a>
+    <img src="https://files.slack.com/files-pri/TCVA3PF24-F02GB4WBALX/techtypelogo0.png" alt="Logo" width="80" height="80">
+  </a>
+
+<h3 align="center">Tech_Type</h3>
+
+  
+
+
+
+
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+  
+ 
+  </ol>
+</details>
+
+
+
+## About The Project
+
+
+
+Tech_type is  a project made with love by 6 passionate developers and their love of learning. The project was made by developers for developers new or old who want to improve there finger dexterity while typing and muscle memory  and accuracy while typing code. To drastically improve effeciency and to save time .
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Wireframe
+
+  <a>
+    <img src="https://files.slack.com/files-pri/TCVA3PF24-F02E1LVP8RK/image_from_ios.png"  width="80" height="80">
+  </a>
+    <a >
+    <img src="https://files.slack.com/files-pri/TCVA3PF24-F02EATGEVRS/image_from_ios.png" width="80" height="80">
+  </a>
+
+
+
+### Built With
+
+* [React.js]
+* [Bootstrap]
+* [Express]
+* [Firebase]
+* [SQL]
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
 
 ## Getting Started
 
-### Project Structure
+Setting up your project locally.
+To get a local copy up and running follow these simple steps.
 
-```
-├── README.md (what you are currently reading)
-├── back-end (a basic express app)
-├── front-end (a basic create-react-app)
-└── package.json (necessary boilerplate for heroku deployment )
-```
-
-**NOTE:** - You will have 3 `package.json` files in this project
-
-- **Top level** - necessary for heroku deployment: you don't need to do anything with this file, it is set up for you
-- **back-end** - everything to do with the express/postgres backend
-- **front-end** - everything to do with the create-react-app front-end
-
-### `back-end` Set Up and Deployment to Heroku
 
 #### Basic App
 
@@ -46,82 +98,7 @@ PG_PASSWORD=""
 - `npm run db_init`
 - `npm run db_seed`
 
-Test app locally. If it does not work locally, it will not work on Heroku.
-
-Fix bugs.
-
-When ready:
-
-- `heroku create`
-- `git add .`
-- `git commit -m 'heroku deployment`
-- `git push heroku main` - if this does not work, go to heroku dashboard => deployment and add the remote
-
-ie `heroku git:remote -a <your-heroku-app-name>`
-
-Open your heroku app. You should see the `Hello, world!` message.
-
-#### Adding the Database on Heroku
-
-In the heroku dashboard, go to `Overview` choose `configure add ons`
-
-In the search bar `Quickly add add-ons` - search for `postgres` - choose `heroku postgres`
-
-- Choose hobby dev
-- Note: even though hobby dev is free, you may be required to provide a credit card
-- In new view, click on `heroku Postgres / attached as DATABASE` => Settings
-
-![](./assets/heroku-database-dash.png)
-
-You will need to make these key value pairs in your heroku app
-
-**IMPORTANT**
-The `keys` must match perfectly with what is in your `db/dbConfig.js` file and your local `.env`
-
-- Open a new tab/window and go to the main page of your heroku app choose settings
-- Reveal Config Variables
-- Add the variables
-
-**Note:** these are false credentials and given for example only:
-
-```
-PG_HOST=ec2-55-227-246-76.compute-1.amazonaws.com
-PG_PORT=5432
-PG_DATABASE=d9bq2bk2s4ilde
-PG_USER=bcwmtakzkmkdxr
-PG_PASSWORD=afb0a7a9396af1bac763154f5649e049ce280658bef0ded7efde6
-```
-
-![](./assets/heroku-config-vars.png)
-
-- make sure you are on the same directory level as your `package.json` of your `back-end` directory
-
-Go back to the heroku database view => settings
-
-- copy `Heroku CLI` (something like `heroku pg:psql postgresql-shaped-11685 --app mysterious-spires-49488`)
-- paste into your terminal
-
-- it should open a `pg shell`
-
-Run the following:
-
-- update the `\i ./db/prod_schema.sql` with the PG_DATABASE value from Heroku
-- `\i ./db/prod_schema.sql`
-  - success should say `CREATE TABLE`
-- update the `\i ./db/prod_seed.sql` with the PG_DATABASE value from Herkou
-- `\i ./db/prod_seed.sql`
-  - success should say `INSERT 0 7`
-- `\q`
-
-This will insert the test table with the days of the week.
-
-Later, when you have build out your app to have your schema and seed data, you will:
-
-- edit the `db/schema.sql` file to be your own
-- edit th `db/seed.sql` file to be your own
-- reopen this shell and rerun these commands.
-
-Note you should set up the
+Test app locally. 
 
 ### `front-end` Set Up
 
@@ -132,22 +109,38 @@ Note you should set up the
 
 - `npm start`
 
-**src/util/apiURL.js**
 
-Replace the placeholder heroku app with your heroku app URL that you set up earlier
 
-Make sure your back-end is still running. You should see an unordered list of the days of the week, coming from your back-end. If it does not work locally, it will not work when it is deployed. Keep debugging until it works
+## Usage
 
-Go to netlify, choose `New site from Git`
+The use case of this project can be used widly in the education sphere of bootcamps and starter coding courses such as in high schools and college for student. Mainly to improve there familliarity with a keyboard and hitting awkward keystroke they may not be familliar with. Improving accuracy to perform during technical job interviews or exams that have time constraints.
 
-- choose continuos deployment, GitHub.
-- configure the netlify app on GitHub
 
-Follow the prompts to add this project repo to Netlify
-Once, authorized, configure to launch app from
 
-- Base directory: `front-end`
-- Build command: `npm run build`
-- Publish directory: `build` (may appear as `front-end/build`)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-![](./assets/netlify-deploy-settings.png)
+
+
+
+## Roadmap
+
+- story mode
+- animations
+- multipalyer
+
+
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+## Developers
+
+Alvi, Kathy, Geomary, Candy, Fezz,and Grace
+ ![TechTypeLogo0beta](https://user-images.githubusercontent.com/21033013/136412635-ec23ead7-e30b-4a9e-b37c-68e95d96ba1f.png)
+
+![image_from_ios2](https://user-images.githubusercontent.com/21033013/136412777-ce3653fa-86d8-40ae-a369-3c90b9a436b0.png)
+
+![image_from_ios](https://user-images.githubusercontent.com/21033013/136412762-8e5dc3a9-bdf0-478b-b9cc-8644230de783.png)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
