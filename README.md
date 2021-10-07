@@ -1,12 +1,6 @@
-<div id="top"></div>
-
-
-<br />
 <div align="center">
-  <a>
-    <img src="https://files.slack.com/files-pri/TCVA3PF24-F02GB4WBALX/techtypelogo0.png" alt="Logo" width="80" height="80">
-  </a>
-
+  
+![TechTypeLogo0beta](https://user-images.githubusercontent.com/21033013/136412635-ec23ead7-e30b-4a9e-b37c-68e95d96ba1f.png)
 <h3 align="center">Tech_Type</h3>
 
   
@@ -137,8 +131,7 @@ The use case of this project can be used widly in the education sphere of bootca
 ## Developers
 
 Alvi, Kathy, Geomary, Candy, Fezz,and Grace
- ![TechTypeLogo0beta](https://user-images.githubusercontent.com/21033013/136412635-ec23ead7-e30b-4a9e-b37c-68e95d96ba1f.png)
-
+ 
 ![image_from_ios2](https://user-images.githubusercontent.com/21033013/136412777-ce3653fa-86d8-40ae-a369-3c90b9a436b0.png)
 
 ![image_from_ios](https://user-images.githubusercontent.com/21033013/136412762-8e5dc3a9-bdf0-478b-b9cc-8644230de783.png)
