@@ -45,7 +45,7 @@ Tech_type is  a project made with love by 6 passionate developers and their love
 ![image_from_ios](https://user-images.githubusercontent.com/21033013/136412762-8e5dc3a9-bdf0-478b-b9cc-8644230de783.png)
 
 
-
+<div align="left">
 ### Built With
 
 * [React.js]
@@ -122,7 +122,7 @@ The use case of this project can be used widly in the education sphere of bootca
 
 
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+  <p align="right">(<a href="#top">back to top</a>)</p></div>
 
 
 ## Developers
