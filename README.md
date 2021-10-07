@@ -40,12 +40,9 @@ Tech_type is  a project made with love by 6 passionate developers and their love
 
 ## Wireframe
 
-  <a>
-    <img src="https://files.slack.com/files-pri/TCVA3PF24-F02E1LVP8RK/image_from_ios.png"  width="80" height="80">
-  </a>
-    <a >
-    <img src="https://files.slack.com/files-pri/TCVA3PF24-F02EATGEVRS/image_from_ios.png" width="80" height="80">
-  </a>
+![image_from_ios2](https://user-images.githubusercontent.com/21033013/136412777-ce3653fa-86d8-40ae-a369-3c90b9a436b0.png)
+
+![image_from_ios](https://user-images.githubusercontent.com/21033013/136412762-8e5dc3a9-bdf0-478b-b9cc-8644230de783.png)
 
 
 
@@ -132,8 +129,6 @@ The use case of this project can be used widly in the education sphere of bootca
 
 Alvi, Kathy, Geomary, Candy, Fezz,and Grace
  
-![image_from_ios2](https://user-images.githubusercontent.com/21033013/136412777-ce3653fa-86d8-40ae-a369-3c90b9a436b0.png)
 
-![image_from_ios](https://user-images.githubusercontent.com/21033013/136412762-8e5dc3a9-bdf0-478b-b9cc-8644230de783.png)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
