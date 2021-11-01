@@ -60,3 +60,7 @@ body {
 div {
   overflow-y: hidden;
 }
+
+input {
+  width: 70vw;
+}
