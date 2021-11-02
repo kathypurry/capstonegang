@@ -29,9 +29,9 @@ const Pages = styled.div`
   font-family: "Josefin Sans", sans-serif;
   overflow-y: hidden;
 
-  .body::-webkit-scrollbar {
-    display: none;
-  }
+  // .body::-webkit-scrollbar {
+  //   display: none;
+  // }
 
 
   h2 {
