@@ -57,10 +57,10 @@ body {
   font-size: 12px;
 }
 
-div {
+/* div {
   overflow-y: hidden;
-}
+} */
 
 input {
-  width: 70vw;
+  width: 50vw;
 }
