@@ -15,7 +15,7 @@ const TextInput = (foo) => {
             setPressed(null);
         }
     
-        window.addEventListener('down', hold);
+        window.addEventListener('down', hold);  
         window.addEventListener('up', release);
     
         return () => {
