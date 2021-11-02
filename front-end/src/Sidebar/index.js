@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { firebase } from '../Services/firebase';
  
-import logo from '../assets/Typing-Game-Logo.svg';
+import homeicon from '../assets/home-white-svg.svg';
 import About from '../assets/About-Logo.svg';
 import Leaderboard from '../assets/leaderboard-Logo-neon.svg';
 import logout from '../assets/logout.svg';
@@ -76,6 +76,10 @@ const Logo = styled.div`
     img {
         width: 30px;
         height: auto;
+    }
+
+    img: hover {
+        filter: invert(0.30);
     }
 `
 
@@ -234,7 +238,7 @@ const Sidebar = () => {
             <Button clicked={click} onClick={() => handleClick()}>Click</Button>
             <SidebarContainer>
                     <Logo>
-                        <a href="/"><img src={logo} alt="logo" /></a>
+                        <a href="/"><img src={homeicon} alt="logo" /></a>
                     </Logo>
 
                     <Bar clicked={click}>
