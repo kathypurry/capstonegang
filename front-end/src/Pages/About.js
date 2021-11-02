@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import styled from 'styled-components';
 import Parallax from 'react-rellax'
@@ -57,6 +58,14 @@ const Section = styled.div`
   }
 `;
 
+const Links = styled.a`
+  text-decoration: none;
+
+  button:hover {
+    color: var(--neongreen);
+  }
+`;
+
 const Content = styled.div`
   max-width: 880px;
   padding: 40px;
@@ -76,7 +85,7 @@ const RelaxContainer = styled.div`
 `;
 
 const Left = styled.div`
-  padding-top: 50vh;
+  padding-top: 25vh;
   width: 50%;
   text-align: center;
 `;
@@ -122,6 +131,7 @@ const AboutComponent = () => {
                 <br />
               </Parallax>
 
+              
               <Parallax speed={8} horizontal={true}>
                 <Paragraph>
                   The Typing game is designed to get developers more familiar
@@ -149,17 +159,23 @@ const AboutComponent = () => {
                 </Paragraph>
               </Parallax>
 
-              <Button
-                variant="contained"
-                color="primary"
-                style={{
-                  marginTop: "20px",
-                  backgroundColor: "var(--foam)",
-                  color: "#5FA8D3",
-                }}
-              >
-                Lets Type
-              </Button>
+            <Links>
+              <Link to="/practice">
+                <Button
+                  
+                  variant="contained"
+                  color="primary"
+                  style={{
+                    marginTop: "20px",
+                    backgroundColor: "var(--foam)",
+                    color: "#5FA8D3",
+                    textDecoration: "none",
+                  }}
+                >
+                  Lets Type
+                </Button>
+                </Link>
+              </Links>
             </Left>
 
             <Right>
@@ -173,13 +189,6 @@ const AboutComponent = () => {
             <img src={NextIcon} alt="NextIcon" />
           </Next>
 
-          {/* <Lower>
-            <img src={LowerIcon} alt="LowerIcon" />
-          </Lower> */}
-
-          {/* <Green>
-                        
-                    </Green> */}
         </Content>
       </Section>
 
@@ -284,6 +293,7 @@ const AboutComponent = () => {
     </Container>
   );
 };
+
 
 const About = MotionF(AboutComponent);
 
