@@ -1,10 +1,10 @@
 \c dbdovavbhl8c03;
 
-INSERT INTO username (
-    username, email, password
-) VALUES
-('KATHYISCOOL', 'Kathy@pursuit.org', 'issapassword'),
-('CANDYISCOOL', 'CANDY@pursuit.org', 'issapassowrdlol233456');
+-- INSERT INTO username (
+--     username, email, password
+-- ) VALUES
+-- ('KATHYISCOOL', 'Kathy@pursuit.org', 'issapassword'),
+-- ('CANDYISCOOL', 'CANDY@pursuit.org', 'issapassowrdlol233456');
 
 INSERT INTO code_snippets (
     difficulty, snippet
@@ -99,8 +99,8 @@ INSERT INTO code_snippets (
     {id:2, name: Vintage VCR, 21.34}]
 ');
 
-INSERT INTO game_stats (
-    wpm, correct, incorrect, missed
-) VALUES
-(40, 30, 20, 10),
-(10, 20, 30, 40);
+-- INSERT INTO game_stats (
+--     wpm, correct, incorrect, missed
+-- ) VALUES
+-- (40, 30, 20, 10),
+-- (10, 20, 30, 40);
