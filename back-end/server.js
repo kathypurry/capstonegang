@@ -9,7 +9,7 @@ app.use((req, res, next) => {
   next();;
 });
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 4000;
 
 // LISTEN
 app.listen(PORT, () => {
