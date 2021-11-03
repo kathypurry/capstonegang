@@ -1,3 +1,6 @@
+DROP DATABASE IF EXISTS typinggame_db;
+CREATE DATABASE typinggame_db;
+
 \c dbdovavbhl8c03;
 
 DROP TABLE IF EXISTS username;
