@@ -1,6 +1,9 @@
 {
   "name": "back-end",
   "version": "1.0.0",
+  "engines": {
+    "node": "15.3.0"
+  },
   "description": "",
   "main": "server.js",
   "scripts": {
