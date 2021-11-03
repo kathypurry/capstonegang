@@ -1,13 +1,5 @@
 \c production_database_name;
 
--- DROP TABLE IF EXISTS typing_game;
-
--- CREATE TABLE typing_game (
---     id SERIAL PRIMARY KEY, 
-    
-   
--- );
-
 DROP TABLE IF EXISTS username;
 
 CREATE TABLE username (

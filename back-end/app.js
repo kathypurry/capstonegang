@@ -7,7 +7,7 @@ const codeSnippetController = require("./controllers/codeSnippetController");
 
 // CONFIGURATION
 const app = express();
-app.set("trust proxy", 1);
+
 // MIDDLEWARE
 app.use(cors());
 app.use(express.json()); // Parse incoming JSON
