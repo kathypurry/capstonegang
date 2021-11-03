@@ -34,7 +34,7 @@ function GamePage() {
       <div>
           {difficulty === ''
               ? null
-              : <PlayerInput snippet={currentSnippet.snippet}/> 
+              : <PlayerInput snippet={currentSnippet?.snippet}/> 
           }
           
           <SelectDifficulty 
