@@ -1,4 +1,4 @@
-\c production_database_name;
+\c dbdovavbhl8c03;
 
 INSERT INTO users (
     username, email, password

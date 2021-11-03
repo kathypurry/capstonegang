@@ -1,4 +1,4 @@
-\c production_database_name;
+\c dbdovavbhl8c03;
 
 -- DROP TABLE IF EXISTS typing_game;
 
