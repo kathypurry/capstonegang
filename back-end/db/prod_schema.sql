@@ -1,12 +1,7 @@
+DROP DATABASE IF EXISTS dbdovavbhl8c03;
+CREATE DATABASE dbdovavbhl8c03;
+
 \c dbdovavbhl8c03;
-
--- DROP TABLE IF EXISTS typing_game;
-
--- CREATE TABLE typing_game (
---     id SERIAL PRIMARY KEY, 
-    
-   
--- );
 
 DROP TABLE IF EXISTS username;
 

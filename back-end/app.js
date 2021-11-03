@@ -7,7 +7,7 @@ const codeSnippetController = require("./controllers/codeSnippetController");
 
 // CONFIGURATION
 const app = express();
-app.set("trust proxy", 1);
+
 // MIDDLEWARE
 app.use(cors());
 app.use(express.json()); // Parse incoming JSON
@@ -24,11 +24,6 @@ app.get("/", (req, res) => {
 });
 
 //app.use("/users", usersController);
-
-app.get("*", (req, res) => {
-  res.status(404).send("404: Page not found");
-});
-
 
 app.get("*", (req, res) => {
   res.status(404).send("404: Page not found");
