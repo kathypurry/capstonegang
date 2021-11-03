@@ -29,11 +29,6 @@ app.get("*", (req, res) => {
   res.status(404).send("404: Page not found");
 });
 
-
-app.get("*", (req, res) => {
-  res.status(404).send("404: Page not found");
-});
-
 /////////////////////////////////////
 // REMOVE AFTER SUCCESSFUL DEPLOYMENT
 /////////////////////////////////////

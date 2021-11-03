@@ -1,6 +1,6 @@
 \c dbdovavbhl8c03;
 
-INSERT INTO users (
+INSERT INTO username (
     username, email, password
 ) VALUES
 ('KATHYISCOOL', 'Kathy@pursuit.org', 'issapassword'),

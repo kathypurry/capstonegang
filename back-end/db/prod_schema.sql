@@ -1,3 +1,6 @@
+DROP DATABASE IF EXISTS dbdovavbhl8c03;
+CREATE DATABASE dbdovavbhl8c03;
+
 \c dbdovavbhl8c03;
 
 DROP TABLE IF EXISTS username;
