@@ -98,9 +98,3 @@ INSERT INTO code_snippets (
     {id: 1, name: Baseball Glove, price: 19.99}
     {id:2, name: Vintage VCR, 21.34}]
 ');
-
--- INSERT INTO game_stats (
---     wpm, correct, incorrect, missed
--- ) VALUES
--- (40, 30, 20, 10),
--- (10, 20, 30, 40);

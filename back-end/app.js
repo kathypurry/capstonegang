@@ -1,5 +1,5 @@
 // DEPENDENCIES
-const cors = require("cors")
+const cors = require("cors");
 const express = require("express");
 //git test 1
 const codeSnippetController = require("./controllers/codeSnippetController");
@@ -13,6 +13,10 @@ app.use(cors());
 app.use(express.json()); // Parse incoming JSON
 
 app.use("/code", codeSnippetController);
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();;
+});
 // ROUTES
 
 app.get("/", (req, res) => {
@@ -20,11 +24,6 @@ app.get("/", (req, res) => {
 });
 
 //app.use("/users", usersController);
-
-app.get("*", (req, res) => {
-  res.status(404).send("404: Page not found");
-});
-
 
 app.get("*", (req, res) => {
   res.status(404).send("404: Page not found");

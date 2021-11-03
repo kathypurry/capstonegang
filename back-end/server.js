@@ -4,7 +4,12 @@ const app = require("./app.js");
 // CONFIGURATION
 require("dotenv").config();
 
-const PORT = process.env.PORT;
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();;
+});
+
+const PORT = process.env.PORT || 4000;
 
 // LISTEN
 app.listen(PORT, () => {

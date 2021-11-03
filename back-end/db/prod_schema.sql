@@ -1,19 +1,14 @@
-\c production_database_name;
+DROP DATABASE IF EXISTS typinggame_db;
+CREATE DATABASE typinggame_db;
 
--- DROP TABLE IF EXISTS typing_game;
-
--- CREATE TABLE typing_game (
---     id SERIAL PRIMARY KEY, 
-    
-   
--- );
+\c dbdovavbhl8c03;
 
 DROP TABLE IF EXISTS username;
 
 CREATE TABLE username (
     id SERIAL PRIMARY KEY, 
-    username TEXT
-    email TEXT
+    username TEXT,
+    email TEXT,
     password TEXT
 );
 
@@ -21,19 +16,17 @@ DROP TABLE IF EXISTS code_snippets ;
 
 CREATE TABLE code_snippets (
     id SERIAL PRIMARY KEY, 
-    difficulty NUMBER
+    difficulty NUMBER,
     snippet TEXT
- 
 );
 
 DROP TABLE IF EXISTS game_stats;
 
 CREATE TABLE game_stats (
     id SERIAL PRIMARY KEY, 
-    percentage NUMBER
-    wpm NUMBER
-    correct NUMBER
-    incorrect NUMBER
+    percentage NUMBER,
+    wpm NUMBER,
+    correct NUMBER,
+    incorrect NUMBER,
     missed NUMBER
-   
 );

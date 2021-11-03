@@ -13,7 +13,7 @@ const {
 
 codeSnippet.get("/", async (req,res) => {
     const allCodeSnippets = await getAllCodeSnippets();
-    res.json(allCodeSnippets);
+    res.status(200).json(allCodeSnippets);
 });
 
 //SHOW  
@@ -22,7 +22,7 @@ codeSnippet.get("/:difficulty", async (req,res) => {
     try {
         const codeSnippet = await getCodeSnippet(difficulty);
         if (codeSnippet) {
-            res.json(codeSnippet);
+            res.status(200).json(codeSnippet);
     } else {
         console.log(`Database error: ${codeSnippet}`);
         throw `There is no code snippet with difficulty: ${difficulty}`;
@@ -31,9 +31,5 @@ codeSnippet.get("/:difficulty", async (req,res) => {
         res.status(404).json({ error: "not found", message: e });
     }
 });
-
-
-
-
 
 module.exports = codeSnippet;
