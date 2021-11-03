@@ -1,5 +1,5 @@
 // DEPENDENCIES
-const cors = require("cors");
+const cors = require("cors")
 const express = require("express");
 //git test 1
 const codeSnippetController = require("./controllers/codeSnippetController");
