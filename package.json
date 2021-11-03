@@ -1,6 +1,9 @@
 {
   "name": "pern-final-project",
   "version": "1.0.0",
+  "engines": {
+    "node": "15.3.0"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
