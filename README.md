@@ -37,7 +37,7 @@
 Tech_type is  a project made with love by 6 passionate developers and their love of learning. The project was made by developers for developers new or old who want to improve there finger dexterity while typing and muscle memory  and accuracy while typing code. To drastically improve effeciency and to save time .
 
 Netlify: <a>https://boring-turing-1469e3.netlify.app/</a>
-Heroku: <a>https://rocky-shelf-02458.herokuapp.com/</a>
+<br>Heroku: <a>https://rocky-shelf-02458.herokuapp.com/</a></br>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
